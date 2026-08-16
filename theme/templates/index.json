@@ -9,54 +9,53 @@
  */
 {
   "sections": {
-    "image_with_text_8MrkyH": {
-      "type": "image-with-text",
+    "image_banner_hero": {
+      "type": "image-banner",
       "blocks": {
-        "heading_FP4dRe": {
+        "heading_hero": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "heading": "Imagem com texto",
-            "heading_size": "h1"
+            "heading": "Mais segurança para o seu cão",
+            "heading_size": "h0"
           }
         },
-        "text_wpRBwK": {
+        "text_hero": {
           "type": "text",
           "settings": {
-            "text": "<p>Os Sapatos Duque possuem solado antiderrapante, proporcionando mais segurança e estabilidade para cães que caminham em pisos escorregadios. Também podem auxiliar na mobilidade e na recuperação de cães com displasia ou lesões articulares.</p>",
+            "text": "Proteção, conforto e estabilidade em todos os passos.",
             "text_style": "body"
           }
         },
-        "button_BMdn6m": {
-          "type": "button",
-          "disabled": true,
+        "buttons_hero": {
+          "type": "buttons",
           "settings": {
-            "button_label": "Etiqueta de botão",
-            "button_link": "",
-            "button_style_secondary": false
+            "button_label_1": "Comprar agora",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Como medir",
+            "button_link_2": "/#shopify-section-custom_liquid_Dqpzcn",
+            "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
-        "heading_FP4dRe",
-        "text_wpRBwK",
-        "button_BMdn6m"
+        "heading_hero",
+        "text_hero",
+        "buttons_hero"
       ],
-      "name": "t:sections.image-with-text.presets.name",
+      "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/hero1_Cachorro_usando_sapato_2.jpg",
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "text_first",
+        "image": "shopify://shop_images/hero2_duque_v1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
         "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle-left",
         "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": true,
         "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_text_below": true
       }
     },
     "collage-0": {
@@ -210,7 +209,7 @@
     }
   },
   "order": [
-    "image_with_text_8MrkyH",
+    "image_banner_hero",
     "collage-0",
     "featured-collection",
     "custom_liquid_Dqpzcn",

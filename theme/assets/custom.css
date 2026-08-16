@@ -1,0 +1,36 @@
+/*
+  Pet do Duque — CSS custom do tema.
+  Não editar base.css. Tudo que for ajuste nosso entra aqui.
+*/
+
+/*
+  Hero da home: respeita a largura máxima do tema em vez de ir de ponta a ponta.
+  O id da seção vem prefixado pelo template (shopify-section-template--XXX__image_banner_hero),
+  por isso o seletor casa pelo final do id.
+*/
+[id$='__image_banner_hero'] .banner {
+  max-width: min(var(--page-width), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+@media screen and (min-width: 750px) {
+  [id$='__image_banner_hero'] .banner {
+    max-width: min(var(--page-width), calc(100% - 10rem));
+  }
+
+  /*
+    O Craft solta a caixa transparente até 68rem, o que joga o texto por cima
+    do cachorro. Prende no terço claro da foto.
+  */
+  [id$='__image_banner_hero'] .banner__box {
+    max-width: 45%;
+  }
+
+  /*
+    Largura em em (relativa ao próprio tamanho da fonte) para o título quebrar
+    depois de "segurança" sem precisar de <br> no conteúdo.
+  */
+  [id$='__image_banner_hero'] .banner__heading {
+    max-width: 7.5em;
+  }
+}
