@@ -1,0 +1,221 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_8MrkyH": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_FP4dRe": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Imagem com texto",
+            "heading_size": "h1"
+          }
+        },
+        "text_wpRBwK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Os Sapatos Duque possuem solado antiderrapante, proporcionando mais segurança e estabilidade para cães que caminham em pisos escorregadios. Também podem auxiliar na mobilidade e na recuperação de cães com displasia ou lesões articulares.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_BMdn6m": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Etiqueta de botão",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FP4dRe",
+        "text_wpRBwK",
+        "button_BMdn6m"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/hero1_Cachorro_usando_sapato_2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage-0": {
+      "type": "collage",
+      "blocks": {
+        "collection-0": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-0",
+        "collection-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "desktop_layout": "right",
+        "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 2,
+        "title": "Sapatos Duque",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 1,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 68
+      }
+    },
+    "custom_liquid_Dqpzcn": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Seção 1: Dois vídeos lado a lado -->\n<div style=\"display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start;\">\n  <!-- Vídeo 1 -->\n  <div style=\"flex: 1 1 48%; min-width: 300px;\">\n    <h3 style=\"text-align: left; margin-bottom: 8px;\">Recomendado por Especialistas</h3>\n    <iframe src=\"https://www.youtube.com/embed/XTAnYxuBwWg\" width=\"100%\" height=\"315\" allowfullscreen=\"\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" frameborder=\"0\" style=\"border-radius: 8px;\">\n    </iframe>\n  </div>\n\n  <!-- Vídeo 2 (trocado pelo de medição) -->\n  <div style=\"flex: 1 1 48%; min-width: 300px;\">\n    <h3 style=\"text-align: left; margin-bottom: 8px;\">Como Medir o Tamanho dos Sapatinhos</h3>\n    <iframe src=\"https://www.youtube.com/embed/YjO_qQHzQL4\" width=\"100%\" height=\"315\" allowfullscreen=\"\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" frameborder=\"0\" style=\"border-radius: 8px;\">\n    </iframe>\n  </div>\n</div>\n\n<!-- Seção 2: Vídeo de largura total -->\n\n<div style=\"width: 100%;\">\n  <h3 style=\"text-align: left; margin-bottom: 8px;\">Como calçar os Sapatos Duque</h3>\n  <div style=\"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;\">\n    <iframe src=\"https://www.youtube.com/embed/DgTqO9V_l_I\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\" allowfullscreen=\"\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" frameborder=\"0\">\n    </iframe>\n  </div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_Lpb6Vi": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_mRRbhi": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_HEdFWC": {
+          "type": "column",
+          "settings": {
+            "title": "ENTREGAMOS EM TODO BRASIL",
+            "text": "<p>Envio imediato após a confirmação do pagamento.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_jyAakE": {
+          "type": "column",
+          "settings": {
+            "title": "PAGAMENTO SEGURO",
+            "text": "<p>Via MERCADO PAGO, um dos melhores e maiores gateways da América Latina.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_bDRhL8": {
+          "type": "column",
+          "settings": {
+            "title": "SUPORTE AO CLIENTE",
+            "text": "<p>Atendimento Seg. a Sáb. <strong>9:00h</strong> às <strong>18:00h</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_HEdFWC",
+        "column_jyAakE",
+        "column_bDRhL8"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Várias colunas",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_WRKBFz": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "Vídeo",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_with_text_8MrkyH",
+    "collage-0",
+    "featured-collection",
+    "custom_liquid_Dqpzcn",
+    "custom_liquid_Lpb6Vi",
+    "multicolumn_mRRbhi",
+    "video_WRKBFz"
+  ]
+}
