@@ -12,38 +12,37 @@
     "image_banner_hero": {
       "type": "image-banner",
       "blocks": {
-        "heading_hero": {
+        "heading": {
           "type": "heading",
           "settings": {
             "heading": "Mais segurança para o seu cão",
             "heading_size": "h0"
           }
         },
-        "text_hero": {
+        "texto": {
           "type": "text",
           "settings": {
-            "text": "Proteção, conforto e estabilidade em todos os passos.",
+            "text": "Proteção, conforto e estabilidade em todos os passos. <strong>A partir de R$ 109,90</strong>",
             "text_style": "body"
           }
         },
-        "buttons_hero": {
+        "botoes": {
           "type": "buttons",
           "settings": {
             "button_label_1": "Comprar agora",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify://products/sapatos-duque-c2-original",
             "button_style_secondary_1": false,
-            "button_label_2": "Como medir",
-            "button_link_2": "/#shopify-section-custom_liquid_Dqpzcn",
+            "button_label_2": "Ver tamanhos",
+            "button_link_2": "/#como-medir",
             "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
-        "heading_hero",
-        "text_hero",
-        "buttons_hero"
+        "heading",
+        "texto",
+        "botoes"
       ],
-      "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/hero2_duque_v1.webp",
         "image_overlay_opacity": 0,
@@ -58,36 +57,35 @@
         "show_text_below": true
       }
     },
-    "collage-0": {
-      "type": "collage",
+    "prova_social": {
+      "type": "rich-text",
+      "disabled": true,
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "heading": {
+          "type": "heading",
           "settings": {
-            "collection": ""
+            "heading": "",
+            "heading_size": "h2"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "texto": {
+          "type": "text",
           "settings": {
-            "collection": ""
+            "text": ""
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "collection-1"
+        "heading",
+        "texto"
       ],
-      "disabled": true,
       "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "desktop_layout": "right",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 0
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "featured-collection": {
@@ -97,9 +95,9 @@
         "products_to_show": 2,
         "title": "Sapatos Duque",
         "heading_size": "h2",
-        "description": "",
+        "description": "<p>4 cores · 8 tamanhos · 3 kits</p>",
         "show_description": false,
-        "description_style": "body",
+        "description_style": "subtitle",
         "columns_desktop": 1,
         "enable_desktop_slider": false,
         "full_width": false,
@@ -114,70 +112,160 @@
         "quick_add": "none",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 68
-      }
-    },
-    "custom_liquid_Dqpzcn": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<!-- Seção 1: Dois vídeos lado a lado -->\n<div style=\"display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start;\">\n  <!-- Vídeo 1 -->\n  <div style=\"flex: 1 1 48%; min-width: 300px;\">\n    <h3 style=\"text-align: left; margin-bottom: 8px;\">Recomendado por Especialistas</h3>\n    <iframe src=\"https://www.youtube.com/embed/XTAnYxuBwWg\" width=\"100%\" height=\"315\" allowfullscreen=\"\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" frameborder=\"0\" style=\"border-radius: 8px;\">\n    </iframe>\n  </div>\n\n  <!-- Vídeo 2 (trocado pelo de medição) -->\n  <div style=\"flex: 1 1 48%; min-width: 300px;\">\n    <h3 style=\"text-align: left; margin-bottom: 8px;\">Como Medir o Tamanho dos Sapatinhos</h3>\n    <iframe src=\"https://www.youtube.com/embed/YjO_qQHzQL4\" width=\"100%\" height=\"315\" allowfullscreen=\"\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" frameborder=\"0\" style=\"border-radius: 8px;\">\n    </iframe>\n  </div>\n</div>\n\n<!-- Seção 2: Vídeo de largura total -->\n\n<div style=\"width: 100%;\">\n  <h3 style=\"text-align: left; margin-bottom: 8px;\">Como calçar os Sapatos Duque</h3>\n  <div style=\"position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;\">\n    <iframe src=\"https://www.youtube.com/embed/DgTqO9V_l_I\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\" allowfullscreen=\"\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" frameborder=\"0\">\n    </iframe>\n  </div>\n</div>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "custom_liquid_Lpb6Vi": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 12,
+        "padding_bottom": 40
       }
     },
     "multicolumn_mRRbhi": {
       "type": "multicolumn",
       "blocks": {
-        "column_HEdFWC": {
+        "c1": {
           "type": "column",
           "settings": {
-            "title": "ENTREGAMOS EM TODO BRASIL",
-            "text": "<p>Envio imediato após a confirmação do pagamento.</p>",
+            "image": "",
+            "title": "Piso liso sem escorregão",
+            "text": "<p>Solado antiderrapante que dá firmeza em cerâmica, porcelanato e madeira.</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column_jyAakE": {
+        "c2": {
           "type": "column",
           "settings": {
-            "title": "PAGAMENTO SEGURO",
-            "text": "<p>Via MERCADO PAGO, um dos melhores e maiores gateways da América Latina.</p>",
+            "image": "",
+            "title": "Proteção no asfalto quente",
+            "text": "<p>Malha respirável que protege a patinha sem abafar.</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column_bDRhL8": {
+        "c3": {
           "type": "column",
           "settings": {
-            "title": "SUPORTE AO CLIENTE",
-            "text": "<p>Atendimento Seg. a Sáb. <strong>9:00h</strong> às <strong>18:00h</strong></p>",
+            "image": "",
+            "title": "Apoio para displasia e artrose",
+            "text": "<p>Mais estabilidade na caminhada de cães com problema articular.</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column_HEdFWC",
-        "column_jyAakE",
-        "column_bDRhL8"
+        "c1",
+        "c2",
+        "c3"
       ],
-      "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Várias colunas",
-        "heading_size": "h1",
+        "title": "Por que os donos escolhem",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "como_medir": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- comment -%}\n  Como medir a patinha - bloco custom_liquid, nao secao nativa.\n\n  Motivo: a Etapa 1 exige que a tabela de tamanhos seja texto HTML selecionavel,\n  nunca imagem. O campo `text` da secao rich-text e do tipo `richtext`, que a\n  Shopify limita a <p>, <strong>, <em>, <a> e listas - a tag <table> e removida\n  na gravacao. Nao ha secao nativa do Craft que aceite tabela.\n\n  Os rotulos de tamanho (0=, PP=, P=...) sao os das variantes reais do produto.\n  Se forem renomeados no admin, esta tabela precisa mudar junto.\n\n  Estilo vive em assets/custom.css (.pdd-medir-*), nunca inline.\n{%- endcomment -%}\n\n<div id=\"como-medir\" class=\"pdd-medir page-width\">\n  <h2 class=\"pdd-medir__titulo\">Como medir a patinha</h2>\n\n  <ol class=\"pdd-medir__passos\">\n    <li>Coloque a patinha do cão sobre uma folha de papel, com o peso apoiado.</li>\n    <li>Marque o ponto mais atrás e o ponto mais à frente da patinha.</li>\n    <li>Meça a distância entre as duas marcas. Esse é o comprimento.</li>\n  </ol>\n\n  <div class=\"pdd-medir__rolagem\">\n    <table class=\"pdd-medir__tabela\">\n      <caption class=\"visually-hidden\">Tamanhos dos Sapatos Duque por comprimento da patinha</caption>\n      <thead>\n        <tr><th scope=\"col\">Tamanho</th><th scope=\"col\">Comprimento da patinha</th></tr>\n      </thead>\n      <tbody>\n        <tr><th scope=\"row\">0=</th><td>7,0 – 7,5 cm</td></tr>\n        <tr><th scope=\"row\">PP=</th><td>7,6 – 9,0 cm</td></tr>\n        <tr><th scope=\"row\">P=</th><td>9,1 – 11,0 cm</td></tr>\n        <tr><th scope=\"row\">M=</th><td>11,1 – 13,0 cm</td></tr>\n        <tr><th scope=\"row\">G=</th><td>13,1 – 14,0 cm</td></tr>\n        <tr><th scope=\"row\">GG=</th><td>14,1 – 16,0 cm</td></tr>\n        <tr><th scope=\"row\">XG=</th><td>16,1 – 19,0 cm</td></tr>\n        <tr><th scope=\"row\">XXG=</th><td>19,1 – 21,0 cm</td></tr>\n      </tbody>\n    </table>\n  </div>\n</div>",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "video_como_medir": {
+      "type": "video",
+      "settings": {
+        "heading": "Veja a medição em vídeo",
+        "heading_size": "h2",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=YjO_qQHzQL4",
+        "description": "Passo a passo de como medir a patinha do seu cão.",
+        "full_width": false,
+        "color_scheme": "scheme-2",
+        "padding_top": 8,
+        "padding_bottom": 40
+      }
+    },
+    "video_como_calcar": {
+      "type": "video",
+      "settings": {
+        "heading": "Como calçar",
+        "heading_size": "h2",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=DgTqO9V_l_I",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 20
+      }
+    },
+    "video_especialistas": {
+      "type": "video",
+      "settings": {
+        "heading": "Recomendado por especialistas",
+        "heading_size": "h2",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=XTAnYxuBwWg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "depoimentos": {
+      "type": "multicolumn",
+      "disabled": true,
+      "blocks": {
+        "d1": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "d2": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "d3": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -185,36 +273,140 @@
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "primary",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
-    "video_WRKBFz": {
-      "type": "video",
-      "name": "t:sections.video.presets.name",
+    "faq": {
+      "type": "collapsible-content",
+      "disabled": true,
+      "blocks": {
+        "q1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Qual o prazo de entrega?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "q2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quanto custa o frete?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "q3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "E se o tamanho não servir?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "q4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Como lavo os sapatinhos?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "q5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Meu cão vai se acostumar?",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
       "settings": {
-        "heading": "Vídeo",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "caption": "",
+        "heading": "Perguntas frequentes",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "section",
+        "container_color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image": "",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "chamada_final": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pronto para dar mais segurança ao seu cão?",
+            "heading_size": "h1"
+          }
+        },
+        "texto": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Conheça a <a href=\"/pages/quem-somos\">história por trás dos Sapatos Duque</a>.</p>"
+          }
+        },
+        "botoes": {
+          "type": "button",
+          "settings": {
+            "button_label": "Comprar agora",
+            "button_link": "shopify://products/sapatos-duque-c2-original",
+            "button_style_secondary": false,
+            "button_label_2": "Falar no WhatsApp",
+            "button_link_2": "https://wa.me/5521993438017",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "texto",
+        "botoes"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     }
   },
   "order": [
     "image_banner_hero",
-    "collage-0",
+    "prova_social",
     "featured-collection",
-    "custom_liquid_Dqpzcn",
-    "custom_liquid_Lpb6Vi",
     "multicolumn_mRRbhi",
-    "video_WRKBFz"
+    "como_medir",
+    "video_como_medir",
+    "video_como_calcar",
+    "video_especialistas",
+    "depoimentos",
+    "faq",
+    "chamada_final"
   ]
 }

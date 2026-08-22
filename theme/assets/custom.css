@@ -34,3 +34,80 @@
     max-width: 7.5em;
   }
 }
+
+/*
+  Como medir a patinha — tabela de tamanhos.
+
+  Vive aqui, e não inline no custom_liquid, por regra do projeto: CSS reusável
+  vai para arquivo próprio. Cor e tipografia saem das variáveis do tema, nunca
+  hex fixo, para acompanhar o color scheme da seção.
+
+  A tabela é conteúdo largo: rola dentro do próprio contêiner
+  (.pdd-medir__rolagem) para o body nunca rolar na horizontal no mobile.
+*/
+.pdd-medir__titulo {
+  margin: 0 0 1.5rem;
+}
+
+.pdd-medir__passos {
+  margin: 0 0 3rem;
+  padding-inline-start: 2rem;
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.pdd-medir__passos li + li {
+  margin-top: 0.8rem;
+}
+
+.pdd-medir__rolagem {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pdd-medir__tabela {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pdd-medir__tabela th,
+.pdd-medir__tabela td {
+  padding: 1.1rem 1.4rem;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  white-space: nowrap;
+}
+
+.pdd-medir__tabela thead th {
+  border-bottom-width: 0.2rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+}
+
+/* O tamanho é o dado que o cliente procura na varredura: destaca sem cor nova. */
+.pdd-medir__tabela tbody th {
+  font-weight: 600;
+}
+
+.pdd-medir__tabela tbody tr:last-child th,
+.pdd-medir__tabela tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/*
+  Preço no hero.
+
+  O campo de texto do image-banner é inline_richtext: recusa <br> e recusa
+  atributo (inclusive class) em <span>. Só sobra tag simples. Por isso o preço
+  vai em <strong> dentro do subtítulo, e a quebra de linha e o destaque saem
+  daqui, mirando a própria tag.
+
+  Preço é informação de primeira linha, não letra miúda — por isso ganha linha
+  própria e corpo maior em vez de ficar diluído no meio da frase.
+*/
+[id$='__image_banner_hero'] .banner__text strong {
+  display: block;
+  margin-top: 1.2rem;
+  font-size: 1.15em;
+}
