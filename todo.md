@@ -125,6 +125,8 @@ Sem estes dados, três seções da home continuam desligadas. Não invento nenhu
       seção 4.
 
 - [ ] **Rótulos de tamanho com `=`** — as variantes são `0=`, `PP=`, `P=`, `M=`,
-      `G=`, `GG=`, `XG=`, `XXG=`. O `=` é ruído. Se renomear no admin, a tabela
-      da home tem que mudar junto: as duas precisam casar, senão o cliente mede
-      a patinha e não acha o tamanho. Ver `ADMIN.md`.
+      `G=`, `GG=`, `XG=`, `XXG=`. O `=` é ruído. Se renomear no admin, muda
+      junto em **três** lugares do tema: tabela da home (`index.json`), tabela
+      do produto (`product.json`) e mapa de faixas em cm
+      (`product-variant-options.liquid`). Tudo precisa casar, senão o cliente
+      mede a patinha e não acha o tamanho. Ver `ADMIN.md`.

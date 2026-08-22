@@ -148,9 +148,10 @@ parcelas é `[PENDENTE]`. Quando houver o dado, dá para escrever a linha em
 
 **Motivo:** os rótulos das variantes (`PP=` etc.) não carregam a faixa em cm,
 então o mapa rótulo → faixa está no snippet `product-variant-options.liquid`,
-espelhando a tabela da home. São **três** lugares que têm que casar: variantes
-no admin, tabela da home, mapa do snippet. Já registrado em `todo.md` junto da
-pendência de renomear os rótulos.
+espelhando a tabela "Como medir" — que desde 22/08 vive na home **e** na página
+de produto. São **quatro** lugares que têm que casar: variantes no admin,
+tabela da home, tabela do produto, mapa do snippet. Já registrado em `todo.md`
+junto da pendência de renomear os rótulos.
 
 ---
 
