@@ -86,18 +86,18 @@ Specs (material, composição) em **metafields**. Tamanho/cor/kit em **variantes
 ---
 
 ## Pronto quando
-- [ ] Galeria com 6–8 fotos; a principal troca ao mudar a cor
-- [ ] Cor, Tamanho e Kit com todas as opções visíveis, sem menu suspenso
-- [ ] Aviso de cor abaixo dos botões, corpo menor, texto novo
-- [ ] Frete e prazo dentro da caixa de compra, corpo normal
-- [ ] Descrição é texto selecionável, 4–6 linhas, zero banner
-- [ ] `disclosures` e `related-products` não existem no template
-- [ ] Zero vídeo na página
+- [ ] Galeria com 6–8 fotos; a principal troca ao mudar a cor — *admin, ver `ADMIN.md` (tema já com `hide_variants` e `thumbnail_slider`)*
+- [x] Cor, Tamanho e Kit com todas as opções visíveis, sem menu suspenso *(22/08 — conferir no dev que a opção se chama "Tamanho", ver `todo.md`)*
+- [x] Aviso de cor abaixo dos botões, corpo menor, texto novo *(22/08)*
+- [ ] Frete e prazo dentro da caixa de compra, corpo normal — *caixa construída e desativada; falta o dado, ver `skiped.md`*
+- [ ] Descrição é texto selecionável, 4–6 linhas, zero banner — *texto pronto no §4; colar é admin, ver `ADMIN.md`*
+- [x] `disclosures` e `related-products` não existem no template *(22/08)*
+- [ ] Zero vídeo na página — *os vídeos saem junto com a descrição antiga, no admin*
 - [ ] Compra de teste completa: variante → carrinho → checkout
-- [ ] 100% das fotos com `alt` em pt-BR citando a cor
+- [ ] 100% das fotos com `alt` em pt-BR citando a cor — *admin, junto da limpeza da galeria*
 - [ ] Preview em 390px e 1280px; caixa de compra inteira alcançável sem zoom
-- [ ] `shopify theme check` sem erro
-- [ ] Antes/depois apresentado ao Gabriel
+- [x] `shopify theme check` sem erro *(22/08 — 0 erros; 11 warnings, todos do Craft de fábrica + o `RemoteAsset` aceito na Etapa 1)*
+- [x] Antes/depois apresentado ao Gabriel *(22/08)*
 
 ## Bloqueia a publicação
 parcelamento · frete · prazo · material

@@ -114,6 +114,46 @@ nada. A etapa manda desativar quando não houver frete ou prazo real.
 
 ---
 
+## Etapa 2 — Página de produto
+
+### Frete e prazo na caixa de compra
+
+**Status:** construído e desativado.
+
+**Motivo:** a etapa pede caixa destacada com frete e prazo, e os dois são
+`[PENDENTE: Gabriel informa]`. O bloco `custom_liquid` existe no template com
+a caixa pronta (`.pdd-frete`), desligado. `[PENDENTE]` nunca vai ao ar.
+
+**O que fazer:** com o dado real, escrever o texto e tirar o `disabled` do
+bloco `frete_prazo` em `templates/product.json`.
+
+### Prova social ao lado do preço
+
+**Status:** construído e desativado — mesmo caso da home.
+
+**Motivo:** `[A DEFINIR]` até a verificação do Loox (ver `ADMIN.md`).
+
+### Parcelamento junto ao preço
+
+**Status:** não construído.
+
+**Motivo:** o bloco `price` do Craft não mostra parcelamento — no Brasil isso
+vem do checkout ou de app, e a regra é nenhum app novo. Além disso o nº de
+parcelas é `[PENDENTE]`. Quando houver o dado, dá para escrever a linha em
+`custom_liquid` abaixo do preço, sem app.
+
+### Faixa em cm ao lado de cada tamanho
+
+**Status:** feito, com dependência frágil assumida.
+
+**Motivo:** os rótulos das variantes (`PP=` etc.) não carregam a faixa em cm,
+então o mapa rótulo → faixa está no snippet `product-variant-options.liquid`,
+espelhando a tabela da home. São **três** lugares que têm que casar: variantes
+no admin, tabela da home, mapa do snippet. Já registrado em `todo.md` junto da
+pendência de renomear os rótulos.
+
+---
+
 ## Histórico
 
 - **22/08 — Menu principal.** Estava pendente na Etapa 0. Resolvido: 3 itens,

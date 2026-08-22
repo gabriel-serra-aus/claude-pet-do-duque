@@ -55,6 +55,17 @@ por vez. Alternativas: duas ou três colunas (com um produto fica esquisito de
 outro jeito), ou trocar por uma seção que mostre o produto com mais informação
 ao lado da foto.
 
+### Página de produto — conferir no dev server
+
+- [ ] **Abrir a página de produto** no `shopify theme dev` e conferir:
+  o link "Não sei o tamanho — como medir" entre a Cor e o Tamanho, e a faixa
+  em cm dentro de cada botão de tamanho. Os dois casam pelo nome da opção
+  conter "tamanho" e pelos rótulos exatos (`0=`, `PP=`…) — se algo não
+  aparecer, o nome no admin é outro e eu ajusto o snippet.
+- [ ] **Galeria em `thumbnail_slider`** — troquei de `stacked` (foto empilhada)
+  para foto grande + miniaturas, pensando nas 6–8 fotos finais. Se preferir
+  outro layout, é um dropdown no theme editor, sem código.
+
 ### Chamada final — imagem
 
 - [ ] **Escolher uma foto** para a chamada final da home, se quiser.
@@ -84,6 +95,10 @@ Sem estes dados, três seções da home continuam desligadas. Não invento nenhu
 - [ ] Ligar Prova social e Depoimentos com o material do Loox
 - [ ] Reescrever e reativar a barra de anúncio com frete ou prazo real
 - [ ] Montar as colunas de links do rodapé, depois que o menu existir no admin
+- [ ] Escrever frete e prazo no bloco `frete_prazo` da página de produto e
+      tirar o `disabled` (`templates/product.json`)
+- [ ] Ligar o bloco de prova social da página de produto com o dado do Loox
+- [ ] Linha de parcelamento abaixo do preço, quando houver o nº de parcelas
 
 ---
 

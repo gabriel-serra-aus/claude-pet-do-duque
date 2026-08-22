@@ -22,8 +22,11 @@ Status: `[ ]` pendente · `[x]` feito (com data)
 
 ## Catálogo — trava a Etapa 2
 
-- [ ] **Associar cada foto de cor à variante** — é o que faz a foto principal trocar quando o cliente muda a cor. Nativo, sem app.
-- [ ] **Desassociar do produto as ~32 fotos excedentes** da galeria. Não apagar da biblioteca.
+- [ ] **Associar cada foto de cor à variante** — é o que faz a foto principal trocar quando o cliente muda a cor. Nativo, sem app. O template já está com "hide variants' media" ligado: associada a foto, selecionar uma cor esconde as fotos das outras.
+- [ ] **Desassociar do produto as ~32 fotos excedentes** da galeria. Não apagar da biblioteca. Ficam 6–8: 1 por cor (4) + cão calçado + kit completo + detalhe do solado.
+- [ ] **`alt` em pt-BR nas fotos que ficarem**, citando a cor — o alt de mídia de produto vive no admin (Edit alt text), não no tema.
+- [ ] **Trocar a descrição do produto pelo texto novo** — Etapa 2, §4. Colar como texto puro: zero imagem, zero HTML à mão. Isso elimina os 6 banners (`O QUE SÃO?`, `CONFORTÁVEIS`, `AREJADOS`, `QUALIDADE DE VIDA`, `PISOS LISOS`, `FEEDBACKS ABAIXO`) e os 3 vídeos, que já estão na home.
+- [ ] **Conferir o nome da opção de tamanho** — o link "como medir" e as faixas em cm no seletor casam pelo nome da opção conter "tamanho" e pelos rótulos exatos (`0=`, `PP=`…). Se a opção tiver outro nome, nada aparece; se os rótulos mudarem, a faixa some — e a tabela da home tem que mudar junto.
 - [ ] **Metafields de specs** — Settings → Custom data → Products: material e composição. Hoje está enterrado na descrição em texto corrido.
 - [ ] **Revisar variantes do "Sapatos Duque"** — cor, tamanho e kit com estoque correto.
 - [ ] **Renomear os rótulos de tamanho** — hoje são `0=`, `PP=`, `P=`, `M=`, `G=`, `GG=`, `XG=`, `XXG=`. O `=` é ruído. As faixas em cm estão certas. Se renomear, a tabela da Home precisa mudar junto — os dois têm que casar.
