@@ -55,8 +55,10 @@ Regras de acesso, sem exceção:
 - **Nunca trabalho no tema publicado.** Toda edição vai para tema de desenvolvimento.
 - **Nunca publico tema, nunca desativo a senha da loja, nunca instalo ou desinstalo app** sem "pode publicar" explícito do Gabriel.
 - Antes de mudança em lote ou refactor de seção, mostro o antes/depois e espero o OK.
+- **Nunca crio página, coleção, produto ou menu na loja.** Quando o trabalho depender de uma página que não existe (ex.: `/pages/como-medir`), eu **peço ao Gabriel antes** e espero ela existir para aplicar o template.
+- **Nunca abro o admin da Shopify nem uso a extensão do Chrome por conta própria.** Tudo que só se resolve pelo admin vai para a fila em `ADMIN.md`. O Gabriel escolhe a hora, libera o acesso e me pede — aí eu executo a fila de uma vez.
 
-O papel do **Chrome (Claude in Chrome) é QA visual, não teclado**: abrir o preview, tirar screenshot em viewport de celular e desktop, conferir se o que escrevi renderizou como devia, e mexer em configuração que só existe no admin. Precisa de permissão liberada na extensão para `admin.shopify.com` e `petdoduque.com`. Se der "permission denied", eu paro e aviso — não tento contornar.
+O papel do **Chrome (Claude in Chrome) é QA visual e execução da fila do admin — sempre sob permissão explícita**: abrir o preview, tirar screenshot em viewport de celular e desktop, conferir se o que escrevi renderizou como devia, e mexer em configuração que só existe no admin. Eu **não abro o Chrome nem o admin sem o Gabriel pedir na hora**. Enquanto isso, tudo que exige admin vai anotado em `ADMIN.md` — a fila fica pronta e é executada em lote quando ele liberar. Precisa de permissão liberada na extensão para `admin.shopify.com` e `petdoduque.com`. Se der "permission denied", eu paro e aviso — não tento contornar.
 
 **Limitações conhecidas deste método**, para não perder tempo redescobrindo:
 
