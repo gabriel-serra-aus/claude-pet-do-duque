@@ -63,7 +63,7 @@ Ordem: o dinheiro primeiro, o institucional por último. Um estágio por vez, um
 - [ ] Chamada do guia de tamanho → `/pages/como-medir`
 - [ ] UGC *(só entra com foto real)*
 - [ ] FAQ
-- [ ] Remover: `collage-0` (vazia), `custom_liquid_Dqpzcn` (3 vídeos em Liquid inline), `custom_liquid_Lpb6Vi` (vazia), `video_WRKBFz` (placeholder "Vídeo")
+- [ ] Remover: `collage-0` (vazia), `custom_liquid_Dqpzcn` (3 vídeos duplicados, largura fixa em pixel), `custom_liquid_Lpb6Vi` (vazia), `video_WRKBFz` (placeholder "Vídeo")
 - [ ] Mover o argumento de solado antiderrapante/displasia para o produto ou para os 3 benefícios
 - [ ] QA mobile + desktop, antes/depois
 

@@ -1,46 +1,41 @@
 # ADMIN.md — Fila do Shopify admin
 
-Ações que **só** se resolvem no admin da Shopify pelo navegador, porque não vivem no tema e a CLI não alcança.
+Ações que **só** se resolvem no admin da Shopify pelo navegador: não vivem no tema e a CLI não alcança.
 
-**Regra:** eu não abro o admin nem a extensão do Chrome por conta própria. Vou acumulando a fila aqui. Quando o Gabriel liberar a permissão e pedir, executo tudo de uma vez, marco o que foi feito e anoto o que travou.
+**Regra:** eu não abro o admin nem a extensão do Chrome por conta própria. Acumulo a fila aqui. Quando o Gabriel liberar a permissão e pedir, executo, marco o que foi feito e anoto o que travou.
 
-Pendência de **conteúdo** (texto, preço, medida, foto) não entra aqui — vive em `conteudo.md`. Aqui é só ação de admin.
+Pendência de **conteúdo** (texto, preço, medida, foto) não entra aqui — vive na seção "Bloqueia a publicação" de cada arquivo em `etapas/`.
 
 Status: `[ ]` pendente · `[x]` feito (com data)
 
 ---
 
-## Fila atual
+## Etapa 0 — antes de qualquer código
 
-### Acesso
+- [ ] **Export de conteúdo da loja** — o backup de tema não cobre. Products → Export (CSV), coleções, páginas e navegação. Guardar em `backups/`.
+- [ ] **Criar a página `Quem somos`** — Content → Pages → Add page. Título "Quem somos", handle `quem-somos`, corpo vazio. O conteúdo entra pelas sections de `templates/page.quem-somos.json`. Trava a Etapa 3.
+- [ ] **Menu principal** — Content → Menus, exatamente 3 itens: `Início` · `Sapatos Duque` · `Quem somos`. Rastreio **sai** do menu. Trava a Etapa 1.
+- [ ] **Rodapé** — WhatsApp · Rastreio · Trocas e devoluções · Política de privacidade · Instagram.
+- [ ] **Liberar a extensão do Chrome** para `admin.shopify.com` e `petdoduque.com`. Sem isso não há nem QA visual.
 
-- [ ] Liberar a extensão do Chrome para `admin.shopify.com` e `petdoduque.com`. Sem isso não faço nem QA visual.
+## Catálogo — trava a Etapa 2
 
-### Criação de conteúdo estrutural — pré-requisito de template
+- [ ] **Associar cada foto de cor à variante** — é o que faz a foto principal trocar quando o cliente muda a cor. Nativo, sem app.
+- [ ] **Desassociar do produto as ~32 fotos excedentes** da galeria. Não apagar da biblioteca.
+- [ ] **Metafields de specs** — Settings → Custom data → Products: material e composição. Hoje está enterrado na descrição em texto corrido.
+- [ ] **Revisar variantes do "Sapatos Duque"** — cor, tamanho e kit com estoque correto.
 
-- [ ] **Criar a página `Quem somos`** — Content → Pages → Add page. Título "Quem somos", handle `quem-somos`, corpo vazio; o conteúdo entra pelas sections de `templates/page.quem-somos.json`. Sem a página, o template não tem onde ser aplicado. Trava o E4.
-- [ ] **Criar a página `Como medir`** — mesma coisa, handle `como-medir`, para `templates/page.como-medir.json`. Trava o E2.
-- [ ] **Menu principal** — Content → Menus: Home · Quem somos · Como medir · Comprar. Só depois das páginas existirem. Trava o E5.
-- [ ] **Rodapé** — WhatsApp · Trocas e devoluções · Política de privacidade · Instagram.
+## Prova social
 
-### Backup — aberto desde 16/08
+- [ ] **Loox** — verificar se há avaliação real acumulada no Booster e se dá pra exportar. É o que destrava as seções desativadas da Etapa 1 e o bloco da Etapa 2.
 
-- [ ] **Export de conteúdo da loja** (o backup de tema não cobre): CSV de produtos em Products → Export, coleções, páginas e navegação. Guardar em `backups/`. É o E0.
+## Só com "pode publicar" explícito — Etapa 4
 
-### Catálogo
-
-- [ ] **Metafields de specs do produto** — Settings → Custom data → Products: tamanho, material, cor. Hoje está enterrado na descrição em texto corrido. Trava o E1.
-- [ ] **Revisar variantes do "Sapatos Duque"** — tamanho e cor como variantes de verdade, com estoque, antes de refazer a página de produto.
-- [ ] **Loox** — verificar se há avaliação real acumulada e se dá pra exportar. É o que destrava a prova social do E1 e do E3.
-
-### Só com "pode publicar" explícito
-
-- [ ] Publicar o tema Craft (#164972953635) no lugar do Booster Premium 2.0.
-- [ ] Desativar o modo senha ("Abertura em breve").
+- [ ] Publicar o Craft (#164972953635) no lugar do Booster Premium 2.0.
+- [ ] Desativar o modo senha ("Abertura em breve"). **Decisão separada da publicação.**
 - [ ] Revisar apps que o Craft não usa (Loox, Yampi) — cada script custa conversão.
 
 ---
 
 ## Feito
-
 _(nada ainda)_
