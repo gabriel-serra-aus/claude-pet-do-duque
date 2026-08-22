@@ -87,31 +87,10 @@
       }
     },
     "sobre": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "O que são os Sapatos Duque",
-            "heading_size": "h2"
-          }
-        },
-        "texto": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Asfalto quente queima a patinha. Piso liso derruba. Os Sapatos Duque resolvem os dois: solado antiderrapante e malha respirável que protege sem abafar. Para cães com displasia ou artrose, o apoio extra faz diferença real na caminhada — foi exatamente assim que eles nasceram.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "texto"
-      ],
+      "type": "custom-liquid",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "left",
+        "custom_liquid": "{%- comment -%}\n  O que são os Sapatos Duque. Era rich-text nativo, mas o bloco de texto\n  do Craft trava numa coluna estreita centralizada (max-width do\n  .rich-text__blocks) que não alinha com o page-width das outras seções.\n  custom_liquid para o título e o texto seguirem a mesma margem do resto\n  da página (pedido do Gabriel em 22/08).\n  Estilo em assets/custom.css (.pdd-sobre*).\n{%- endcomment -%}\n<div class=\"page-width pdd-sobre\">\n  <h2 class=\"pdd-sobre__titulo\">O que são os Sapatos Duque</h2>\n  <p>Os Sapatos Duque são sapatinhos antiderrapantes feitos para cães de todas as idades, raças e tamanhos.</p>\n  <p>Eles ajudam a proporcionar mais firmeza e segurança em pisos lisos, sendo especialmente úteis para cães que escorregam, têm mobilidade reduzida, displasia, artrose ou outras dificuldades articulares.</p>\n</div>",
         "color_scheme": "scheme-2",
-        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -119,36 +98,18 @@
     "como_medir": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{%- comment -%}\n  Como medir a patinha - copia exata da secao da home (templates/index.json,\n  secao como_medir), por decisao do Gabriel em 22/08: o cliente escolhe o\n  tamanho sem sair da pagina de produto.\n\n  SINCRONIA: a tabela agora vive em DOIS templates (home e produto), alem do\n  mapa rotulo->faixa em snippets/product-variant-options.liquid e das\n  variantes no admin. Mudou um, muda em todos.\n\n  Estilo vive em assets/custom.css (.pdd-medir-*), nunca inline.\n{%- endcomment -%}\n\n<div id=\"como-medir\" class=\"pdd-medir page-width\">\n  <h2 class=\"pdd-medir__titulo\">Como medir a patinha</h2>\n\n  <ol class=\"pdd-medir__passos\">\n    <li>Coloque a patinha do cão sobre uma folha de papel, com o peso apoiado.</li>\n    <li>Marque o ponto mais atrás e o ponto mais à frente da patinha.</li>\n    <li>Meça a distância entre as duas marcas. Esse é o comprimento.</li>\n  </ol>\n\n  <div class=\"pdd-medir__rolagem\">\n    <table class=\"pdd-medir__tabela\">\n      <caption class=\"visually-hidden\">Tamanhos dos Sapatos Duque por comprimento da patinha</caption>\n      <thead>\n        <tr><th scope=\"col\">Tamanho</th><th scope=\"col\">Comprimento da patinha</th></tr>\n      </thead>\n      <tbody>\n        <tr><th scope=\"row\">0=</th><td>7,0 – 7,5 cm</td></tr>\n        <tr><th scope=\"row\">PP=</th><td>7,6 – 9,0 cm</td></tr>\n        <tr><th scope=\"row\">P=</th><td>9,1 – 11,0 cm</td></tr>\n        <tr><th scope=\"row\">M=</th><td>11,1 – 13,0 cm</td></tr>\n        <tr><th scope=\"row\">G=</th><td>13,1 – 14,0 cm</td></tr>\n        <tr><th scope=\"row\">GG=</th><td>14,1 – 16,0 cm</td></tr>\n        <tr><th scope=\"row\">XG=</th><td>16,1 – 19,0 cm</td></tr>\n        <tr><th scope=\"row\">XXG=</th><td>19,1 – 21,0 cm</td></tr>\n      </tbody>\n    </table>\n  </div>\n</div>",
-        "color_scheme": "scheme-2",
+        "custom_liquid": "{%- comment -%}\n  Como medir a patinha — duas colunas na faixa cinza (22/08): à esquerda\n  título + subtítulo, vídeo da medição e os passos numerados em círculo\n  ABAIXO do vídeo; à direita a tabela de tamanhos, com os dois títulos\n  alinhados no topo. Sem card nem fundo próprio, por pedido do Gabriel.\n  A home mantém o formato antigo; as classes novas (__grade, __coluna,\n  --circulos) são só desta página.\n\n  O vídeo \"Veja a medição em vídeo\" subiu para dentro do card — a seção\n  video_como_medir que existia logo abaixo foi removida deste template.\n\n  SINCRONIA: a tabela vive em DOIS templates (home e produto), além do\n  mapa rotulo->faixa em snippets/product-variant-options.liquid e das\n  variantes no admin. Mudou um, muda em todos.\n\n  Estilo vive em assets/custom.css (.pdd-medir-*), nunca inline.\n{%- endcomment -%}\n\n<div id=\"como-medir\" class=\"pdd-medir page-width\">\n  <div class=\"pdd-medir__grade\">\n    <div class=\"pdd-medir__coluna\">\n      <h2 class=\"pdd-medir__titulo\">Como medir a patinha</h2>\n      <p class=\"pdd-medir__subtitulo\">Meça em casa em poucos passos.</p>\n      <div class=\"pdd-medir__par-card\">\n        <div class=\"pdd-medir__video\">\n          {% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Veja a medição em vídeo', compacto: true %}\n        </div>\n        <ol class=\"pdd-medir__passos pdd-medir__passos--circulos\">\n          <li>Coloque a patinha do cão sobre uma folha de papel, com o peso apoiado.</li>\n          <li>Marque o ponto mais atrás e o ponto mais à frente da patinha.</li>\n          <li>Meça a distância entre as duas marcas. Esse é o comprimento.</li>\n        </ol>\n      </div>\n    </div>\n\n    <div class=\"pdd-medir__lado\">\n      <h2 class=\"pdd-medir__titulo-tabela\">Tabela de tamanhos</h2>\n      <div class=\"pdd-medir__rolagem\">\n        <table class=\"pdd-medir__tabela\">\n          <caption class=\"visually-hidden\">Tamanhos dos Sapatos Duque por comprimento da patinha</caption>\n          <thead>\n            <tr><th scope=\"col\">Tamanho</th><th scope=\"col\">Comprimento da patinha</th></tr>\n          </thead>\n          <tbody>\n            <tr><th scope=\"row\">0</th><td>7,0 – 7,5 cm</td></tr>\n            <tr><th scope=\"row\">PP</th><td>7,6 – 9,0 cm</td></tr>\n            <tr><th scope=\"row\">P</th><td>9,1 – 11,0 cm</td></tr>\n            <tr><th scope=\"row\">M</th><td>11,1 – 13,0 cm</td></tr>\n            <tr><th scope=\"row\">G</th><td>13,1 – 14,0 cm</td></tr>\n            <tr><th scope=\"row\">GG</th><td>14,1 – 16,0 cm</td></tr>\n            <tr><th scope=\"row\">XG</th><td>16,1 – 19,0 cm</td></tr>\n            <tr><th scope=\"row\">XXG</th><td>19,1 – 21,0 cm</td></tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n  </div>\n</div>",
+        "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 20
-      }
-    },
-    "video_como_medir": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique. Mesmo formato da home.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Veja a medição em vídeo', texto: 'Passo a passo de como medir a patinha do seu cão.' %}",
-        "color_scheme": "scheme-2",
-        "padding_top": 8,
         "padding_bottom": 40
       }
     },
-    "video_como_calcar": {
+    "videos_par": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique. Mesmo formato da home.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', texto: '' %}",
-        "color_scheme": "scheme-1",
+        "custom_liquid": "{%- comment -%}\n  \"Como calçar\" e \"Recomendado por especialistas\" lado a lado no desktop\n  (pedido do Gabriel em 22/08) — antes eram duas seções empilhadas.\n  O snippet usa a miniatura do próprio YouTube e só carrega o player no\n  clique; a seção nativa `video` mostraria o placeholder de camisetas do\n  Craft sem cover_image em Files.\n  Grade em assets/custom.css (.pdd-videos-par).\n{%- endcomment -%}\n<div class=\"page-width pdd-videos-par\">\n  {% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', compacto: true %}\n  {% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', compacto: true %}\n</div>",
+        "color_scheme": "scheme-2",
         "padding_top": 36,
-        "padding_bottom": 20
-      }
-    },
-    "video_especialistas": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique. Mesmo formato da home.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', texto: '' %}",
-        "color_scheme": "scheme-1",
-        "padding_top": 20,
         "padding_bottom": 40
       }
     }
@@ -157,8 +118,6 @@
     "main",
     "sobre",
     "como_medir",
-    "video_como_medir",
-    "video_como_calcar",
-    "video_especialistas"
+    "videos_par"
   ]
 }

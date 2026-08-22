@@ -106,6 +106,146 @@
 }
 
 /*
+  Formato de card do "Como medir" na página de produto: vídeo + passos
+  numerados em círculo dentro de um card, tabela de tamanhos ao lado no
+  desktop. Classes novas, só do template de produto — a home continua
+  usando apenas as regras acima. Fundo do card em rgba do foreground
+  para funcionar em qualquer color scheme.
+*/
+.pdd-medir__grade {
+  display: grid;
+  gap: 3.2rem;
+  align-items: start;
+}
+
+@media screen and (min-width: 990px) {
+  .pdd-medir__grade {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.pdd-medir__subtitulo {
+  margin: -0.5rem 0 2.4rem;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+/* Vídeo em cima, passos embaixo — sempre empilhado, em qualquer largura. */
+.pdd-medir__par-card {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.pdd-medir__passos--circulos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: passo;
+}
+
+.pdd-medir__passos--circulos li {
+  counter-increment: passo;
+  position: relative;
+  padding-left: 4rem;
+  min-height: 2.8rem;
+}
+
+.pdd-medir__passos--circulos li + li {
+  margin-top: 1.6rem;
+}
+
+.pdd-medir__passos--circulos li::before {
+  content: counter(passo);
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.45);
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+
+.pdd-medir__titulo-tabela {
+  margin: 0 0 1.5rem;
+}
+
+/*
+  "O que são os Sapatos Duque" na página de produto: custom_liquid no
+  page-width para alinhar com as outras seções (o rich-text nativo trava
+  numa coluna estreita centralizada). O texto ocupa a largura toda do
+  page-width, por pedido do Gabriel.
+*/
+.pdd-sobre__titulo {
+  margin: 0 0 1.5rem;
+}
+
+.pdd-sobre p {
+  margin: 0 0 1.2rem;
+}
+
+.pdd-sobre p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+  "A História dos Sapatos Duque" (seção historia do index.json, nativa
+  image-with-text): no desktop a foto estica até a altura exata da coluna
+  de texto, em vez da altura fixa do setting "medium" — que fica como
+  fallback se esta regra não carregar. O seletor casa pelo sufixo do id
+  que a Shopify gera para a seção (…__historia), único jeito estável de
+  mirar uma seção nativa sem editar o arquivo dela.
+*/
+@media screen and (min-width: 750px) {
+  [id$="__historia"] .image-with-text__media-item {
+    display: flex;
+  }
+
+  [id$="__historia"] .image-with-text__media--medium {
+    height: auto;
+    min-height: 100%;
+    flex: 1;
+  }
+}
+
+/*
+  "Como calçar" e "Recomendado por especialistas" lado a lado na página
+  de produto. O margin-top zerado neutraliza a regra de vídeos
+  empilhados (.pdd-video + .pdd-video) — aqui o espaçamento é do gap.
+*/
+.pdd-videos-par {
+  display: grid;
+  gap: 2.8rem 2rem;
+  align-items: start;
+}
+
+@media screen and (min-width: 750px) {
+  .pdd-videos-par {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pdd-videos-par .pdd-video {
+  margin-top: 0;
+}
+
+/* Títulos dos vídeos no mesmo formato dos h2 da página. O snippet em
+   modo compacto emite h3 (não dá para trocar a tag sem mexer no snippet,
+   que a home também usa), então o tamanho de h2 do tema é reaplicado
+   aqui, com as mesmas variáveis e pontos de corte do base.css. */
+.pdd-videos-par .pdd-video__titulo--compacto {
+  font-size: calc(var(--font-heading-scale) * 2rem);
+}
+
+@media only screen and (min-width: 750px) {
+  .pdd-videos-par .pdd-video__titulo--compacto {
+    font-size: calc(var(--font-heading-scale) * 2.4rem);
+  }
+}
+
+/*
   Preço no hero.
 
   O campo de texto do image-banner é inline_richtext: recusa <br> e recusa
@@ -219,35 +359,35 @@
 }
 
 /*
-  "Por que os donos escolhem" (snippet pdd-beneficios).
+  Benefícios dos Sapatos Duque (snippet pdd-beneficios).
 
-  Grid com auto-fit: uma coluna no celular, três no desktop, sem media query
-  e sem largura em pixel. O ícone herda a cor do texto do esquema ativo.
+  Grade 2×2 no desktop com divisórias entre células, uma coluna no celular.
+  Ícone WebP à esquerda, texto à direita. As linhas usam a cor de frente do
+  esquema ativo com transparência, então funcionam em qualquer color scheme.
 */
-.pdd-beneficios__titulo {
-  margin: 0 0 3rem;
-}
-
 .pdd-beneficios__lista {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-  gap: 3.2rem;
+  grid-template-columns: 1fr;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.pdd-beneficios__icone {
-  display: block;
-  width: 4.8rem;
-  height: 4.8rem;
-  margin-bottom: 1.4rem;
-  color: rgb(var(--color-button));
+.pdd-beneficios__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2.4rem 0;
 }
 
-.pdd-beneficios__icone svg {
-  width: 100%;
-  height: 100%;
+.pdd-beneficios__item + .pdd-beneficios__item {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+}
+
+.pdd-beneficios__icone {
+  flex-shrink: 0;
+  width: 5.6rem;
+  height: 5.6rem;
 }
 
 .pdd-beneficios__nome {
@@ -258,8 +398,113 @@
 
 .pdd-beneficios__texto {
   margin: 0;
-  max-width: 40ch;
+  max-width: 46ch;
   line-height: 1.6;
+}
+
+@media screen and (min-width: 750px) {
+  .pdd-beneficios__lista {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pdd-beneficios__item {
+    padding: 3.2rem 0;
+  }
+
+  /* primeira linha da grade fica sem divisória em cima */
+  .pdd-beneficios__item:nth-child(2) {
+    border-top: 0;
+  }
+
+  /* divisória vertical entre as duas colunas */
+  .pdd-beneficios__item:nth-child(odd) {
+    padding-right: 4rem;
+  }
+
+  .pdd-beneficios__item:nth-child(even) {
+    padding-left: 4rem;
+    border-left: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  }
+
+  .pdd-beneficios__icone {
+    width: 7.2rem;
+    height: 7.2rem;
+  }
+}
+
+/*
+  Vitrine do produto na home (custom_liquid "vitrine").
+
+  Foto e conteúdo lado a lado a partir de 750px; no celular empilha com a
+  foto primeiro. Cor sai das variáveis do tema: círculo do check na cor do
+  texto, traço na cor do botão (o vermelho da marca no scheme ativo).
+*/
+.pdd-vitrine {
+  display: grid;
+  gap: 2.4rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 750px) {
+  .pdd-vitrine {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.pdd-vitrine__foto {
+  display: block;
+}
+
+.pdd-vitrine__foto img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--media-radius, 0);
+}
+
+.pdd-vitrine__titulo {
+  margin: 0 0 1.2rem;
+}
+
+.pdd-vitrine__subtitulo,
+.pdd-vitrine__descricao {
+  margin: 0 0 1.6rem;
+  line-height: 1.6;
+  max-width: 45ch;
+}
+
+.pdd-vitrine__preco {
+  margin: 0 0 2rem;
+}
+
+.pdd-vitrine__preco strong {
+  font-size: 1.25em;
+}
+
+.pdd-vitrine__checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2.8rem;
+  margin: 0 0 2.8rem;
+  padding: 0;
+  list-style: none;
+}
+
+.pdd-vitrine__checks li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.pdd-vitrine__check {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.pdd-vitrine__check-traco {
+  stroke: rgb(var(--color-button));
 }
 
 /*
@@ -319,44 +564,6 @@
   color: rgba(var(--color-foreground), 0.7);
 }
 
-/*
-  Como medir + vídeos, lado a lado (seção "como_medir" do index.json).
-
-  Uma coluna no celular; a partir de 990px a tabela fica à esquerda e os
-  vídeos à direita, aproveitando a largura do desktop. O vídeo "Como medir"
-  abre a coluna porque complementa a tabela ao lado; os outros dois ficam
-  abaixo, em par quando a largura permite (auto-fit, sem media query).
-*/
-.pdd-medir-videos {
-  display: grid;
-  gap: 4.8rem;
-  align-items: start;
-}
-
-@media screen and (min-width: 990px) {
-  .pdd-medir-videos {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-  }
-}
-
-.pdd-videos__titulo {
-  margin: 0 0 3rem;
-}
-
-/* Dentro do bloco o espaçamento é do gap, não da regra de vídeos
-   empilhados (.pdd-video + .pdd-video) usada na página de produto. */
-.pdd-medir-videos .pdd-video {
-  margin-top: 0;
-}
-
-.pdd-medir-videos__par {
-  margin-top: 2.8rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 2.8rem 2rem;
-}
-
 .pdd-video__titulo--compacto {
   margin: 0 0 1rem;
   font-size: 1.8rem;
@@ -400,4 +607,62 @@
   .pdd-whatsapp {
     display: none;
   }
+}
+
+/*
+  Menu mais legível e mais fácil de tocar.
+
+  O Craft herda do Dawn 1.4rem no item de menu do desktop (via .link em
+  base.css) e 1.8rem com padding de 1.1rem no menu de gaveta do mobile —
+  pequeno demais para o público da loja, que compra pelo celular.
+  Como base.css não pode ser editado, o ajuste vive aqui.
+
+  Alvo de toque no mobile: fonte + padding vertical ≈ 5.2rem, acima do
+  mínimo de 44px recomendado para dedo.
+*/
+.header__menu-item.list-menu__item {
+  font-size: 2.2rem;
+}
+
+.header__submenu .header__menu-item.caption-large {
+  font-size: 1.5rem;
+}
+
+.menu-drawer__menu-item {
+  font-size: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/*
+  Página atual mais destacada no menu. O padrão do tema é só um sublinhado
+  fino (desktop) e um fundo a 4% (gaveta mobile) — fraco demais para o
+  cliente se localizar. Negrito é sintetizado pelo navegador, já que o tema
+  só carrega o peso 400 da fonte de corpo. A cor do item ativo é a do botão
+  do scheme do header (vermelho-tijolo no scheme-1), via --color-button.
+*/
+.header__menu-item[aria-current='page'] {
+  color: rgb(var(--color-button));
+  font-weight: 700;
+}
+
+.header__menu-item[aria-current='page']:hover {
+  color: rgb(var(--color-button));
+}
+
+.header__active-menu-item {
+  color: rgb(var(--color-button));
+  text-decoration-thickness: 0.3rem;
+  text-underline-offset: 0.5rem;
+}
+
+.menu-drawer__menu-item--active {
+  color: rgb(var(--color-button));
+  font-weight: 700;
+  background-color: rgba(var(--color-button), 0.08);
+  box-shadow: inset 0.4rem 0 0 rgb(var(--color-button));
+}
+
+.menu-drawer__menu-item--active:hover {
+  color: rgb(var(--color-button));
 }

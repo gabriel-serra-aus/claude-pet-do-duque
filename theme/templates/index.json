@@ -88,30 +88,58 @@
         "padding_bottom": 28
       }
     },
-    "vitrine": {
-      "type": "featured-collection",
+    "historia": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "A História dos Sapatos Duque",
+            "heading_size": "h2"
+          }
+        },
+        "texto": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Os Sapatos Duque são sapatinhos antiderrapantes criados para proporcionar mais firmeza, conforto e segurança em pisos lisos.</p><p>A ideia nasceu quando Duque, um labrador chocolate diagnosticado com displasia ainda filhote, começou a ter dificuldades para caminhar. O que começou como uma solução feita em casa transformou-se em um produto que hoje ajuda cães de todas as idades, raças e tamanhos.</p>",
+            "text_style": "body"
+          }
+        },
+        "botao": {
+          "type": "button",
+          "settings": {
+            "button_label": "Conheça a história completa",
+            "button_link": "shopify://pages/quem-somos",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "texto",
+        "botao"
+      ],
       "settings": {
-        "collection": "all",
-        "products_to_show": 2,
-        "title": "Sapatos Duque",
-        "heading_size": "h2",
-        "description": "<p>4 cores · 8 tamanhos · 3 kits</p>",
-        "show_description": false,
-        "description_style": "subtitle",
-        "columns_desktop": 1,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "outline",
+        "image": "shopify://shop_images/DSC_3182.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_second",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "vitrine": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- comment -%}\n  Vitrine do produto — foto à esquerda, conteúdo à direita (22/08).\n  Substituiu o card da featured-collection: o card nativo não põe foto e\n  texto lado a lado nem mostra subtítulo, linha de benefícios com check\n  e botão de compra.\n\n  Foto e preço vêm do próprio produto (all_products), então acompanham\n  o admin sem retoque aqui. Estilo em assets/custom.css (.pdd-vitrine*).\n{%- endcomment -%}\n{%- assign produto = all_products['sapatos-duque-c2-original'] -%}\n{%- assign beneficios = 'Antiderrapante|Respirável|Confortável' | split: '|' -%}\n<div class=\"page-width pdd-vitrine\">\n  <a href=\"{{ produto.url }}\" class=\"pdd-vitrine__foto\">\n    {{ produto.featured_image | image_url: width: 1200 | image_tag: widths: '400, 600, 800, 1200', sizes: '(min-width: 750px) 50vw, calc(100vw - 3rem)', loading: 'lazy', alt: 'Sapatos Duque — sapatinhos antiderrapantes para cachorro' }}\n  </a>\n  <div class=\"pdd-vitrine__conteudo\">\n    <h2 class=\"pdd-vitrine__titulo\">Sapatos Duque</h2>\n    <p class=\"pdd-vitrine__subtitulo\">Mais segurança e conforto em cada passo.</p>\n    <p class=\"pdd-vitrine__descricao\">Solado antiderrapante, malha respirável e ajuste confortável para ajudar seu cão a caminhar com mais firmeza.</p>\n    <p class=\"pdd-vitrine__preco\">A partir de <strong>{{ produto.price_min | money }}</strong></p>\n    <ul class=\"pdd-vitrine__checks\" role=\"list\">\n      {%- for beneficio in beneficios -%}\n      <li>\n        <svg class=\"pdd-vitrine__check\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\">\n          <circle cx=\"12\" cy=\"12\" r=\"11\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n          <path class=\"pdd-vitrine__check-traco\" d=\"M7 12.5l3.4 3.3L17 9.2\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n        {{ beneficio }}\n      </li>\n      {%- endfor -%}\n    </ul>\n    <a href=\"{{ produto.url }}\" class=\"button pdd-vitrine__botao\">Compre agora</a>\n  </div>\n</div>",
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
         "padding_top": 12,
         "padding_bottom": 40
       }
@@ -119,8 +147,8 @@
     "multicolumn_mRRbhi": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{%- comment -%}\n  A secao nativa multicolumn so aceita imagem vinda de Files. Os icones\n  ainda nao estao la, entao as colunas ficariam sem imagem. O snippet usa\n  SVG embutido. Ver todo.md para a volta ao nativo.\n{%- endcomment -%}\n{% render 'pdd-beneficios' %}",
-        "color_scheme": "scheme-1",
+        "custom_liquid": "{%- comment -%}\n  A secao nativa multicolumn so aceita imagem vinda de Files e empilha\n  imagem sobre texto. Os icones vivem em assets do tema e o layout pede\n  icone ao lado do texto em grade 2x2 com divisorias. Ver o snippet.\n{%- endcomment -%}\n{% render 'pdd-beneficios' %}",
+        "color_scheme": "scheme-2",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -128,10 +156,19 @@
     "como_medir": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{%- comment -%}\n  Como medir a patinha + Veja em video - um bloco so, duas colunas no desktop.\n\n  Custom_liquid, nao secao nativa, por dois motivos: o campo richtext da\n  Shopify remove <table> na gravacao, e nenhuma secao do Craft poe tabela e\n  videos lado a lado.\n\n  Esquerda: passos e tabela de tamanhos. Direita: o video Como medir primeiro,\n  porque complementa a tabela ao lado; os outros dois abaixo, em par.\n  No mobile tudo vira uma coluna.\n\n  Os rotulos de tamanho (0=, PP=, P=...) sao os das variantes reais do produto.\n  Se forem renomeados no admin, esta tabela precisa mudar junto.\n\n  Estilo vive em assets/custom.css (.pdd-medir-* e .pdd-medir-videos*),\n  nunca inline.\n{%- endcomment -%}\n\n<div id=\"como-medir\" class=\"pdd-medir-videos page-width\">\n  <div class=\"pdd-medir\">\n    <h2 class=\"pdd-medir__titulo\">Como medir a patinha</h2>\n\n    <ol class=\"pdd-medir__passos\">\n      <li>Coloque a patinha do cão sobre uma folha de papel, com o peso apoiado.</li>\n      <li>Marque o ponto mais atrás e o ponto mais à frente da patinha.</li>\n      <li>Meça a distância entre as duas marcas. Esse é o comprimento.</li>\n    </ol>\n\n    <div class=\"pdd-medir__rolagem\">\n      <table class=\"pdd-medir__tabela\">\n        <caption class=\"visually-hidden\">Tamanhos dos Sapatos Duque por comprimento da patinha</caption>\n        <thead>\n          <tr><th scope=\"col\">Tamanho</th><th scope=\"col\">Comprimento da patinha</th></tr>\n        </thead>\n        <tbody>\n          <tr><th scope=\"row\">0=</th><td>7,0 – 7,5 cm</td></tr>\n          <tr><th scope=\"row\">PP=</th><td>7,6 – 9,0 cm</td></tr>\n          <tr><th scope=\"row\">P=</th><td>9,1 – 11,0 cm</td></tr>\n          <tr><th scope=\"row\">M=</th><td>11,1 – 13,0 cm</td></tr>\n          <tr><th scope=\"row\">G=</th><td>13,1 – 14,0 cm</td></tr>\n          <tr><th scope=\"row\">GG=</th><td>14,1 – 16,0 cm</td></tr>\n          <tr><th scope=\"row\">XG=</th><td>16,1 – 19,0 cm</td></tr>\n          <tr><th scope=\"row\">XXG=</th><td>19,1 – 21,0 cm</td></tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n\n  <div class=\"pdd-medir-videos__videos\">\n    <h2 class=\"pdd-videos__titulo\">Veja em vídeo</h2>\n    {% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Como medir', compacto: true %}\n    <div class=\"pdd-medir-videos__par\">\n      {% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', compacto: true %}\n      {% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', compacto: true %}\n    </div>\n  </div>\n</div>",
-        "color_scheme": "scheme-2",
+        "custom_liquid": "{%- comment -%}\n  Como medir a patinha — mesmo formato da página de produto (22/08):\n  duas colunas na faixa cinza, à esquerda título + subtítulo, vídeo da\n  medição e os passos numerados em círculo abaixo do vídeo; à direita a\n  tabela de tamanhos. Substituiu o formato antigo da home (passos +\n  tabela à esquerda, coluna \"Veja em vídeo\" à direita).\n\n  custom_liquid porque o campo richtext da Shopify remove <table> na\n  gravação e nenhuma seção do Craft põe vídeo, passos e tabela nessa grade.\n\n  SINCRONIA: a tabela vive em DOIS templates (home e produto), além do\n  mapa rotulo->faixa em snippets/product-variant-options.liquid e das\n  variantes no admin. Mudou um, muda em todos.\n\n  Estilo vive em assets/custom.css (.pdd-medir-*), nunca inline.\n{%- endcomment -%}\n\n<div id=\"como-medir\" class=\"pdd-medir page-width\">\n  <div class=\"pdd-medir__grade\">\n    <div class=\"pdd-medir__coluna\">\n      <h2 class=\"pdd-medir__titulo\">Como medir a patinha</h2>\n      <p class=\"pdd-medir__subtitulo\">Meça em casa em poucos passos.</p>\n      <div class=\"pdd-medir__par-card\">\n        <div class=\"pdd-medir__video\">\n          {% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Veja a medição em vídeo', compacto: true %}\n        </div>\n        <ol class=\"pdd-medir__passos pdd-medir__passos--circulos\">\n          <li>Coloque a patinha do cão sobre uma folha de papel, com o peso apoiado.</li>\n          <li>Marque o ponto mais atrás e o ponto mais à frente da patinha.</li>\n          <li>Meça a distância entre as duas marcas. Esse é o comprimento.</li>\n        </ol>\n      </div>\n    </div>\n\n    <div class=\"pdd-medir__lado\">\n      <h2 class=\"pdd-medir__titulo-tabela\">Tabela de tamanhos</h2>\n      <div class=\"pdd-medir__rolagem\">\n        <table class=\"pdd-medir__tabela\">\n          <caption class=\"visually-hidden\">Tamanhos dos Sapatos Duque por comprimento da patinha</caption>\n          <thead>\n            <tr><th scope=\"col\">Tamanho</th><th scope=\"col\">Comprimento da patinha</th></tr>\n          </thead>\n          <tbody>\n            <tr><th scope=\"row\">0</th><td>7,0 – 7,5 cm</td></tr>\n            <tr><th scope=\"row\">PP</th><td>7,6 – 9,0 cm</td></tr>\n            <tr><th scope=\"row\">P</th><td>9,1 – 11,0 cm</td></tr>\n            <tr><th scope=\"row\">M</th><td>11,1 – 13,0 cm</td></tr>\n            <tr><th scope=\"row\">G</th><td>13,1 – 14,0 cm</td></tr>\n            <tr><th scope=\"row\">GG</th><td>14,1 – 16,0 cm</td></tr>\n            <tr><th scope=\"row\">XG</th><td>16,1 – 19,0 cm</td></tr>\n            <tr><th scope=\"row\">XXG</th><td>19,1 – 21,0 cm</td></tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n  </div>\n</div>",
+        "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 20
+        "padding_bottom": 40
+      }
+    },
+    "videos_par": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- comment -%}\n  \"Como calçar\" e \"Recomendado por especialistas\" lado a lado no desktop,\n  igual à página de produto (22/08) — substitui a coluna \"Veja em vídeo\"\n  do formato antigo da home. O snippet usa a miniatura do próprio YouTube\n  e só carrega o player no clique; a seção nativa `video` mostraria o\n  placeholder de camisetas do Craft sem cover_image em Files.\n  Grade em assets/custom.css (.pdd-videos-par).\n{%- endcomment -%}\n<div class=\"page-width pdd-videos-par\">\n  {% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', compacto: true %}\n  {% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', compacto: true %}\n</div>",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 40
       }
     },
     "cta_apos_medida": {
@@ -297,59 +334,18 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "chamada_final": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Pronto para dar mais segurança ao seu cão?",
-            "heading_size": "h1"
-          }
-        },
-        "texto": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Conheça a <a href=\"/pages/quem-somos\">história por trás dos Sapatos Duque</a>.</p>"
-          }
-        },
-        "botoes": {
-          "type": "button",
-          "settings": {
-            "button_label": "Comprar agora",
-            "button_link": "shopify://products/sapatos-duque-c2-original",
-            "button_style_secondary": false,
-            "button_label_2": "Falar no WhatsApp",
-            "button_link_2": "https://wa.me/5521993438017",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "texto",
-        "botoes"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-4",
-        "full_width": true,
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
     }
   },
   "order": [
     "image_banner_hero",
     "prova_social",
+    "historia",
     "vitrine",
     "multicolumn_mRRbhi",
     "como_medir",
+    "videos_par",
     "cta_apos_medida",
     "depoimentos",
-    "faq",
-    "chamada_final"
+    "faq"
   ]
 }
