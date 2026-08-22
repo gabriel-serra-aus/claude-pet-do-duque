@@ -39,19 +39,23 @@
         alt vazio de propósito: o botão já carrega o rótulo em aria-label.
         Texto nos dois faz o leitor de tela anunciar a mesma coisa duas vezes.
 
-        Nem todo vídeo tem todas as resoluções: o da medição, por exemplo,
-        devolve 404 em maxresdefault. Daí a queda em duas etapas —
-        maxresdefault (1280) → sddefault (640) → hqdefault (480).
+        Nem todo vídeo tem todas as resoluções. O cuidado aqui não é óbvio:
+        quando falta, o YouTube devolve **404 com um JPEG válido dentro** — o
+        logo cinza de 120×90. O navegador decodifica e considera carregado,
+        então `onerror` NÃO dispara e o cinza fica na tela esticado.
+
+        Por isso a queda é decidida pela largura da imagem, não pelo erro:
+        até 120px é o placeholder. maxresdefault (1280) → sddefault (640)
+        → hqdefault (480), que o oEmbed garante existir em vídeo público.
+
         sddefault e hqdefault são 4:3 com tarja preta; o object-fit: cover
         do CSS corta justamente a tarja.
       {%- endcomment -%}
       <img
         class="pdd-video__capa"
-        src="https://img.youtube.com/vi/{{ id }}/maxresdefault.jpg"
-        data-base="https://img.youtube.com/vi/{{ id }}/"
-        onerror="var q=this.dataset.q||'max';if(q==='max'){this.dataset.q='sd';this.src=this.dataset.base+'sddefault.jpg';}else if(q==='sd'){this.dataset.q='hq';this.src=this.dataset.base+'hqdefault.jpg';}else{this.onerror=null;}"
+        src="https://i.ytimg.com/vi/{{ id }}/maxresdefault.jpg"
+        data-base="https://i.ytimg.com/vi/{{ id }}/"
         alt=""
-        loading="lazy"
         width="1280"
         height="720"
       >
@@ -69,6 +73,22 @@
       class extends HTMLElement {
         connectedCallback() {
           this.addEventListener('click', () => this.carrega(), { once: true });
+          this.ajustaCapa();
+        }
+        // Ver o comentário do <img>: o 404 do YouTube vem com imagem dentro,
+        // então a queda é decidida pela largura, não pelo evento de erro.
+        ajustaCapa() {
+          const img = this.querySelector('.pdd-video__capa');
+          if (!img) return;
+          const quedas = ['sddefault', 'hqdefault'];
+          const avalia = () => {
+            if (img.naturalWidth > 120) return; // miniatura de verdade
+            const proxima = quedas.shift();
+            if (proxima) img.src = img.dataset.base + proxima + '.jpg';
+          };
+          img.addEventListener('load', avalia);
+          img.addEventListener('error', avalia);
+          if (img.complete) avalia();
         }
         carrega() {
           const id = this.dataset.id;

@@ -117,59 +117,12 @@
       }
     },
     "multicolumn_mRRbhi": {
-      "type": "multicolumn",
-      "blocks": {
-        "c1": {
-          "type": "column",
-          "settings": {
-            "image": "",
-            "title": "Piso liso sem escorregão",
-            "text": "<p>Solado antiderrapante que dá firmeza em cerâmica, porcelanato e madeira.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "c2": {
-          "type": "column",
-          "settings": {
-            "image": "",
-            "title": "Proteção no asfalto quente",
-            "text": "<p>Malha respirável que protege a patinha sem abafar.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "c3": {
-          "type": "column",
-          "settings": {
-            "image": "",
-            "title": "Apoio para displasia e artrose",
-            "text": "<p>Mais estabilidade na caminhada de cães com problema articular.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "c1",
-        "c2",
-        "c3"
-      ],
+      "type": "custom-liquid",
       "settings": {
-        "title": "Por que os donos escolhem",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
+        "custom_liquid": "{%- comment -%}\n  A secao nativa multicolumn so aceita imagem vinda de Files. Os icones\n  ainda nao estao la, entao as colunas ficariam sem imagem. O snippet usa\n  SVG embutido. Ver todo.md para a volta ao nativo.\n{%- endcomment -%}\n{% render 'pdd-beneficios' %}",
         "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "como_medir": {
