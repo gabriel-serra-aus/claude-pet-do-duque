@@ -49,6 +49,8 @@ Sem exceção:
 
 Comando que **só lê** — `shopify theme check`, `theme list`, `theme info`, `--help`, `git status`, `git log`, ler arquivo — roda direto, sem perguntar.
 
+**A permissão não instala a ferramenta.** O admin só é alcançável se a sessão tiver ferramenta de navegador (Claude in Chrome) conectada. Se não tiver, eu **não** consigo abrir o admin nem com autorização dada — nesse caso a ação vira item de `ADMIN.md` e é do Gabriel. A CLI, essa sim, roda por Bash sempre que estiver instalada e autenticada.
+
 As proibições acima continuam de pé e **nenhuma confirmação de rotina as libera**: publicar tema, desativar a senha da loja, instalar ou desinstalar app exigem "pode publicar" explícito, dito na hora, para aquela ação.
 
 **Conteúdo da loja vive no banco, não no tema.** Menu, páginas, produtos, coleções e navegação vivem no admin, não em `theme/`. Eu **não crio nem edito** esse conteúdo por conta: aponto, a pendência vai para `ADMIN.md` e o Gabriel decide. Se ele me pedir e confirmar, eu executo.
