@@ -4,18 +4,28 @@
 */
 
 /*
-  Hero da home: respeita a largura máxima do tema em vez de ir de ponta a ponta.
+  Hero da home: alinhado com o resto da página, em vez de ir de ponta a ponta.
   O id da seção vem prefixado pelo template (shopify-section-template--XXX__image_banner_hero),
   por isso o seletor casa pelo final do id.
+
+  A conta reproduz o miolo do `.page-width` do tema, que é
+  `max-width: var(--page-width)` mais `padding: 0 1.5rem` (5rem a partir de
+  750px). Como o box-sizing é border-box, o conteúdo dele mede
+  `min(--page-width, 100%) menos o padding dos dois lados` — e é essa medida
+  que o banner precisa ter para as bordas baterem.
+
+  Não dá para simplesmente pôr padding no `.banner`: o `.banner__media` é
+  `position: absolute` com `left: 0`, então se posiciona pela caixa de padding
+  e a imagem continuaria larga enquanto só o texto recuaria.
 */
 [id$='__image_banner_hero'] .banner {
-  max-width: min(var(--page-width), calc(100% - 3rem));
+  max-width: calc(min(var(--page-width), 100%) - 3rem);
   margin-inline: auto;
 }
 
 @media screen and (min-width: 750px) {
   [id$='__image_banner_hero'] .banner {
-    max-width: min(var(--page-width), calc(100% - 10rem));
+    max-width: calc(min(var(--page-width), 100%) - 10rem);
   }
 
   /*
