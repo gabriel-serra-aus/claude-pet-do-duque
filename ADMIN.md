@@ -13,7 +13,9 @@ Status: `[ ]` pendente · `[x]` feito (com data)
 ## Etapa 0 — antes de qualquer código
 
 - [ ] **Export de conteúdo da loja** — o backup de tema não cobre. Products → Export (CSV), coleções, páginas e navegação. Guardar em `backups/`.
-- [ ] **Criar a página `Quem somos`** — Content → Pages → Add page. Título "Quem somos", handle `quem-somos`, corpo vazio. O conteúdo entra pelas sections de `templates/page.quem-somos.json`. Trava a Etapa 3.
+- [x] **Página `Quem somos` já existe** (22/08) — ID `50586583145`, handle `quem-somos`, visível, template "Página padrão". **Não estava vazia:** tem a história do Duque no `body_html`, texto real e bom, que só existe no banco. Matéria-prima da Etapa 3.
+- [ ] **Título da página em CAIXA ALTA** — está `QUEM SOMOS?`. Trocar para `Quem somos`. Vale para o título e para o SEO.
+- [ ] **Template da página** — hoje "Página padrão". Depois que eu criar `templates/page.quem-somos.json`, trocar no dropdown "Modelo". Etapa 3.
 - [ ] **Menu principal** — Content → Menus, exatamente 3 itens: `Início` · `Sapatos Duque` · `Quem somos`. Rastreio **sai** do menu. Trava a Etapa 1.
 - [ ] **Rodapé** — WhatsApp · Rastreio · Trocas e devoluções · Política de privacidade · Instagram.
 - [ ] **Liberar a extensão do Chrome** para `admin.shopify.com` e `petdoduque.com`. Sem isso não há nem QA visual.

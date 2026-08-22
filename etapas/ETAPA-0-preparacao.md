@@ -23,11 +23,11 @@ Rodar antes de qualquer edição. Bloqueia as etapas 1, 2 e 3.
 5. Confirmar no admin que existe a página `/pages/quem-somos`.
 
 ## Pronto quando
-- [ ] Tema de backup `Backup 2026-08-22` existe na loja, unpublished
-- [ ] Export de produtos/páginas/navegação em `backups/`
-- [ ] Git local commitado
+- [x] Tema de backup `Backup 2026-08-22` existe na loja, unpublished — #165276221475
+- [ ] Export de produtos/páginas/navegação em `backups/` — **adiado por decisão do Gabriel** (22/08). Shopify não exporta página nem menu nativamente; é cópia manual. Refazer depois de decidir quais páginas ficam.
+- [x] Git local commitado — `theme/` limpo
 - [ ] Menu principal com 3 itens
-- [ ] Página `/pages/quem-somos` existe
+- [x] Página `/pages/quem-somos` existe — ID `50586583145`, com conteúdo no corpo
 - [ ] `shopify theme dev` rodando
 
 ## Regras
