@@ -16,16 +16,17 @@
           "type": "title",
           "settings": {}
         },
-        "text_L4dTXn": {
-          "type": "text",
-          "settings": {
-            "text": "IMPORTANTE: Cor sujeita a estoque. Outra opção será enviada se a cor não estiver disponível)",
-            "text_style": "body"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
+        },
+        "prova_social": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "[A DEFINIR: prova social real — aguardando verificação do Loox]",
+            "text_style": "body"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -42,29 +43,44 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
+          }
+        },
+        "frete_prazo": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{%- comment -%}\n  Frete e prazo — caixa destacada abaixo dos botões, corpo normal,\n  não letra miúda. DESATIVADO até o Gabriel informar frete e prazo\n  reais: [PENDENTE] nunca vai ao ar.\n  custom_liquid porque o bloco text do Craft não faz caixa destacada.\n  Estilo em assets/custom.css (.pdd-frete).\n{%- endcomment -%}\n<div class=\"pdd-frete\">\n  <p>[PENDENTE: frete e prazo — Gabriel informa]</p>\n</div>"
+          }
+        },
+        "aviso_cor": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{%- comment -%}\n  Aviso de cor: por último e em corpo menor — é ressalva, não argumento.\n  Antes ficava acima do preço, soando como imposição.\n  custom_liquid porque o bloco text do Craft não tem corpo menor que body.\n  Estilo em assets/custom.css (.pdd-aviso-cor).\n{%- endcomment -%}\n<p class=\"pdd-aviso-cor\">Cor sujeita a estoque. Se faltar, avisamos antes de enviar.</p>"
           }
         },
         "description": {
           "type": "description",
           "settings": {}
         },
-        "share": {
-          "type": "share",
+        "fecho": {
+          "type": "custom_liquid",
           "settings": {
-            "share_label": "Share"
+            "custom_liquid": "{%- comment -%}\n  Fecho da descrição: aponta a educação que vive na home — a home educa,\n  a página de produto vende. custom_liquid para ter caixa discreta com\n  link ancorado. Estilo em assets/custom.css (.pdd-fecho).\n{%- endcomment -%}\n<div class=\"pdd-fecho\">\n  <p>Como medir, como calçar e dúvidas frequentes: <a href=\"/#como-medir\">ver na Home</a></p>\n</div>"
           }
         }
       },
       "block_order": [
         "title",
-        "text_L4dTXn",
         "price",
+        "prova_social",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "frete_prazo",
+        "aviso_cor",
         "description",
-        "share"
+        "fecho"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -72,49 +88,18 @@
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
-        "mobile_thumbnails": "hide",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 44
       }
-    },
-    "disclosures": {
-      "type": "disclosures",
-      "settings": {
-        "heading": "Divulgações",
-        "heading_size": "h2",
-        "open_by_default": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 68
-      }
     }
   },
   "order": [
-    "main",
-    "disclosures",
-    "related-products"
+    "main"
   ]
 }

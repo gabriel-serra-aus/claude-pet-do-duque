@@ -61,6 +61,40 @@
 
   {% assign escaped_value = value | escape %}
 
+  {%- comment -%}
+    Pet do Duque: faixa em cm ao lado de cada tamanho (Etapa 2). O rótulo da
+    variante ("PP=") não diz nada sozinho — a faixa é o que o cliente compara
+    com a medida da patinha. O mapa espelha a tabela "Como medir" da home
+    (templates/index.json, seção como_medir): se os rótulos mudarem no admin,
+    os dois têm que mudar juntos. Rótulo fora do mapa não ganha faixa.
+    Estilo em assets/custom.css (.pdd-faixa-cm).
+  {%- endcomment -%}
+  {%- liquid
+    assign pdd_faixa_cm = nil
+    assign pdd_option_nome = option.name | downcase
+    if pdd_option_nome contains 'tamanho'
+      assign pdd_rotulo = value | strip
+      case pdd_rotulo
+        when '0='
+          assign pdd_faixa_cm = '7,0–7,5 cm'
+        when 'PP='
+          assign pdd_faixa_cm = '7,6–9,0 cm'
+        when 'P='
+          assign pdd_faixa_cm = '9,1–11,0 cm'
+        when 'M='
+          assign pdd_faixa_cm = '11,1–13,0 cm'
+        when 'G='
+          assign pdd_faixa_cm = '13,1–14,0 cm'
+        when 'GG='
+          assign pdd_faixa_cm = '14,1–16,0 cm'
+        when 'XG='
+          assign pdd_faixa_cm = '16,1–19,0 cm'
+        when 'XXG='
+          assign pdd_faixa_cm = '19,1–21,0 cm'
+      endcase
+    endif
+  -%}
+
   {%- if picker_type == 'swatch' -%}
     {%- capture help_text -%}
       <span class="visually-hidden">{{ escaped_value }}</span>
@@ -97,6 +131,7 @@
     >
     <label for="{{ input_id }}">
       {{ value -}}
+      {%- if pdd_faixa_cm %} <span class="pdd-faixa-cm">{{ pdd_faixa_cm }}</span>{% endif -%}
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}

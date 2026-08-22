@@ -261,3 +261,75 @@
   max-width: 40ch;
   line-height: 1.6;
 }
+
+/*
+  Página de produto — Etapa 2.
+
+  Tudo abaixo serve à caixa de compra do main-product. Cor e corpo saem das
+  variáveis do tema; nenhuma medida em pixel fixo.
+*/
+
+/*
+  Link "como medir", colado ao seletor de tamanho: injetado pelo snippet
+  product-variant-picker.liquid entre a Cor e o Tamanho. A margem negativa
+  aproxima o link do fieldset seguinte, que é a quem ele pertence.
+*/
+.pdd-link-medida {
+  margin: 0.4rem 0 -0.6rem;
+  font-size: 1.3rem;
+}
+
+.pdd-link-medida a {
+  color: rgba(var(--color-foreground), 0.75);
+  text-underline-offset: 0.3rem;
+}
+
+/*
+  Faixa em cm dentro do botão de tamanho (product-variant-options.liquid).
+  Menor e mais apagada que o rótulo: é apoio de leitura, não o dado principal.
+*/
+.pdd-faixa-cm {
+  font-size: 0.85em;
+  color: rgba(var(--color-foreground), 0.65);
+  white-space: nowrap;
+}
+
+/*
+  Frete e prazo — caixa destacada abaixo dos botões. Corpo normal de
+  propósito: frete e prazo são informação de primeira linha, não letra miúda.
+*/
+.pdd-frete {
+  margin: 1.2rem 0 0;
+  padding: 1.4rem 1.6rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  border-radius: 0.4rem;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.pdd-frete p {
+  margin: 0;
+}
+
+/*
+  Aviso de cor: última linha da caixa de compra, corpo menor — é ressalva.
+*/
+.pdd-aviso-cor {
+  margin: 1rem 0 0;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+/*
+  Fecho da descrição: caixa discreta apontando a educação que vive na home.
+*/
+.pdd-fecho {
+  margin: 1.6rem 0 0;
+  padding: 1.2rem 1.6rem;
+  border-left: 0.3rem solid rgba(var(--color-foreground), 0.25);
+  background: rgba(var(--color-foreground), 0.04);
+  font-size: 1.4rem;
+}
+
+.pdd-fecho p {
+  margin: 0;
+}
