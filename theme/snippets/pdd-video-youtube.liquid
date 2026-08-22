@@ -1,0 +1,90 @@
+{%- comment -%}
+  Vídeo do YouTube com miniatura real e carregamento sob clique.
+
+  Por que não a seção nativa `video`:
+  ela monta a capa a partir de `cover_image`, um image_picker que só aceita
+  arquivo da biblioteca de Files da loja. Sem esse arquivo, o Craft cai no
+  placeholder `hero-apparel-3` — o desenho de camisetas. Como as miniaturas
+  não estão em Files, a seção nativa mostraria o placeholder nos três vídeos.
+
+  Aqui a capa vem de `img.youtube.com`, que publica um quadro de cada vídeo.
+  Nada para subir no admin, e cada vídeo ganha a própria imagem.
+
+  O iframe só é criado no clique: até lá a página não fala com o YouTube.
+  Isso é mais leve que embutir o player direto.
+
+  Parâmetros:
+    id     - id do vídeo no YouTube (obrigatório)
+    titulo - título exibido acima (obrigatório)
+    texto  - linha de apoio abaixo do título (opcional)
+
+  Estilo em assets/custom.css (.pdd-video*).
+{%- endcomment -%}
+
+<div class="pdd-video page-width">
+  {%- if titulo != blank -%}
+    <h2 class="pdd-video__titulo">{{ titulo }}</h2>
+  {%- endif -%}
+  {%- if texto != blank -%}
+    <p class="pdd-video__texto">{{ texto }}</p>
+  {%- endif -%}
+
+  <pdd-video class="pdd-video__quadro" data-id="{{ id }}">
+    <button
+      type="button"
+      class="pdd-video__botao"
+      aria-label="Reproduzir o vídeo {{ titulo | escape }}"
+    >
+      {%- comment -%}
+        alt vazio de propósito: o botão já carrega o rótulo em aria-label.
+        Texto nos dois faz o leitor de tela anunciar a mesma coisa duas vezes.
+
+        Nem todo vídeo tem todas as resoluções: o da medição, por exemplo,
+        devolve 404 em maxresdefault. Daí a queda em duas etapas —
+        maxresdefault (1280) → sddefault (640) → hqdefault (480).
+        sddefault e hqdefault são 4:3 com tarja preta; o object-fit: cover
+        do CSS corta justamente a tarja.
+      {%- endcomment -%}
+      <img
+        class="pdd-video__capa"
+        src="https://img.youtube.com/vi/{{ id }}/maxresdefault.jpg"
+        data-base="https://img.youtube.com/vi/{{ id }}/"
+        onerror="var q=this.dataset.q||'max';if(q==='max'){this.dataset.q='sd';this.src=this.dataset.base+'sddefault.jpg';}else if(q==='sd'){this.dataset.q='hq';this.src=this.dataset.base+'hqdefault.jpg';}else{this.onerror=null;}"
+        alt=""
+        loading="lazy"
+        width="1280"
+        height="720"
+      >
+      <span class="pdd-video__play" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+      </span>
+    </button>
+  </pdd-video>
+</div>
+
+<script>
+  if (!customElements.get('pdd-video')) {
+    customElements.define(
+      'pdd-video',
+      class extends HTMLElement {
+        connectedCallback() {
+          this.addEventListener('click', () => this.carrega(), { once: true });
+        }
+        carrega() {
+          const id = this.dataset.id;
+          if (!id) return;
+          const iframe = document.createElement('iframe');
+          iframe.src =
+            'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+          iframe.title = this.querySelector('button').getAttribute('aria-label') || '';
+          iframe.allow =
+            'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          iframe.loading = 'lazy';
+          this.replaceChildren(iframe);
+          iframe.focus();
+        }
+      }
+    );
+  }
+</script>

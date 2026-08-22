@@ -182,42 +182,27 @@
       }
     },
     "video_como_medir": {
-      "type": "video",
+      "type": "custom-liquid",
       "settings": {
-        "heading": "Veja a medição em vídeo",
-        "heading_size": "h2",
-        "enable_video_looping": false,
-        "video_url": "https://www.youtube.com/watch?v=YjO_qQHzQL4",
-        "description": "Passo a passo de como medir a patinha do seu cão.",
-        "full_width": false,
+        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Veja a medição em vídeo', texto: 'Passo a passo de como medir a patinha do seu cão.' %}",
         "color_scheme": "scheme-2",
         "padding_top": 8,
         "padding_bottom": 40
       }
     },
     "video_como_calcar": {
-      "type": "video",
+      "type": "custom-liquid",
       "settings": {
-        "heading": "Como calçar",
-        "heading_size": "h2",
-        "enable_video_looping": false,
-        "video_url": "https://www.youtube.com/watch?v=DgTqO9V_l_I",
-        "description": "",
-        "full_width": false,
+        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', texto: '' %}",
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 20
       }
     },
     "video_especialistas": {
-      "type": "video",
+      "type": "custom-liquid",
       "settings": {
-        "heading": "Recomendado por especialistas",
-        "heading_size": "h2",
-        "enable_video_looping": false,
-        "video_url": "https://www.youtube.com/watch?v=XTAnYxuBwWg",
-        "description": "",
-        "full_width": false,
+        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', texto: '' %}",
         "color_scheme": "scheme-1",
         "padding_top": 20,
         "padding_bottom": 40

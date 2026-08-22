@@ -125,3 +125,85 @@
 .header__icon--account {
   display: none;
 }
+
+/*
+  Vídeos do YouTube (snippet pdd-video-youtube).
+
+  A capa é 16:9 fixa: o espaço é reservado antes da imagem chegar, então nada
+  pula na tela enquanto carrega. Cor do botão sai das variáveis do tema.
+*/
+.pdd-video + .pdd-video {
+  margin-top: 4rem;
+}
+
+.pdd-video__titulo {
+  margin: 0 0 0.8rem;
+}
+
+.pdd-video__texto {
+  margin: 0 0 2rem;
+  max-width: 60ch;
+}
+
+.pdd-video__quadro {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.06);
+}
+
+.pdd-video__quadro iframe,
+.pdd-video__botao {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.pdd-video__botao {
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  display: block;
+}
+
+.pdd-video__capa {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pdd-video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  box-shadow: 0 0.2rem 1.2rem rgba(var(--color-shadow), 0.25);
+  transition: transform 0.15s ease;
+}
+
+.pdd-video__play svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.pdd-video__botao:hover .pdd-video__play,
+.pdd-video__botao:focus-visible .pdd-video__play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdd-video__play {
+    transition: none;
+  }
+}
