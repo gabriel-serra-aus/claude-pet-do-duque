@@ -7,6 +7,12 @@ Arquivo alvo: `theme/templates/product.json`.
 Produto = só comprar. Nada de vídeo, banner ou FAQ.
 Toda educação já está na home (Etapa 1).
 
+> **Decisão do Gabriel (22/08), muda o objetivo acima:** a coluna de compra
+> fica enxuta, mas a página ganha corpo abaixo dela — seção de texto
+> "O que são os Sapatos Duque" e os **3 vídeos** no formato leve da home
+> (capa + play, iframe só no clique). A descrição do admin (com os banners)
+> saiu da coluna direita: o bloco `description` não é mais renderizado.
+
 ---
 
 ## 1. Remover
@@ -90,9 +96,9 @@ Specs (material, composição) em **metafields**. Tamanho/cor/kit em **variantes
 - [x] Cor, Tamanho e Kit com todas as opções visíveis, sem menu suspenso *(22/08 — conferir no dev que a opção se chama "Tamanho", ver `todo.md`)*
 - [x] Aviso de cor abaixo dos botões, corpo menor, texto novo *(22/08)*
 - [ ] Frete e prazo dentro da caixa de compra, corpo normal — *caixa construída e desativada; falta o dado, ver `skiped.md`*
-- [ ] Descrição é texto selecionável, 4–6 linhas, zero banner — *texto pronto no §4; colar é admin, ver `ADMIN.md`*
+- [x] Descrição é texto selecionável, 4–6 linhas, zero banner *(22/08 — virou a seção rich-text "O que são os Sapatos Duque" no template; o bloco `description` saiu da página. Limpar o `body_html` no admin continua na fila, por SEO — ver `ADMIN.md`)*
 - [x] `disclosures` e `related-products` não existem no template *(22/08)*
-- [ ] Zero vídeo na página — *os vídeos saem junto com a descrição antiga, no admin*
+- [x] ~~Zero vídeo na página~~ — *decisão do Gabriel (22/08): os 3 vídeos entram, no formato leve da home*
 - [ ] Compra de teste completa: variante → carrinho → checkout
 - [ ] 100% das fotos com `alt` em pt-BR citando a cor — *admin, junto da limpeza da galeria*
 - [ ] Preview em 390px e 1280px; caixa de compra inteira alcançável sem zoom
