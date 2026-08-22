@@ -252,3 +252,9 @@ frete · prazo · política de troca · instruções de lavagem · confirmação
 
 Estes cinco continuam abertos e estão em `todo.md`. Mantêm o FAQ, a Prova social
 e os Depoimentos desligados, mas **não** impedem seguir para as Etapas 2 e 3.
+
+- **Foto DSC_3182 nos Files** (22/08) — a seção "A História dos Sapatos Duque" da
+  home referencia `shopify://shop_images/DSC_3182.jpg`. A foto não está no tema:
+  precisa existir em Content → Files com esse nome exato (ideal: converter para
+  WebP e ajustar a referência no theme editor). Enquanto não existir, a seção
+  mostra o slot de imagem vazio. Falta também `alt` descritivo em pt-BR ao subir.
