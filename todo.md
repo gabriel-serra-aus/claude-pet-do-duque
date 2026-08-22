@@ -42,6 +42,19 @@ Para voltar ao nativo: subir os 3 SVG de `images/` em Files, trocar a seção de
 volta para `multicolumn` e apontar as imagens. Aí o texto volta a ser editável
 por você, sem me chamar.
 
+### Card do produto em destaque ocupando a largura toda
+
+- [ ] **Decidir na Etapa 2** se o card gigante fica.
+
+A seção está com uma coluna no desktop, então o card de um produto só ocupa a
+largura inteira — e com `page_width` em 1200 ficou ainda maior. Card enorme de
+produto único costuma parecer página inacabada.
+
+Não mexi porque isso conversa com a página de produto, e a regra é uma página
+por vez. Alternativas: duas ou três colunas (com um produto fica esquisito de
+outro jeito), ou trocar por uma seção que mostre o produto com mais informação
+ao lado da foto.
+
 ### Chamada final — imagem
 
 - [ ] **Escolher uma foto** para a chamada final da home, se quiser.
