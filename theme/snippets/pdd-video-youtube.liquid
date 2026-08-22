@@ -14,16 +14,23 @@
   Isso é mais leve que embutir o player direto.
 
   Parâmetros:
-    id     - id do vídeo no YouTube (obrigatório)
-    titulo - título exibido acima (obrigatório)
-    texto  - linha de apoio abaixo do título (opcional)
+    id       - id do vídeo no YouTube (obrigatório)
+    titulo   - título exibido acima (obrigatório)
+    texto    - linha de apoio abaixo do título (opcional)
+    compacto - true quando o vídeo é célula de uma grade (ex.: .pdd-videos
+               na home): sem page-width próprio (a grade já está dentro de
+               um) e título em h3 menor, porque o h2 é da seção.
 
   Estilo em assets/custom.css (.pdd-video*).
 {%- endcomment -%}
 
-<div class="pdd-video page-width">
+<div class="pdd-video{% unless compacto %} page-width{% endunless %}">
   {%- if titulo != blank -%}
-    <h2 class="pdd-video__titulo">{{ titulo }}</h2>
+    {%- if compacto -%}
+      <h3 class="pdd-video__titulo pdd-video__titulo--compacto">{{ titulo }}</h3>
+    {%- else -%}
+      <h2 class="pdd-video__titulo">{{ titulo }}</h2>
+    {%- endif -%}
   {%- endif -%}
   {%- if texto != blank -%}
     <p class="pdd-video__texto">{{ texto }}</p>

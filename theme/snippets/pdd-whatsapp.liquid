@@ -1,0 +1,27 @@
+{%- comment -%}
+  Botão flutuante de WhatsApp — só no mobile (some a partir de 750px via CSS).
+
+  Por que existe: a venda da loja fecha no WhatsApp, mas o número só aparece
+  na chamada final da home, no fim da rolagem. O botão acompanha a rolagem
+  inteira sem ocupar o layout.
+
+  Por que não é nativo: o Craft não tem botão flutuante de contato, e a regra
+  do projeto é nenhum app novo — app de chat injeta script em toda página.
+  Isto é um <a> fixo, zero JavaScript.
+
+  Renderizado uma vez em layout/theme.liquid, antes do </body>.
+  Estilo em assets/custom.css (.pdd-whatsapp).
+{%- endcomment -%}
+
+<a
+  class="pdd-whatsapp"
+  href="https://wa.me/5521993438017"
+  target="_blank"
+  rel="noopener"
+  aria-label="Falar no WhatsApp"
+>
+  {%- comment -%} Glifo do WhatsApp; aria-hidden porque o rótulo está no link. {%- endcomment -%}
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2.05 22l5.27-1.38a9.87 9.87 0 0 0 4.72 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.73-.66-1.23-1.47-1.38-1.72-.14-.24-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43l-.48-.01c-.16 0-.43.06-.66.31-.22.24-.86.84-.86 2.05 0 1.21.89 2.38 1.01 2.55.13.16 1.74 2.66 4.22 3.73.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/>
+  </svg>
+</a>

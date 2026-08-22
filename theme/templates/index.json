@@ -88,30 +88,51 @@
         "padding_bottom": 28
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
+    "vitrine": {
+      "type": "featured-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons"
+      ],
       "settings": {
-        "collection": "all",
-        "products_to_show": 2,
-        "title": "Sapatos Duque",
-        "heading_size": "h2",
-        "description": "<p>4 cores · 8 tamanhos · 3 kits</p>",
-        "show_description": false,
-        "description_style": "subtitle",
-        "columns_desktop": 1,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "outline",
+        "product": "sapatos-duque-c2-original",
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
         "padding_top": 12,
         "padding_bottom": 40
       }
@@ -134,30 +155,46 @@
         "padding_bottom": 20
       }
     },
-    "video_como_medir": {
-      "type": "custom-liquid",
+    "cta_apos_medida": {
+      "type": "rich-text",
+      "blocks": {
+        "texto": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mediu a patinha? Então você já sabe o tamanho.</p>"
+          }
+        },
+        "botao": {
+          "type": "button",
+          "settings": {
+            "button_label": "Comprar agora",
+            "button_link": "shopify://products/sapatos-duque-c2-original",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "texto",
+        "botao"
+      ],
       "settings": {
-        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Veja a medição em vídeo', texto: 'Passo a passo de como medir a patinha do seu cão.' %}",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "scheme-2",
-        "padding_top": 8,
-        "padding_bottom": 40
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 44
       }
     },
-    "video_como_calcar": {
+    "videos": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', texto: '' %}",
+        "custom_liquid": "{%- comment -%}\n  Os 3 videos numa grade: 1 coluna no celular, 3 lado a lado no desktop.\n  Encurta a home — antes eram tres faixas 16:9 empilhadas. O parametro\n  compacto tira o page-width de cada video (a grade ja esta dentro de um)\n  e poe o titulo em h3, porque o h2 e da secao.\n  Estilo em assets/custom.css (.pdd-videos*).\n{%- endcomment -%}\n<div class=\"pdd-videos page-width\">\n  <h2 class=\"pdd-videos__titulo\">Veja em vídeo</h2>\n  <div class=\"pdd-videos__grade\">\n    {% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Como medir', compacto: true %}\n    {% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', compacto: true %}\n    {% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', compacto: true %}\n  </div>\n</div>",
         "color_scheme": "scheme-1",
         "padding_top": 36,
-        "padding_bottom": 20
-      }
-    },
-    "video_especialistas": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', texto: '' %}",
-        "color_scheme": "scheme-1",
-        "padding_top": 20,
         "padding_bottom": 40
       }
     },
@@ -337,12 +374,11 @@
   "order": [
     "image_banner_hero",
     "prova_social",
-    "featured-collection",
+    "vitrine",
     "multicolumn_mRRbhi",
     "como_medir",
-    "video_como_medir",
-    "video_como_calcar",
-    "video_especialistas",
+    "cta_apos_medida",
+    "videos",
     "depoimentos",
     "faq",
     "chamada_final"
