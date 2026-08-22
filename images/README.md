@@ -1,26 +1,16 @@
 # images/
 
-Imagens do site. Referenciadas pelo nome em `conteudo.md`.
+Arquivos de imagem do projeto. O que está aqui **não** vai para a loja sozinho:
+o tema referencia imagens da biblioteca de Files da Shopify, que só o Gabriel sobe.
 
-## Convenção
+## Ícones dos benefícios
 
-- Formato **WebP**, dimensionado para o slot (nada de 4000px num card)
-- Nome em minúscula, sem acento, separado por hífen: `home-hero.webp`
-- Prefixo por página: `home-`, `produto-`, `medir-`, `quem-somos-`, `ugc-`, `icone-`
-- Todo arquivo aqui precisa de um `alt` em pt-BR registrado no `conteudo.md`
+`icone-piso-liso.svg` · `icone-asfalto-quente.svg` · `icone-articulacao.svg`
 
-## Esperadas
+Hoje esses três ícones estão **embutidos** no snippet `pdd-beneficios.liquid` —
+o site funciona sem subir nada. Os arquivos aqui existem para o caminho
+alternativo: subir em Files e voltar a seção para a `multicolumn` nativa,
+recuperando a edição pelo theme editor. Ver `todo.md`.
 
-| Arquivo | Uso | Status |
-|---|---|---|
-| `home-hero.webp` | Banner principal da home | na loja como `hero2_duque_v1.webp` |
-| `home-medida.webp` | Chamada do guia de tamanho | pendente |
-| `icone-entrega.webp` | Coluna "Entregamos em todo o Brasil" | pendente |
-| `icone-seguro.webp` | Coluna "Compra segura" | pendente |
-| `icone-suporte.webp` | Coluna "Suporte de verdade" | pendente |
-| `ugc-01.webp` … | Fotos reais de clientes | pendente |
-| `duque.webp` | Foto do Duque — Quem somos | pendente |
-| `produto-*.webp` | Galeria do produto | pendente |
-| `medir-tabela.webp` | Só se a tabela virar imagem — **não recomendado** | — |
-
-Upload para a Shopify é manual, pelo admin (Content → Files) ou `theme/assets/`.
+Desenhados em grade de 48px, traço de 2px, sem cor fixa (`currentColor`) — quem
+define a cor é o esquema do tema.

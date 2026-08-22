@@ -28,6 +28,16 @@ Status: `[ ]` pendente · `[x]` feito (com data)
 - [ ] **Revisar variantes do "Sapatos Duque"** — cor, tamanho e kit com estoque correto.
 - [ ] **Renomear os rótulos de tamanho** — hoje são `0=`, `PP=`, `P=`, `M=`, `G=`, `GG=`, `XG=`, `XXG=`. O `=` é ruído. As faixas em cm estão certas. Se renomear, a tabela da Home precisa mudar junto — os dois têm que casar.
 
+## Etapa 1 — rodapé
+
+- [ ] **Criar o menu de rodapé** — Content → Menus → Add menu. Sem ele o rodapé não tem coluna de links. Itens:
+  - `Fale no WhatsApp` → `https://wa.me/5521993438017`
+  - `Rastrear pedido` → `/pages/rastreamento-1`
+  - `Trocas e devoluções` → política de reembolso (Settings → Policies)
+  - `Política de privacidade` → política de privacidade (Settings → Policies)
+  - Instagram já está no tema, não precisa entrar no menu.
+- [ ] **Conferir se as políticas existem** — Settings → Policies. Se estiverem vazias, os dois links acima não têm destino.
+
 ## Prova social
 
 - [ ] **Loox** — verificar se há avaliação real acumulada no Booster e se dá pra exportar. É o que destrava as seções desativadas da Etapa 1 e o bloco da Etapa 2.
