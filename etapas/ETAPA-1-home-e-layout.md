@@ -6,6 +6,68 @@ Arquivo alvo: `theme/templates/index.json` + configurações globais.
 ## Objetivo
 Home vira a página de venda. Toda a educação sobre o produto vive aqui.
 
+## Como executar
+
+Antes de editar, mostrar o estado atual das seções de `index.json`.
+
+Trabalhar em 5 blocos. **Ao fim de cada um, parar e mostrar o antes/depois ao Gabriel antes de seguir:**
+
+1. Remover as 4 seções (item 1)
+2. Banner principal · Produto em destaque · Por que comprar (seções 3, 5, 6)
+3. Como medir, com a tabela de tamanhos · Vídeos de uso (seções 7, 8)
+4. FAQ · Chamada final · Prova social e Depoimentos, ambas `disabled` (seções 4, 9, 10, 11)
+5. Layout global · `locales/pt-BR.json` (item 4)
+
+Fechar com `shopify theme check` e a checklist "Pronto quando" preenchida.
+
+---
+
+## 0. Dados confirmados (22/08, via `shopify theme dev`)
+
+Verificado contra a loja, não presumido. Substitui qualquer valor divergente abaixo.
+
+| Dado | Valor real |
+|---|---|
+| Handle do produto | `sapatos-duque-c2-original` |
+| Preço | R$ 109,90 a R$ 344,90 — `price_min` confere com "A partir de R$ 109,90" |
+| Variantes | 96 no total, 92 em estoque |
+| Cores (4) | Preto, Branco, Roxo, Vermelho |
+| Kits (3) | Kit One (4 patas), Double Duque (8), Duque Economy (16) |
+| Vermelho da marca | `#B3342B` — 6,10:1 com branco, 5,19:1 sobre `#efecec`. Passa AA. Provisório. |
+
+**Tamanhos — os nomes do plano original não existem na loja.** As faixas em cm batem,
+os rótulos não. Usar sempre os reais, senão o cliente não casa a tabela com o seletor:
+
+| Rótulo real | Comprimento da patinha |
+|---|---|
+| `0=` | 7,0 – 7,5 cm |
+| `PP=` | 7,6 – 9,0 cm |
+| `P=` | 9,1 – 11,0 cm |
+| `M=` | 11,1 – 13,0 cm |
+| `G=` | 13,1 – 14,0 cm |
+| `GG=` | 14,1 – 16,0 cm |
+| `XG=` | 16,1 – 19,0 cm |
+| `XXG=` | 19,1 – 21,0 cm |
+
+O sufixo `=` parece erro de digitação virado permanente. Renomear é ação de admin — fila da Etapa 2.
+
+### Decisões técnicas tomadas
+
+- **Tabela de tamanhos vai em `custom_liquid`, não em `rich-text`.** O campo `text` do
+  rich-text é tipo `richtext`, que a Shopify limita a `<p>`, `<strong>`, `<a>` e listas —
+  `<table>` é removido. Caso claro de "custom_liquid quando ganha".
+- **`4 cores · 8 tamanhos · 3 kits` vai no campo `description` da featured-collection**
+  (opção A, aprovada pelo Gabriel). Não editar `snippets/card-product.liquid`: é
+  compartilhado com a página de coleção e com produtos relacionados.
+- **Chamada final vira `rich-text` em esquema escuro, não `image-banner`.** Não há imagem
+  definida para ela, e `image-banner` sem imagem mostra o placeholder do Craft — reprova
+  no "zero placeholder". Trocar para `image-banner` quando houver foto.
+
+### Menu principal
+
+Estado anterior registrado em `backups/navegacao-2026-08-22.md`. Alvo:
+`Início` · `Sapatos Duque` (→ produto) · `Quem somos`. Rastreio sai.
+
 ---
 
 ## 1. Remover da home
@@ -99,16 +161,7 @@ Vídeo: `YjO_qQHzQL4`
 
 **Tabela em HTML dentro do rich-text. Nunca imagem.**
 
-| Tamanho | Comprimento da patinha |
-|---|---|
-| P- | 7,0 – 7,5 cm |
-| PP+ | 7,6 – 9,0 cm |
-| P+ | 9,1 – 11,0 cm |
-| M+ | 11,1 – 13,0 cm |
-| G+ | 13,1 – 14,0 cm |
-| GG+ | 14,1 – 16,0 cm |
-| XG+ | 16,1 – 19,0 cm |
-| XXG+ | 19,1 – 21,0 cm |
+**Usar a tabela da seção 0** — os rótulos aqui estavam errados (`P-`, `PP+`…) e foram removidos para ninguém copiar por engano.
 
 Dar `id` à seção para a âncora do botão 2 do banner.
 

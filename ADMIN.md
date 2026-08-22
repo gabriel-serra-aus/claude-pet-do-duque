@@ -26,6 +26,7 @@ Status: `[ ]` pendente · `[x]` feito (com data)
 - [ ] **Desassociar do produto as ~32 fotos excedentes** da galeria. Não apagar da biblioteca.
 - [ ] **Metafields de specs** — Settings → Custom data → Products: material e composição. Hoje está enterrado na descrição em texto corrido.
 - [ ] **Revisar variantes do "Sapatos Duque"** — cor, tamanho e kit com estoque correto.
+- [ ] **Renomear os rótulos de tamanho** — hoje são `0=`, `PP=`, `P=`, `M=`, `G=`, `GG=`, `XG=`, `XXG=`. O `=` é ruído. As faixas em cm estão certas. Se renomear, a tabela da Home precisa mudar junto — os dois têm que casar.
 
 ## Prova social
 
