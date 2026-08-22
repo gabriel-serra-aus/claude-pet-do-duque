@@ -16,9 +16,9 @@ Status: `[ ]` pendente · `[x]` feito (com data)
 - [x] **Página `Quem somos` já existe** (22/08) — ID `50586583145`, handle `quem-somos`, visível, template "Página padrão". **Não estava vazia:** tem a história do Duque no `body_html`, texto real e bom, que só existe no banco. Matéria-prima da Etapa 3.
 - [ ] **Título da página em CAIXA ALTA** — está `QUEM SOMOS?`. Trocar para `Quem somos`. Vale para o título e para o SEO.
 - [ ] **Template da página** — hoje "Página padrão". Depois que eu criar `templates/page.quem-somos.json`, trocar no dropdown "Modelo". Etapa 3.
-- [ ] **Menu principal** — Content → Menus, exatamente 3 itens: `Início` · `Sapatos Duque` · `Quem somos`. Rastreio **sai** do menu. Trava a Etapa 1.
+- [x] **Menu principal** (22/08) — 3 itens: `Início` · `Sapatos Duque` (aponta direto ao produto) · `Quem somos`. Rastreio saiu. Verificado no servidor de dev. Estado anterior em `backups/navegacao-2026-08-22.md`.
 - [ ] **Rodapé** — WhatsApp · Rastreio · Trocas e devoluções · Política de privacidade · Instagram.
-- [ ] **Liberar a extensão do Chrome** para `admin.shopify.com` e `petdoduque.com`. Sem isso não há nem QA visual.
+- [ ] **Ferramenta de navegador na sessão** — o Gabriel já autorizou o acesso ao admin (ver `CLAUDE.md`), mas a sessão do Claude Code não tem ferramenta de navegador. Autorização não instala ferramenta. Caminho: `claude mcp add playwright -- npx -y @playwright/mcp@latest`, reiniciar a sessão e apontar para o Chrome já logado. Ver `todo.md`.
 
 ## Catálogo — trava a Etapa 2
 

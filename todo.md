@@ -87,6 +87,15 @@ Sem estes dados, três seções da home continuam desligadas. Não invento nenhu
 
 ---
 
+## Fechado
+
+- [x] **QA visual da home** (22/08) — 390px e 1280px aprovados pelo Gabriel.
+- [x] **Alinhamento das seções** (22/08) — o hero destoava do resto; a regra
+      antiga não reproduzia a conta do `.page-width` do tema.
+- [x] **Largura da página** (22/08) — de 1000 (mínimo do schema) para 1200.
+
+---
+
 ## Dívida técnica
 
 - [ ] **Locks stale no git** — `.git/index.lock` e `.git/HEAD.lock` aparecem

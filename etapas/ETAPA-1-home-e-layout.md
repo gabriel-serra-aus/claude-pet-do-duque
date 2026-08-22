@@ -1,6 +1,10 @@
 # Etapa 1 — Home e layout global
 
-Depende da Etapa 0. Bloqueia as Etapas 2 e 3.
+**CONCLUÍDA em 22/08/2026.** Não bloqueia mais as Etapas 2 e 3.
+O que ficou de fora, e por quê, está em `skiped.md`. O que sobrou de trabalho
+está em `todo.md`.
+
+Depende da Etapa 0.
 Arquivo alvo: `theme/templates/index.json` + configurações globais.
 
 ## Objetivo
@@ -216,17 +220,35 @@ Configurar em **Theme settings** (não em CSS, não dentro de seção):
 
 ---
 
-## Pronto quando
-- [ ] 12 seções na ordem acima em `templates/index.json`
-- [ ] `collage-0`, `custom_liquid_Dqpzcn`, `custom_liquid_Lpb6Vi` e `video_WRKBFz` removidas
-- [ ] Zero placeholder do tema visível ("Várias colunas", "Vídeo")
-- [ ] Tabela de tamanhos é texto HTML e pode ser selecionada com o cursor
-- [ ] 100% das imagens com `alt` em pt-BR
-- [ ] Rodapé e header em pt-BR
-- [ ] Prova social e Depoimentos existem e estão `disabled`
-- [ ] Preview em 390px e 1280px, sem rolagem horizontal
-- [ ] `shopify theme check` sem erro
-- [ ] Antes/depois apresentado ao Gabriel
+## Pronto quando — fechado em 22/08/2026
+
+- [x] Seções na ordem prevista — 11 em `index.json` (8 no ar, 3 desligadas),
+      mais `header` e `footer` nos grupos. A contagem de 12 do plano original
+      somava `announcement-bar`, `header` e `footer`, que não vivem no
+      `index.json`; a barra de anúncio ficou desativada por falta de mensagem real
+- [x] `collage-0`, `custom_liquid_Dqpzcn`, `custom_liquid_Lpb6Vi` e `video_WRKBFz` removidas
+- [x] Zero placeholder do tema visível — saíram "Várias colunas", "Vídeo" e o
+      desenho de camisetas que o Craft usava como capa dos vídeos
+- [x] Tabela de tamanhos é texto HTML selecionável — 8 linhas, em `custom_liquid`
+      porque o campo `richtext` da seção nativa remove `<table>`
+- [x] 100% das imagens com `alt` em pt-BR — verificado no HTML renderizado
+- [x] Rodapé e header em pt-BR — nenhuma string em inglês renderizando
+- [x] Prova social e Depoimentos existem e estão `disabled`
+- [x] Preview em 390px e 1280px, sem rolagem horizontal — aprovado pelo Gabriel em 22/08
+- [x] `shopify theme check` sem erro — 0 erros; warnings restantes são
+      pré-existentes ou esperados (`RemoteAsset` na miniatura do YouTube)
+- [x] Antes/depois apresentado ao Gabriel
+
+### Fora do previsto, decidido durante a execução
+
+- Hero alinhado ao `.page-width` do tema; `page_width` de 1000 para 1200
+- Vermelho da marca `#B3342B` no botão primário do esquema claro
+- Vídeos e benefícios em snippet com SVG e miniatura do YouTube, por falta de
+  arquivo na biblioteca de Files
+- Chamada final como `rich-text` escuro em vez de `image-banner`, por falta de imagem
 
 ## Bloqueia a publicação
 frete · prazo · política de troca · instruções de lavagem · confirmação dos 3 passos de medida
+
+Estes cinco continuam abertos e estão em `todo.md`. Mantêm o FAQ, a Prova social
+e os Depoimentos desligados, mas **não** impedem seguir para as Etapas 2 e 3.

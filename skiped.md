@@ -116,4 +116,9 @@ nada. A etapa manda desativar quando não houver frete ou prazo real.
 
 ## Histórico
 
-_(nada resolvido ainda)_
+- **22/08 — Menu principal.** Estava pendente na Etapa 0. Resolvido: 3 itens,
+  Rastreio fora, "Sapatos Duque" apontando direto ao produto.
+- **22/08 — Miniatura dos vídeos.** A primeira correção não funcionou porque
+  assumi que o YouTube devolveria erro quando falta `maxresdefault`. Ele devolve
+  404 **com um JPEG válido no corpo** — o logo cinza de 120×90 — e o navegador
+  trata como imagem carregada. A queda passou a ser decidida pela largura.
