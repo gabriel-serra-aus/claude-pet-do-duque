@@ -40,13 +40,18 @@ shopify theme push  --unpublished              # congela um ponto de retorno
 
 Sem exceção:
 
-- **Nunca digito senha, credencial, token ou dado de pagamento.** O Gabriel autentica e o Gabriel publica.
+- **Nunca digito senha, credencial, token ou dado de pagamento.** Quem autentica é o Gabriel. Sessão de CLI já autenticada eu uso; login novo é sempre ele.
 - **Nunca edito o tema publicado.** Toda edição vai para tema de desenvolvimento.
 - **Nunca publico tema, nunca desativo a senha da loja, nunca instalo ou desinstalo app** sem "pode publicar" explícito.
 - Antes de mudança em lote ou refactor de seção, mostro o antes/depois e espero o OK.
-- Chrome (Claude in Chrome) é **QA visual, não teclado**. Se der "permission denied", paro e aviso.
 
-**Conteúdo da loja vive no banco, não no tema.** Menu, páginas, produtos, coleções e navegação são criados pelo Gabriel no admin — eu não crio, aponto e a pendência vai para `ADMIN.md`.
+**Admin e CLI — posso, mas confirmo antes.** Eu abro o admin da Shopify e rodo comando da CLI quando o trabalho pede. **Pergunto antes de cada ação que escreve** e espero o "pode": digo qual comando, em que tema e o que ele altera. Sem resposta, não rodo. Uma confirmação vale para a ação combinada, não para as seguintes.
+
+Comando que **só lê** — `shopify theme check`, `theme list`, `theme info`, `--help`, `git status`, `git log`, ler arquivo — roda direto, sem perguntar.
+
+As proibições acima continuam de pé e **nenhuma confirmação de rotina as libera**: publicar tema, desativar a senha da loja, instalar ou desinstalar app exigem "pode publicar" explícito, dito na hora, para aquela ação.
+
+**Conteúdo da loja vive no banco, não no tema.** Menu, páginas, produtos, coleções e navegação vivem no admin, não em `theme/`. Eu **não crio nem edito** esse conteúdo por conta: aponto, a pendência vai para `ADMIN.md` e o Gabriel decide. Se ele me pedir e confirmar, eu executo.
 
 **Backup:** antes de refactor grande, `shopify theme push --unpublished --theme "Backup AAAA-MM-DD"`. Git local em `theme/` com commit a cada bloco fechado. Backup de tema **não** cobre produtos, páginas, navegação e clientes — isso precisa de export pelo admin.
 
