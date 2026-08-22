@@ -89,50 +89,29 @@
       }
     },
     "vitrine": {
-      "type": "featured-product",
-      "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h2"
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": false
-          }
-        }
-      },
-      "block_order": [
-        "title",
-        "price",
-        "variant_picker",
-        "buy_buttons"
-      ],
+      "type": "featured-collection",
       "settings": {
-        "product": "sapatos-duque-c2-original",
+        "collection": "all",
+        "products_to_show": 2,
+        "title": "Sapatos Duque",
+        "heading_size": "h2",
+        "description": "<p>4 cores · 8 tamanhos · 3 kits</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "columns_desktop": 1,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "outline",
         "color_scheme": "scheme-1",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": true,
-        "enable_video_looping": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 12,
         "padding_bottom": 40
       }
@@ -149,7 +128,7 @@
     "como_medir": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{%- comment -%}\n  Como medir a patinha - bloco custom_liquid, nao secao nativa.\n\n  Motivo: a Etapa 1 exige que a tabela de tamanhos seja texto HTML selecionavel,\n  nunca imagem. O campo `text` da secao rich-text e do tipo `richtext`, que a\n  Shopify limita a <p>, <strong>, <em>, <a> e listas - a tag <table> e removida\n  na gravacao. Nao ha secao nativa do Craft que aceite tabela.\n\n  Os rotulos de tamanho (0=, PP=, P=...) sao os das variantes reais do produto.\n  Se forem renomeados no admin, esta tabela precisa mudar junto.\n\n  Estilo vive em assets/custom.css (.pdd-medir-*), nunca inline.\n{%- endcomment -%}\n\n<div id=\"como-medir\" class=\"pdd-medir page-width\">\n  <h2 class=\"pdd-medir__titulo\">Como medir a patinha</h2>\n\n  <ol class=\"pdd-medir__passos\">\n    <li>Coloque a patinha do cão sobre uma folha de papel, com o peso apoiado.</li>\n    <li>Marque o ponto mais atrás e o ponto mais à frente da patinha.</li>\n    <li>Meça a distância entre as duas marcas. Esse é o comprimento.</li>\n  </ol>\n\n  <div class=\"pdd-medir__rolagem\">\n    <table class=\"pdd-medir__tabela\">\n      <caption class=\"visually-hidden\">Tamanhos dos Sapatos Duque por comprimento da patinha</caption>\n      <thead>\n        <tr><th scope=\"col\">Tamanho</th><th scope=\"col\">Comprimento da patinha</th></tr>\n      </thead>\n      <tbody>\n        <tr><th scope=\"row\">0=</th><td>7,0 – 7,5 cm</td></tr>\n        <tr><th scope=\"row\">PP=</th><td>7,6 – 9,0 cm</td></tr>\n        <tr><th scope=\"row\">P=</th><td>9,1 – 11,0 cm</td></tr>\n        <tr><th scope=\"row\">M=</th><td>11,1 – 13,0 cm</td></tr>\n        <tr><th scope=\"row\">G=</th><td>13,1 – 14,0 cm</td></tr>\n        <tr><th scope=\"row\">GG=</th><td>14,1 – 16,0 cm</td></tr>\n        <tr><th scope=\"row\">XG=</th><td>16,1 – 19,0 cm</td></tr>\n        <tr><th scope=\"row\">XXG=</th><td>19,1 – 21,0 cm</td></tr>\n      </tbody>\n    </table>\n  </div>\n</div>",
+        "custom_liquid": "{%- comment -%}\n  Como medir a patinha + Veja em video - um bloco so, duas colunas no desktop.\n\n  Custom_liquid, nao secao nativa, por dois motivos: o campo richtext da\n  Shopify remove <table> na gravacao, e nenhuma secao do Craft poe tabela e\n  videos lado a lado.\n\n  Esquerda: passos e tabela de tamanhos. Direita: o video Como medir primeiro,\n  porque complementa a tabela ao lado; os outros dois abaixo, em par.\n  No mobile tudo vira uma coluna.\n\n  Os rotulos de tamanho (0=, PP=, P=...) sao os das variantes reais do produto.\n  Se forem renomeados no admin, esta tabela precisa mudar junto.\n\n  Estilo vive em assets/custom.css (.pdd-medir-* e .pdd-medir-videos*),\n  nunca inline.\n{%- endcomment -%}\n\n<div id=\"como-medir\" class=\"pdd-medir-videos page-width\">\n  <div class=\"pdd-medir\">\n    <h2 class=\"pdd-medir__titulo\">Como medir a patinha</h2>\n\n    <ol class=\"pdd-medir__passos\">\n      <li>Coloque a patinha do cão sobre uma folha de papel, com o peso apoiado.</li>\n      <li>Marque o ponto mais atrás e o ponto mais à frente da patinha.</li>\n      <li>Meça a distância entre as duas marcas. Esse é o comprimento.</li>\n    </ol>\n\n    <div class=\"pdd-medir__rolagem\">\n      <table class=\"pdd-medir__tabela\">\n        <caption class=\"visually-hidden\">Tamanhos dos Sapatos Duque por comprimento da patinha</caption>\n        <thead>\n          <tr><th scope=\"col\">Tamanho</th><th scope=\"col\">Comprimento da patinha</th></tr>\n        </thead>\n        <tbody>\n          <tr><th scope=\"row\">0=</th><td>7,0 – 7,5 cm</td></tr>\n          <tr><th scope=\"row\">PP=</th><td>7,6 – 9,0 cm</td></tr>\n          <tr><th scope=\"row\">P=</th><td>9,1 – 11,0 cm</td></tr>\n          <tr><th scope=\"row\">M=</th><td>11,1 – 13,0 cm</td></tr>\n          <tr><th scope=\"row\">G=</th><td>13,1 – 14,0 cm</td></tr>\n          <tr><th scope=\"row\">GG=</th><td>14,1 – 16,0 cm</td></tr>\n          <tr><th scope=\"row\">XG=</th><td>16,1 – 19,0 cm</td></tr>\n          <tr><th scope=\"row\">XXG=</th><td>19,1 – 21,0 cm</td></tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n\n  <div class=\"pdd-medir-videos__videos\">\n    <h2 class=\"pdd-videos__titulo\">Veja em vídeo</h2>\n    {% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Como medir', compacto: true %}\n    <div class=\"pdd-medir-videos__par\">\n      {% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', compacto: true %}\n      {% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', compacto: true %}\n    </div>\n  </div>\n</div>",
         "color_scheme": "scheme-2",
         "padding_top": 40,
         "padding_bottom": 20
@@ -187,15 +166,6 @@
         "full_width": true,
         "padding_top": 0,
         "padding_bottom": 44
-      }
-    },
-    "videos": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{%- comment -%}\n  Os 3 videos numa grade: 1 coluna no celular, 3 lado a lado no desktop.\n  Encurta a home — antes eram tres faixas 16:9 empilhadas. O parametro\n  compacto tira o page-width de cada video (a grade ja esta dentro de um)\n  e poe o titulo em h3, porque o h2 e da secao.\n  Estilo em assets/custom.css (.pdd-videos*).\n{%- endcomment -%}\n<div class=\"pdd-videos page-width\">\n  <h2 class=\"pdd-videos__titulo\">Veja em vídeo</h2>\n  <div class=\"pdd-videos__grade\">\n    {% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Como medir', compacto: true %}\n    {% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', compacto: true %}\n    {% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', compacto: true %}\n  </div>\n</div>",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 40
       }
     },
     "depoimentos": {
@@ -378,7 +348,6 @@
     "multicolumn_mRRbhi",
     "como_medir",
     "cta_apos_medida",
-    "videos",
     "depoimentos",
     "faq",
     "chamada_final"

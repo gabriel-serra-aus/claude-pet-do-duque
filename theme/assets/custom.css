@@ -320,26 +320,41 @@
 }
 
 /*
-  Grade de vídeos da home (seção "videos" do index.json).
+  Como medir + vídeos, lado a lado (seção "como_medir" do index.json).
 
-  Uma coluna no celular, três lado a lado no desktop, via auto-fit — sem
-  media query e sem largura em pixel, no mesmo padrão dos benefícios.
-  Cada célula é o snippet pdd-video-youtube em modo compacto.
+  Uma coluna no celular; a partir de 990px a tabela fica à esquerda e os
+  vídeos à direita, aproveitando a largura do desktop. O vídeo "Como medir"
+  abre a coluna porque complementa a tabela ao lado; os outros dois ficam
+  abaixo, em par quando a largura permite (auto-fit, sem media query).
 */
+.pdd-medir-videos {
+  display: grid;
+  gap: 4.8rem;
+  align-items: start;
+}
+
+@media screen and (min-width: 990px) {
+  .pdd-medir-videos {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
 .pdd-videos__titulo {
   margin: 0 0 3rem;
 }
 
-.pdd-videos__grade {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-  gap: 3.2rem 2.4rem;
+/* Dentro do bloco o espaçamento é do gap, não da regra de vídeos
+   empilhados (.pdd-video + .pdd-video) usada na página de produto. */
+.pdd-medir-videos .pdd-video {
+  margin-top: 0;
 }
 
-/* A regra .pdd-video + .pdd-video (vídeos empilhados) não vale na grade:
-   o espaçamento aqui é do gap. */
-.pdd-videos__grade .pdd-video {
-  margin-top: 0;
+.pdd-medir-videos__par {
+  margin-top: 2.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2.8rem 2rem;
 }
 
 .pdd-video__titulo--compacto {

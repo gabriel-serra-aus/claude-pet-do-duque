@@ -13,6 +13,26 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "fale_com_a_gente": {
+          "type": "text",
+          "settings": {
+            "heading": "Fale com a gente",
+            "subtext": "<p>Vendas e dúvidas pelo <a href=\"https://wa.me/5521993438017\">WhatsApp (21) 99343-8017</a>.</p>"
+          }
+        },
+        "links_ajuda": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Ajuda",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "fale_com_a_gente",
+        "links_ajuda"
+      ],
       "settings": {
         "color_scheme": "scheme-4",
         "newsletter_enable": false,
