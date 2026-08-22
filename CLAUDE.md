@@ -13,6 +13,29 @@ Loja Shopify da marca **Pet do Duque** (`https://petdoduque.com`), operando no t
 
 ## 2. Como eu trabalho neste projeto
 
+### Arquivos do projeto — quem manda em quê
+
+| Arquivo | Papel |
+|---|---|
+| `CLAUDE.md` | Regras, tom de voz, padrões técnicos, backup. O que vale sempre. |
+| `plano.md` | Só planejamento: escopo e estágios. Estágio concluído fica marcado e não se revisita. |
+| `conteudo.md` | Fonte da verdade do texto e das imagens do site. |
+| `images/` | Arquivos de imagem, referenciados pelo nome no `conteudo.md`. |
+| `MEMORY.md` | Fatos, estado e decisões do projeto. Escrita só quando o Gabriel pede. |
+
+Copy nunca é escrita direto no tema. Passa pelo `conteudo.md` primeiro; o tema recebe o que já foi aprovado ali. Se falta um dado, ele vira `[PENDENTE]` no `conteudo.md` — não vira texto inventado no Liquid.
+
+### Uma página por vez
+
+**Cada request trata de uma única página.** Nunca edito duas páginas na mesma sessão, mesmo que a mudança pareça se propagar naturalmente.
+
+- No início do trabalho fica claro qual é a página alvo: **Home**, **Quem somos**, **Como medir** ou **Produto**.
+- Se algo exigir tocar outra página — menu, seção compartilhada, snippet reusado — eu **paro, anoto como pendência e pergunto**. Não edito por conta.
+- Arquivos globais (`locales/pt-BR.json`, `assets/custom.css`, `settings_data.json`) só mudam no que serve à página em foco.
+- O antes/depois apresentado ao Gabriel é sempre de uma página só.
+
+### Método e ferramentas
+
 **Método definido: Shopify CLI com os arquivos do tema na pasta do projeto.**
 
 O tema fica em `C:\Users\gabri\Documents\Claude Code\Code\pet-do-duque\theme`. Gabriel deixa `shopify theme dev` rodando num terminal; eu edito os arquivos direto na pasta e o CLI faz hot-reload no tema de desenvolvimento em segundos.
@@ -62,6 +85,8 @@ shopify theme push --unpublished       # sobe como tema novo, não publica
 
 Conferir o preview antes de publicar. Publicação é sempre manual, pelo admin, e sempre com OK do Gabriel.
 
+**Conteúdo da loja vive no banco, não no tema.** Menu, páginas, produtos, coleções e blog são criados e editados pelo Gabriel no admin — o tema só referencia. Eu não crio página nem item de menu; aponto que precisa ser criado e sigo.
+
 **O que backup de tema NÃO cobre:** produtos, coleções, páginas, blog, navegação e clientes vivem no banco da loja, não no tema. `settings_data.json` e os `templates/*.json` guardam as configurações e o conteúdo das seções — o resto precisa de export próprio (CSV de produtos pelo admin). Antes de mexer em catálogo, exportar separadamente.
 
 ## 4. Tom de voz e identidade da marca
@@ -103,22 +128,10 @@ Craft é um tema Online Store 2.0 da família Dawn. As consequências práticas:
 
 **Tensão a administrar:** o Craft foi desenhado para catálogo artesanal — muito respiro, ritmo editorial, pouca densidade. O posicionamento do Pet do Duque é prático e focado em conversão. A direção é manter a base limpa do Craft e **aumentar a densidade nos pontos de decisão**: badge de preço e frete visíveis no card, prova social acima da dobra do produto, botão de compra fixo no mobile, FAQ de tamanho e troca em collapsible content. Respiro no institucional, objetividade no comercial.
 
-## 6. Estrutura-alvo da home
+## 6. Definição de pronto
 
-1. Anúncio no topo — frete/prazo ou oferta ativa
-2. Banner principal — um produto, uma promessa, um CTA
-3. Prova social imediata — avaliações ou "X clientes atendidos"
-4. Coleção em destaque — os sapatinhos, com preço visível no card
-5. Por que comprar — 3 benefícios concretos, ícone + uma linha
-6. Guia de tamanho — resolve a objeção número um de calçado
-7. Foto real de cliente / UGC
-8. FAQ — troca, prazo, tamanho, lavagem
-9. Rodapé — WhatsApp, políticas, redes
+Nenhuma entrega é considerada pronta sem: copy vinda do `conteudo.md` (nenhum `[PENDENTE]` no ar), `shopify theme check` limpo, preview no mobile e no desktop, todas as imagens com `alt`, nenhum texto placeholder do tema sobrando, links testados, e o antes/depois apresentado ao Gabriel. Fechada a entrega, marco o estágio no `plano.md`.
 
-## 7. Definição de pronto
-
-Nenhuma entrega é considerada pronta sem: `shopify theme check` limpo, preview no mobile e no desktop, todas as imagens com `alt`, nenhum texto placeholder do tema sobrando, links testados, e o antes/depois apresentado ao Gabriel.
-
-## 8. Comunicação
+## 7. Comunicação
 
 Respondo em **português**. Direto, sem resumir o que acabei de fazer — o resultado está à vista. Quando houver decisão de marca ou de dinheiro envolvida, aponto o trade-off em vez de escolher sozinho.
