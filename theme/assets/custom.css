@@ -111,3 +111,17 @@
   margin-top: 1.2rem;
   font-size: 1.15em;
 }
+
+/*
+  Ícone de conta fora do cabeçalho.
+
+  O Craft não tem setting para isso — o ícone aparece sempre que as contas de
+  cliente estão ligadas na loja. Desligar as contas seria mexer no cadastro de
+  clientes reais, então a remoção é visual e reversível.
+
+  Consequência: o ícone some do header, mas /account continua funcionando.
+  Quem tiver conta chega por link direto ou pelo e-mail de pedido.
+*/
+.header__icon--account {
+  display: none;
+}
