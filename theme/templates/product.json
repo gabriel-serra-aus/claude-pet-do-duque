@@ -58,16 +58,6 @@
           "settings": {
             "custom_liquid": "{%- comment -%}\n  Aviso de cor: por último e em corpo menor — é ressalva, não argumento.\n  Antes ficava acima do preço, soando como imposição.\n  custom_liquid porque o bloco text do Craft não tem corpo menor que body.\n  Estilo em assets/custom.css (.pdd-aviso-cor).\n{%- endcomment -%}\n<p class=\"pdd-aviso-cor\">Cor sujeita a estoque. Se faltar, avisamos antes de enviar.</p>"
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "fecho": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{%- comment -%}\n  Fecho da descrição: aponta a educação que vive na home — a home educa,\n  a página de produto vende. custom_liquid para ter caixa discreta com\n  link ancorado. Estilo em assets/custom.css (.pdd-fecho).\n{%- endcomment -%}\n<div class=\"pdd-fecho\">\n  <p>Como medir, como calçar e dúvidas frequentes: <a href=\"/#como-medir\">ver na Home</a></p>\n</div>"
-          }
         }
       },
       "block_order": [
@@ -78,9 +68,7 @@
         "quantity_selector",
         "buy_buttons",
         "frete_prazo",
-        "aviso_cor",
-        "description",
-        "fecho"
+        "aviso_cor"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -97,9 +85,70 @@
         "padding_top": 36,
         "padding_bottom": 44
       }
+    },
+    "sobre": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "O que são os Sapatos Duque",
+            "heading_size": "h2"
+          }
+        },
+        "texto": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Asfalto quente queima a patinha. Piso liso derruba. Os Sapatos Duque resolvem os dois: solado antiderrapante e malha respirável que protege sem abafar. Para cães com displasia ou artrose, o apoio extra faz diferença real na caminhada — foi exatamente assim que eles nasceram.</p><p>Tabela de tamanhos e dúvidas frequentes: <a href=\"/#como-medir\">ver na Home</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "texto"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "video_como_medir": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique. Mesmo formato da home.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Veja a medição em vídeo', texto: 'Passo a passo de como medir a patinha do seu cão.' %}",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 20
+      }
+    },
+    "video_como_calcar": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique. Mesmo formato da home.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', texto: '' %}",
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "video_especialistas": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique. Mesmo formato da home.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'XTAnYxuBwWg', titulo: 'Recomendado por especialistas', texto: '' %}",
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "sobre",
+    "video_como_medir",
+    "video_como_calcar",
+    "video_especialistas"
   ]
 }

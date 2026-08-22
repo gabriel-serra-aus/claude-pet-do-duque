@@ -318,18 +318,3 @@
   font-size: 1.2rem;
   color: rgba(var(--color-foreground), 0.7);
 }
-
-/*
-  Fecho da descrição: caixa discreta apontando a educação que vive na home.
-*/
-.pdd-fecho {
-  margin: 1.6rem 0 0;
-  padding: 1.2rem 1.6rem;
-  border-left: 0.3rem solid rgba(var(--color-foreground), 0.25);
-  background: rgba(var(--color-foreground), 0.04);
-  font-size: 1.4rem;
-}
-
-.pdd-fecho p {
-  margin: 0;
-}
