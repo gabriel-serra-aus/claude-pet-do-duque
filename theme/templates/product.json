@@ -99,7 +99,7 @@
         "texto": {
           "type": "text",
           "settings": {
-            "text": "<p>Asfalto quente queima a patinha. Piso liso derruba. Os Sapatos Duque resolvem os dois: solado antiderrapante e malha respirável que protege sem abafar. Para cães com displasia ou artrose, o apoio extra faz diferença real na caminhada — foi exatamente assim que eles nasceram.</p><p>Tabela de tamanhos e dúvidas frequentes: <a href=\"/#como-medir\">ver na Home</a></p>"
+            "text": "<p>Asfalto quente queima a patinha. Piso liso derruba. Os Sapatos Duque resolvem os dois: solado antiderrapante e malha respirável que protege sem abafar. Para cães com displasia ou artrose, o apoio extra faz diferença real na caminhada — foi exatamente assim que eles nasceram.</p>"
           }
         }
       },
@@ -116,13 +116,22 @@
         "padding_bottom": 40
       }
     },
+    "como_medir": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- comment -%}\n  Como medir a patinha - copia exata da secao da home (templates/index.json,\n  secao como_medir), por decisao do Gabriel em 22/08: o cliente escolhe o\n  tamanho sem sair da pagina de produto.\n\n  SINCRONIA: a tabela agora vive em DOIS templates (home e produto), alem do\n  mapa rotulo->faixa em snippets/product-variant-options.liquid e das\n  variantes no admin. Mudou um, muda em todos.\n\n  Estilo vive em assets/custom.css (.pdd-medir-*), nunca inline.\n{%- endcomment -%}\n\n<div id=\"como-medir\" class=\"pdd-medir page-width\">\n  <h2 class=\"pdd-medir__titulo\">Como medir a patinha</h2>\n\n  <ol class=\"pdd-medir__passos\">\n    <li>Coloque a patinha do cão sobre uma folha de papel, com o peso apoiado.</li>\n    <li>Marque o ponto mais atrás e o ponto mais à frente da patinha.</li>\n    <li>Meça a distância entre as duas marcas. Esse é o comprimento.</li>\n  </ol>\n\n  <div class=\"pdd-medir__rolagem\">\n    <table class=\"pdd-medir__tabela\">\n      <caption class=\"visually-hidden\">Tamanhos dos Sapatos Duque por comprimento da patinha</caption>\n      <thead>\n        <tr><th scope=\"col\">Tamanho</th><th scope=\"col\">Comprimento da patinha</th></tr>\n      </thead>\n      <tbody>\n        <tr><th scope=\"row\">0=</th><td>7,0 – 7,5 cm</td></tr>\n        <tr><th scope=\"row\">PP=</th><td>7,6 – 9,0 cm</td></tr>\n        <tr><th scope=\"row\">P=</th><td>9,1 – 11,0 cm</td></tr>\n        <tr><th scope=\"row\">M=</th><td>11,1 – 13,0 cm</td></tr>\n        <tr><th scope=\"row\">G=</th><td>13,1 – 14,0 cm</td></tr>\n        <tr><th scope=\"row\">GG=</th><td>14,1 – 16,0 cm</td></tr>\n        <tr><th scope=\"row\">XG=</th><td>16,1 – 19,0 cm</td></tr>\n        <tr><th scope=\"row\">XXG=</th><td>19,1 – 21,0 cm</td></tr>\n      </tbody>\n    </table>\n  </div>\n</div>",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
     "video_como_medir": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique. Mesmo formato da home.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'YjO_qQHzQL4', titulo: 'Veja a medição em vídeo', texto: 'Passo a passo de como medir a patinha do seu cão.' %}",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 20
+        "color_scheme": "scheme-2",
+        "padding_top": 8,
+        "padding_bottom": 40
       }
     },
     "video_como_calcar": {
@@ -130,7 +139,7 @@
       "settings": {
         "custom_liquid": "{%- comment -%}\n  A secao nativa `video` mostra o placeholder de camisetas do Craft\n  quando nao ha cover_image em Files. O snippet usa a miniatura do\n  proprio YouTube e so carrega o player no clique. Mesmo formato da home.\n{%- endcomment -%}\n{% render 'pdd-video-youtube', id: 'DgTqO9V_l_I', titulo: 'Como calçar', texto: '' %}",
         "color_scheme": "scheme-1",
-        "padding_top": 20,
+        "padding_top": 36,
         "padding_bottom": 20
       }
     },
@@ -147,6 +156,7 @@
   "order": [
     "main",
     "sobre",
+    "como_medir",
     "video_como_medir",
     "video_como_calcar",
     "video_especialistas"

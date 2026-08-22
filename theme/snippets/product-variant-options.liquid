@@ -64,9 +64,10 @@
   {%- comment -%}
     Pet do Duque: faixa em cm ao lado de cada tamanho (Etapa 2). O rótulo da
     variante ("PP=") não diz nada sozinho — a faixa é o que o cliente compara
-    com a medida da patinha. O mapa espelha a tabela "Como medir" da home
-    (templates/index.json, seção como_medir): se os rótulos mudarem no admin,
-    os dois têm que mudar juntos. Rótulo fora do mapa não ganha faixa.
+    com a medida da patinha. O mapa espelha a tabela "Como medir", que vive
+    na home (templates/index.json) E no produto (templates/product.json):
+    se os rótulos mudarem no admin, os três têm que mudar juntos. Rótulo
+    fora do mapa não ganha faixa.
     Estilo em assets/custom.css (.pdd-faixa-cm).
   {%- endcomment -%}
   {%- liquid

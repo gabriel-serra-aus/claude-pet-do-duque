@@ -26,12 +26,14 @@
         Pet do Duque: o link "como medir" precisa ficar colado ao seletor de
         tamanho, entre a Cor e o Tamanho (Etapa 2, item 5). Bloco de template
         não entra no meio de um variant_picker, por isso a injeção vive aqui.
+        A âncora é da própria página: a seção "Como medir a patinha" existe
+        no template de produto desde 22/08 — o cliente desce, não navega.
         Estilo em assets/custom.css (.pdd-link-medida).
       {%- endcomment -%}
       {%- assign pdd_option_nome = option.name | downcase -%}
       {%- if pdd_option_nome contains 'tamanho' -%}
         <p class="pdd-link-medida">
-          <a href="/#como-medir">Não sei o tamanho — como medir</a>
+          <a href="#como-medir">Não sei o tamanho — como medir</a>
         </p>
       {%- endif -%}
       {%- liquid
