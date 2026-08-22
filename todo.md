@@ -42,18 +42,21 @@ Para voltar ao nativo: subir os 3 SVG de `images/` em Files, trocar a seção de
 volta para `multicolumn` e apontar as imagens. Aí o texto volta a ser editável
 por você, sem me chamar.
 
-### Card do produto em destaque ocupando a largura toda
+### Melhorias da home aplicadas em 22/08 — revisar no dev
 
-- [ ] **Decidir na Etapa 2** se o card gigante fica.
+Pedido do Gabriel (exceção autorizada à regra de uma página por sessão, no
+mesmo dia da Etapa 2). Quatro mudanças para olhar no `shopify theme dev`:
 
-A seção está com uma coluna no desktop, então o card de um produto só ocupa a
-largura inteira — e com `page_width` em 1200 ficou ainda maior. Card enorme de
-produto único costuma parecer página inacabada.
-
-Não mexi porque isso conversa com a página de produto, e a regra é uma página
-por vez. Alternativas: duas ou três colunas (com um produto fica esquisito de
-outro jeito), ou trocar por uma seção que mostre o produto com mais informação
-ao lado da foto.
+- [ ] **Vitrine `featured-product`** no lugar do card gigante — foto + preço +
+      cores/tamanhos/kits + comprar, direto na home. O seletor herda o link
+      "como medir" e as faixas em cm da página de produto.
+- [ ] **CTA depois da tabela de medida** — "Mediu a patinha? Então você já
+      sabe o tamanho." + Comprar agora, fechando a faixa cinza.
+- [ ] **Vídeos em grade** — 3 lado a lado no desktop, empilhados no celular.
+      A home ficou uns dois ecrãs mais curta no desktop.
+- [ ] **Botão flutuante de WhatsApp** — só no mobile, verde do WhatsApp,
+      presente em todas as páginas (vive no layout). Se incomodar, é apagar
+      uma linha do `theme.liquid`.
 
 ### Página de produto — conferir no dev server
 
