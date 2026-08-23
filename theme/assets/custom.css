@@ -435,20 +435,31 @@
 /*
   Vitrine do produto na home (custom_liquid "vitrine").
 
-  Foto e conteúdo lado a lado a partir de 750px; no celular empilha com a
-  foto primeiro. Cor sai das variáveis do tema: círculo do check na cor do
-  texto, traço na cor do botão (o vermelho da marca no scheme ativo).
+  Conteúdo à esquerda e foto à direita a partir de 750px (espelhando a
+  seção da história, que tem a foto à esquerda — pedido do Gabriel,
+  2026-08-23); no celular empilha com a foto primeiro, por isso o order
+  só no desktop. Título alinhado ao topo da foto (align-items: start).
+  Cor sai das variáveis do tema: círculo do check na cor do texto, traço
+  na cor do botão (o vermelho da marca no scheme ativo).
+
+  A foto é quadrada (aspect-ratio) para ter o mesmo tamanho da foto da
+  história, que usa a mesma proporção — ver o bloco da história no fim
+  deste arquivo.
 */
 .pdd-vitrine {
   display: grid;
   gap: 2.4rem;
-  align-items: center;
+  align-items: start;
 }
 
 @media screen and (min-width: 750px) {
   .pdd-vitrine {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+  }
+
+  .pdd-vitrine__foto {
+    order: 2;
   }
 }
 
@@ -460,6 +471,8 @@
   width: 100%;
   height: auto;
   border-radius: var(--media-radius, 0);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .pdd-vitrine__titulo {
@@ -773,4 +786,51 @@
 .footer-block__brand-info .list-social__link:hover .list-social__label {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
+}
+
+/*
+  "A História dos Sapatos Duque" (home) — ajustes na image-with-text nativa.
+
+  1) Foto com os quatro cantos no raio padrão do site (--media-radius).
+     O collapse-corners do Craft zera os cantos internos para colar a foto
+     na caixa de texto, mas aqui a caixa é transparente e a foto fica com
+     canto reto sem motivo. !important porque o CSS do componente carrega
+     depois deste arquivo e venceria no empate de especificidade.
+
+  2) O bloco de texto usa scheme-1 no template só para herdar o botão
+     vermelho da marca (--color-button, o mesmo do hero e da vitrine);
+     o fundo cinza que viria junto volta a ser transparente para a faixa
+     continuar branca (scheme-2).
+
+  3) Foto quadrada (aspect-ratio) no lugar da altura fixa do tema
+     ("medium", 46rem), para ficar do mesmo tamanho da foto da vitrine,
+     que usa a mesma proporção na mesma largura de coluna. O min-height: 0
+     desliga o estica-para-preencher do tema, senão a coluna de texto
+     poderia alongar a foto e desfazer a igualdade.
+
+  4) Título alinhado ao topo da foto: a posição "top" do tema ainda deixa
+     o padding interno da caixa de texto empurrando o título para baixo —
+     zera só o padding-top, e só no desktop (no celular a caixa fica
+     abaixo da foto e o padding é o respiro entre as duas).
+*/
+[id$='__historia'] .image-with-text__media,
+[id$='__historia'] .image-with-text__media img {
+  border-radius: var(--media-radius) !important;
+}
+
+[id$='__historia'] .image-with-text__media,
+[id$='__historia'] .image-with-text__content {
+  background: transparent;
+}
+
+[id$='__historia'] .image-with-text__media {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+}
+
+@media screen and (min-width: 750px) {
+  [id$='__historia'] .image-with-text__content {
+    padding-top: 0;
+  }
 }

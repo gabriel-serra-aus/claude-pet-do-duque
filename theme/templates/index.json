@@ -44,7 +44,7 @@
         "botoes"
       ],
       "settings": {
-        "image": "shopify://shop_images/Hero_Banner_Bradoc.webp",
+        "image": "shopify://shop_images/hero2_duque_v1.webp",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
@@ -108,7 +108,7 @@
         "botao": {
           "type": "button",
           "settings": {
-            "button_label": "Conheça a história completa",
+            "button_label": "Conheça a história",
             "button_link": "shopify://pages/quem-somos",
             "button_style_secondary": false
           }
@@ -120,17 +120,17 @@
         "botao"
       ],
       "settings": {
-        "image": "shopify://shop_images/DSC_3182.jpg",
+        "image": "shopify://shop_images/Quem_Somos.webp",
         "height": "medium",
         "desktop_image_width": "medium",
-        "layout": "image_second",
+        "layout": "image_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
+        "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
         "section_color_scheme": "scheme-2",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -138,7 +138,7 @@
     "vitrine": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{%- comment -%}\n  Vitrine do produto — foto à esquerda, conteúdo à direita (22/08).\n  Substituiu o card da featured-collection: o card nativo não põe foto e\n  texto lado a lado nem mostra subtítulo, linha de benefícios com check\n  e botão de compra.\n\n  Foto e preço vêm do próprio produto (all_products), então acompanham\n  o admin sem retoque aqui. Estilo em assets/custom.css (.pdd-vitrine*).\n{%- endcomment -%}\n{%- assign produto = all_products['sapatos-duque-c2-original'] -%}\n{%- assign beneficios = 'Antiderrapante|Respirável|Confortável' | split: '|' -%}\n<div class=\"page-width pdd-vitrine\">\n  <a href=\"{{ produto.url }}\" class=\"pdd-vitrine__foto\">\n    {{ produto.featured_image | image_url: width: 1200 | image_tag: widths: '400, 600, 800, 1200', sizes: '(min-width: 750px) 50vw, calc(100vw - 3rem)', loading: 'lazy', alt: 'Sapatos Duque — sapatinhos antiderrapantes para cachorro' }}\n  </a>\n  <div class=\"pdd-vitrine__conteudo\">\n    <h2 class=\"pdd-vitrine__titulo\">Sapatos Duque</h2>\n    <p class=\"pdd-vitrine__subtitulo\">Mais segurança e conforto em cada passo.</p>\n    <p class=\"pdd-vitrine__descricao\">Solado antiderrapante, malha respirável e ajuste confortável para ajudar seu cão a caminhar com mais firmeza.</p>\n    <p class=\"pdd-vitrine__preco\">A partir de <strong>{{ produto.price_min | money }}</strong></p>\n    <ul class=\"pdd-vitrine__checks\" role=\"list\">\n      {%- for beneficio in beneficios -%}\n      <li>\n        <svg class=\"pdd-vitrine__check\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\">\n          <circle cx=\"12\" cy=\"12\" r=\"11\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n          <path class=\"pdd-vitrine__check-traco\" d=\"M7 12.5l3.4 3.3L17 9.2\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n        {{ beneficio }}\n      </li>\n      {%- endfor -%}\n    </ul>\n    <a href=\"{{ produto.url }}\" class=\"button pdd-vitrine__botao\">Compre agora</a>\n  </div>\n</div>",
+        "custom_liquid": "{%- comment -%}\n  Vitrine do produto — conteúdo à esquerda, foto à direita (23/08;\n  espelha a seção da história, que tem a foto à esquerda).\n  Substituiu o card da featured-collection: o card nativo não põe foto e\n  texto lado a lado nem mostra subtítulo, linha de benefícios com check\n  e botão de compra.\n\n  Foto e preço vêm do próprio produto (all_products), então acompanham\n  o admin sem retoque aqui. Estilo em assets/custom.css (.pdd-vitrine*).\n{%- endcomment -%}\n{%- assign produto = all_products['sapatos-duque-c2-original'] -%}\n{%- assign beneficios = 'Antiderrapante|Respirável|Confortável' | split: '|' -%}\n<div class=\"page-width pdd-vitrine\">\n  <a href=\"{{ produto.url }}\" class=\"pdd-vitrine__foto\">\n    {{ produto.featured_image | image_url: width: 1200 | image_tag: widths: '400, 600, 800, 1200', sizes: '(min-width: 750px) 50vw, calc(100vw - 3rem)', loading: 'lazy', alt: 'Sapatos Duque — sapatinhos antiderrapantes para cachorro' }}\n  </a>\n  <div class=\"pdd-vitrine__conteudo\">\n    <h2 class=\"pdd-vitrine__titulo\">Sapatos Duque</h2>\n    <p class=\"pdd-vitrine__subtitulo\">Mais segurança e conforto em cada passo.</p>\n    <p class=\"pdd-vitrine__descricao\">Solado antiderrapante, malha respirável e ajuste confortável para ajudar seu cão a caminhar com mais firmeza.</p>\n    <p class=\"pdd-vitrine__preco\">A partir de <strong>{{ produto.price_min | money }}</strong></p>\n    <ul class=\"pdd-vitrine__checks\" role=\"list\">\n      {%- for beneficio in beneficios -%}\n      <li>\n        <svg class=\"pdd-vitrine__check\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\">\n          <circle cx=\"12\" cy=\"12\" r=\"11\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n          <path class=\"pdd-vitrine__check-traco\" d=\"M7 12.5l3.4 3.3L17 9.2\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n        {{ beneficio }}\n      </li>\n      {%- endfor -%}\n    </ul>\n    <a href=\"{{ produto.url }}\" class=\"button pdd-vitrine__botao\">Compre agora</a>\n  </div>\n</div>",
         "color_scheme": "scheme-1",
         "padding_top": 12,
         "padding_bottom": 40
