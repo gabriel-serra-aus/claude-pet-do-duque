@@ -11,7 +11,7 @@ Tudo o que ainda falta fazer. Regras de acesso ao admin: `CLAUDE.md` §4.
 
 Só se resolve no admin, pelo navegador.
 
-- [ ] **Menu `footer` (navegação)** — remover os itens "Como comprar?" e "Fale conosco" (decisão do Gabriel, 2026-08-23). Ficam: "Perguntas frequentes" → `/pages/perguntas-frequentes` · "Envios e entregas" · "Trocas e garantia" (conferir se as duas últimas apontam para página com conteúdo real — o texto de troca ainda está pendente).
+- [ ] **Menu `footer` (navegação)** — "Como comprar?" e "Fale conosco" já removidos pelo Gabriel (2026-08-23). Falta: conferir se "Envios e entregas" e "Trocas e garantia" apontam para página com conteúdo real — o texto de troca ainda está pendente.
 
 
 ## Conteúdo que falta — trava a publicação, não invento nenhum
