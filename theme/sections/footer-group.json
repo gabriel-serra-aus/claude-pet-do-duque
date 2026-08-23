@@ -14,11 +14,17 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "marca": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
         "fale_com_a_gente": {
           "type": "text",
           "settings": {
             "heading": "Fale com a gente",
-            "subtext": "<p>Vendas e dúvidas pelo <a href=\"https://wa.me/5521993438017\">WhatsApp (21) 99343-8017</a>.</p>"
+            "subtext": "<p>Vendas e dúvidas pelo WhatsApp.</p><p><a href=\"https://wa.me/5521993438017\">WhatsApp (21) 99343-8017</a></p>"
           }
         },
         "links_ajuda": {
@@ -30,6 +36,7 @@
         }
       },
       "block_order": [
+        "marca",
         "fale_com_a_gente",
         "links_ajuda"
       ],
@@ -38,14 +45,14 @@
         "newsletter_enable": false,
         "newsletter_heading": "Assine e receba novidades",
         "enable_follow_on_shop": true,
-        "show_social": true,
+        "show_social": false,
         "whatsapp_link": "https://wa.me/5521993438017",
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
-        "padding_top": 0,
+        "padding_top": 48,
         "padding_bottom": 36
       }
     }

@@ -666,3 +666,82 @@
 .menu-drawer__menu-item--active:hover {
   color: rgb(var(--color-button));
 }
+
+/*
+  Rodapé — modelo aprovado pelo Gabriel (2026-08-23): coluna da marca
+  (logo + tagline + Instagram), "Fale com a gente" com botão de WhatsApp
+  e "Links rápidos" em duas colunas com seta.
+
+  Vive aqui porque o Craft não tem: botão dentro de bloco de texto do
+  rodapé, seta nos links de menu, nem controle de colunas da lista.
+  Cor e raio saem das variáveis do tema.
+*/
+
+/* No celular os blocos empilham em coluna única — o padrão do tema
+   espreme 2 por linha, curto demais para o botão e o logo em 390px. */
+@media screen and (max-width: 749px) {
+  .footer .footer__blocks-wrapper .grid__item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/*
+  Botão de WhatsApp do bloco "Fale com a gente". O subtext é richtext e
+  não aceita classe, então o seletor mira o destino do link. O ícone
+  entra por mask para herdar a cor do texto do botão.
+*/
+.footer .footer-block__details-content a[href^="https://wa.me"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.4rem;
+  padding: 1.3rem 2.4rem;
+  min-height: 4.4rem;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  border-radius: var(--buttons-radius, 0.4rem);
+  text-decoration: none;
+}
+
+.footer .footer-block__details-content a[href^="https://wa.me"]:hover {
+  background: rgba(var(--color-button), 0.85);
+}
+
+.footer .footer-block__details-content a[href^="https://wa.me"]::before {
+  content: '';
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: currentColor;
+  -webkit-mask: url('icon-whatsapp.svg') center / contain no-repeat;
+  mask: url('icon-whatsapp.svg') center / contain no-repeat;
+}
+
+/* Links rápidos: seta na cor do botão do scheme, como no modelo. */
+.footer-block--menu .list-menu__item--link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-block--menu .list-menu__item--link::after {
+  content: '';
+  width: 0.7rem;
+  height: 0.7rem;
+  border-top: 0.2rem solid rgb(var(--color-button));
+  border-right: 0.2rem solid rgb(var(--color-button));
+  transform: rotate(45deg);
+}
+
+/* Duas colunas de links a partir do tablet, uma no celular. */
+@media screen and (min-width: 750px) {
+  .footer-block--menu .footer-block__details-content {
+    columns: 2;
+    column-gap: 4rem;
+  }
+
+  .footer-block--menu .footer-block__details-content li {
+    break-inside: avoid;
+  }
+}
