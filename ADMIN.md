@@ -6,7 +6,7 @@ Ações que só se resolvem no admin. Regras de acesso: `CLAUDE.md` §4. Pendên
 
 ## Etapa 0
 
-- [ ] **Export de conteúdo da loja** (produtos CSV, coleções, páginas, navegação) → `backups/`. Backup de tema não cobre.
+- [ ] **Export de conteúdo da loja** → `backups/`. Só produtos têm export nativo (CSV); páginas, políticas, coleções e menus são cópia manual. O corpo de `quem-somos` existe **só** no banco — sem isso, não há de onde restaurar.
 - [ ] **Título da página Quem somos:** trocar `QUEM SOMOS?` por `Quem somos` — título e SEO.
 - [ ] **Template da página Quem somos:** trocar para `page.quem-somos.json` quando eu criar (Etapa 3).
 - [ ] **Rodapé:** WhatsApp · Rastreio · Trocas e devoluções · Política de privacidade · Instagram.

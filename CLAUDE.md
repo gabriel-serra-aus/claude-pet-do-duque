@@ -48,11 +48,15 @@ shopify theme push --unpublished # congela um ponto de retorno
 
 **Admin:** só alcançável com ferramenta de navegador conectada na sessão; sem ela, a ação vira item de `ADMIN.md`. Conteúdo da loja (menu, páginas, produtos, navegação) vive no admin, não em `theme/` — não crio nem edito por conta própria; aponto em `ADMIN.md` e o Gabriel decide.
 
-**Backup:** antes de refactor grande, `shopify theme push --unpublished --theme "Backup AAAA-MM-DD"`. Commit em `theme/` a cada bloco fechado. Backup de tema não cobre conteúdo do admin — esse é export pelo admin.
-
 **Commits:** fora de `theme/` → prefixo `Non code files - `. Em `theme/` → sem prefixo. Bloco que mexeu nos dois: dois commits separados, nunca um misto.
 
-## 5. Tom de voz
+## 5. Backup
+
+Antes de **todo novo desenvolvimento**: `shopify theme push --unpublished --theme "Backup AAAA-MM-DD"` + commit do git em `theme/`.
+
+O backup de tema **não cobre** o que vive no banco da Shopify: produtos, páginas, coleções, navegação e clientes — isso só sai por export ou cópia manual no admin. Risco pequeno e aceito: só o Gabriel mexe no admin.
+
+## 6. Tom de voz
 
 Português brasileiro, coloquial e direto. Frase curta — o cliente está no celular, decidindo em segundos.
 
@@ -61,7 +65,7 @@ Português brasileiro, coloquial e direto. Frase curta — o cliente está no ce
 - **Evitar:** superlativo vazio · inglês desnecessário · emoji em descrição de produto · parágrafo com mais de 3 linhas no mobile.
 - **Nunca inventar** medida, material, prazo, política de troca, avaliação ou número de venda. Se o dado não existe, marco `[PENDENTE]` e pergunto.
 
-## 6. Padrões técnicos — Craft (Online Store 2.0, família Dawn)
+## 7. Padrões técnicos — Craft (Online Store 2.0, família Dawn)
 
 - **Nativo quando empata, `custom_liquid` quando ganha.** Escolha por resultado, registrada no commit.
 - **`custom_liquid` bem escrito:** variáveis CSS do tema, nunca hex fixo · unidade relativa · CSS reusável em `assets/custom.css` · comentário no topo dizendo o que faz e por que não é nativo.
@@ -73,10 +77,10 @@ Português brasileiro, coloquial e direto. Frase curta — o cliente está no ce
 - **Apps:** nenhum novo. Cada script injetado custa conversão.
 - **Densidade:** base limpa como o Craft pede; densidade só nos pontos de decisão — preço e frete visíveis, prova social perto do botão, FAQ acessível.
 
-## 7. Definição de pronto
+## 8. Definição de pronto
 
 Copy sem `[PENDENTE]` no ar · `shopify theme check` limpo · preview em 390px e 1280px · `alt` em todas as imagens · nenhum placeholder do tema sobrando · links testados · antes/depois apresentado ao Gabriel. Fechada a entrega, marco a checklist na etapa.
 
-## 8. Comunicação
+## 9. Comunicação
 
 Respondo em **português**, direto, sem resumir o que acabei de fazer. Em decisão de marca ou de dinheiro, aponto o trade-off em vez de escolher sozinho.
