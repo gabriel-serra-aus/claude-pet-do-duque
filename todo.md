@@ -5,13 +5,13 @@ Tudo o que ainda falta fazer. Regras de acesso ao admin: `CLAUDE.md` §4.
 ## Gabriel — revisar no `shopify theme dev`
 
 - [ ] **todas as imagens** — .
-- [ ] **rodapé novo** — conferir em 390px e 1280px: colunas "Fale com a gente" e "Links rápidos", ícones Instagram + WhatsApp, banner só com Pix e PayPal (confirmar que o ícone Pix renderiza).
+- [ ] **rodapé novo** — conferir em 390px e 1280px: coluna da marca (logo + tagline + Instagram), "Fale com a gente" com botão de WhatsApp, "Links rápidos" em duas colunas com seta, banner só com Pix e PayPal (confirmar que o ícone Pix renderiza). O modelo aprovado não mostra o banner de pagamento — ficou mantido do pedido anterior; se não quiser, é só desligar "payment_enable" na seção do rodapé.
 
 ## Admin da Shopify
 
 Só se resolve no admin, pelo navegador.
 
-- [ ] **Menu `footer` (navegação)** — deixar com exatamente estes itens, nesta ordem: "Quem somos" → página Quem somos (confirmar handle) · "Perguntas frequentes" → `/pages/perguntas-frequentes`. Quando a política de troca existir, acrescentar "Política de troca". "Como comprar" ficou de fora por decisão do Gabriel (2026-08-23).
+- [ ] **Menu `footer` (navegação)** — remover o item "Como comprar?" (decisão do Gabriel, 2026-08-23). Ficam: "Perguntas frequentes" → `/pages/perguntas-frequentes` · "Envios e entregas" · "Trocas e garantia" (conferir se as duas últimas apontam para página com conteúdo real — o texto de troca ainda está pendente).
 
 
 ## Conteúdo que falta — trava a publicação, não invento nenhum
