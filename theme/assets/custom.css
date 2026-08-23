@@ -720,16 +720,17 @@
 }
 
 /*
-  Tagline da marca nivelada com "Vendas e dúvidas pelo WhatsApp."
-  (pedido do Gabriel, 2026-08-23).
+  Tagline da marca, "Vendas e dúvidas pelo WhatsApp." e o primeiro link
+  de "Links rápidos" na mesma linha horizontal (pedido do Gabriel,
+  2026-08-23).
 
-  Os dois blocos abrem com alturas diferentes — logo de um lado, título do
-  outro — e cada um solta seu texto 2rem abaixo disso. O nivelamento fixa a
-  caixa do logo em 7rem e desce o texto do bloco do WhatsApp pela diferença
-  (7rem menos a altura do título). A altura do título vem do base.css:
-  fonte 1.6rem (750–989px) ou 1.8rem (990px+) × line-height 1.3, com
-  heading scale 1.0 nos Theme settings — se essa escala mudar, os dois
-  valores de margin-top precisam ser recalculados.
+  Os blocos abrem com alturas diferentes — logo de um lado, título dos
+  outros — e cada um solta seu conteúdo 2rem abaixo disso. O nivelamento
+  fixa a caixa do logo em 7rem e desce o conteúdo dos blocos de título
+  pela diferença (7rem menos a altura do título). A altura do título vem
+  do base.css: fonte 1.6rem (750–989px) ou 1.8rem (990px+) × line-height
+  1.3, com heading scale 1.0 nos Theme settings — se essa escala mudar,
+  os dois valores de margin-top precisam ser recalculados.
 
   Só a partir de 750px: no celular os blocos empilham e não há o que nivelar.
 */
@@ -746,13 +747,15 @@
     object-position: left center;
   }
 
-  .footer-block:has(a[href^="https://wa.me"]) .footer-block__details-content {
+  .footer-block:has(a[href^="https://wa.me"]) .footer-block__details-content,
+  .footer-block--menu .footer-block__details-content {
     margin-top: calc(7rem - 1.3 * 1.6rem);
   }
 }
 
 @media screen and (min-width: 990px) {
-  .footer-block:has(a[href^="https://wa.me"]) .footer-block__details-content {
+  .footer-block:has(a[href^="https://wa.me"]) .footer-block__details-content,
+  .footer-block--menu .footer-block__details-content {
     margin-top: calc(7rem - 1.3 * 1.8rem);
   }
 }
