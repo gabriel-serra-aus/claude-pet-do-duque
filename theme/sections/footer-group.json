@@ -24,7 +24,7 @@
         "links_ajuda": {
           "type": "link_list",
           "settings": {
-            "heading": "Ajuda",
+            "heading": "Links rápidos",
             "menu": "footer"
           }
         }
@@ -39,9 +39,10 @@
         "newsletter_heading": "Assine e receba novidades",
         "enable_follow_on_shop": true,
         "show_social": true,
+        "whatsapp_link": "https://wa.me/5521993438017",
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "payment_enable": false,
+        "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
         "padding_top": 0,

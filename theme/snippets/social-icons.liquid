@@ -2,6 +2,9 @@
   Renders social icons.
   Accepts:
   - class: {String} a class to be added to the <ul> element (optional).
+  - whatsapp_link: {String} when present, renders a WhatsApp icon after Instagram (optional).
+    Pet do Duque: o Craft não tem campo nativo de WhatsApp nos ícones sociais; o link
+    vem por parâmetro para não afetar os outros usos deste snippet (ex.: announcement-bar).
 
   Usage:
   {% render 'social-icons',
@@ -27,6 +30,16 @@
           {{- 'icon-instagram.svg' | inline_asset_content -}}
         </span>
         <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if whatsapp_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ whatsapp_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-whatsapp.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">WhatsApp</span>
       </a>
     </li>
   {%- endif -%}

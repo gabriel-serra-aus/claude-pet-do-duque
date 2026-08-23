@@ -243,7 +243,7 @@
           {%- endif -%}
 
           {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons', class: 'footer__list-social' -%}
+            {%- render 'social-icons', class: 'footer__list-social', whatsapp_link: section.settings.whatsapp_link -%}
           {%- endif -%}
         </div>
       </div>
@@ -287,7 +287,13 @@
           <div class="footer__payment">
             <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
             <ul class="list list-payment" role="list">
-              {%- for type in shop.enabled_payment_types -%}
+              {% comment %}
+                Pet do Duque: lista fixa (Pix e PayPal) no lugar de shop.enabled_payment_types.
+                O nativo mostra os métodos habilitados no checkout, que não refletem o que a
+                loja aceita de fato (venda fechada pelo WhatsApp, só Pix e PayPal).
+              {% endcomment %}
+              {%- assign accepted_payment_types = 'pix,paypal' | split: ',' -%}
+              {%- for type in accepted_payment_types -%}
                 <li class="list-payment__item">
                   {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
                 </li>
@@ -464,6 +470,12 @@
       "default": true,
       "label": "t:sections.footer.settings.show_social.label",
       "info": "t:sections.footer.settings.show_social.info"
+    },
+    {
+      "type": "url",
+      "id": "whatsapp_link",
+      "label": "Link do WhatsApp",
+      "info": "Mostra um ícone de WhatsApp junto aos ícones sociais do rodapé."
     },
     {
       "type": "checkbox",
