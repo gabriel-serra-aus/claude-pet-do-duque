@@ -10,6 +10,7 @@ Mercado: Brasil (Rio). **pt-BR, BRL, tráfego majoritariamente mobile.** Posicio
 
 **Tema alvo:** Craft #164972953635 (unpublished). **No ar:** Booster Premium 2.0 — não tocar.
 Loja em modo senha; vendas por WhatsApp +55 21 99343-8017.
+Header do Craft sem busca e sem login (só carrinho) — cliente ainda loga pela URL direta `/account/login`.
 
 **Regra do projeto: a Home educa, a página de produto vende.**
 
@@ -52,7 +53,7 @@ shopify theme push --unpublished # congela um ponto de retorno
 
 ## 5. Backup
 
-Antes de **todo novo desenvolvimento**: `shopify theme push --unpublished --theme "Backup AAAA-MM-DD"` + commit do git em `theme/`.
+Backup é felito pelo Gabriel ou somente se o Gabriel explicitamente pedir: `shopify theme push --unpublished --theme "Backup AAAA-MM-DD"` + commit do git em `theme/`.
 
 O backup de tema **não cobre** o que vive no banco da Shopify: produtos, páginas, coleções, navegação e clientes — isso só sai por export ou cópia manual no admin. Risco pequeno e aceito: só o Gabriel mexe no admin.
 
