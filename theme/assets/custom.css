@@ -724,13 +724,13 @@
   de "Links rápidos" na mesma linha horizontal (pedido do Gabriel,
   2026-08-23).
 
-  Os blocos abrem com alturas diferentes — logo de um lado, título dos
-  outros — e cada um solta seu conteúdo 2rem abaixo disso. O nivelamento
-  fixa a caixa do logo em 7rem e desce o conteúdo dos blocos de título
-  pela diferença (7rem menos a altura do título). A altura do título vem
-  do base.css: fonte 1.6rem (750–989px) ou 1.8rem (990px+) × line-height
-  1.3, com heading scale 1.0 nos Theme settings — se essa escala mudar,
-  os dois valores de margin-top precisam ser recalculados.
+  Todos os blocos ganham uma "zona de abertura" da mesma altura: 9rem.
+  Na coluna da marca ela é a caixa do logo (7rem) + os 2rem de respiro
+  que o tema já dá; nos blocos com título, o próprio título estica até
+  9rem (min-height, com a margem nativa zerada). Como a zona é igual em
+  todo bloco, o conteúdo abaixo dela começa na mesma linha em qualquer
+  coluna — sem conta com fonte ou line-height, então não quebra se a
+  escala de título mudar nos Theme settings.
 
   Só a partir de 750px: no celular os blocos empilham e não há o que nivelar.
 */
@@ -748,15 +748,8 @@
     object-position: left top;
   }
 
-  .footer-block:has(a[href^="https://wa.me"]) .footer-block__details-content,
-  .footer-block--menu .footer-block__details-content {
-    margin-top: calc(7rem - 1.3 * 1.6rem);
-  }
-}
-
-@media screen and (min-width: 990px) {
-  .footer-block:has(a[href^="https://wa.me"]) .footer-block__details-content,
-  .footer-block--menu .footer-block__details-content {
-    margin-top: calc(7rem - 1.3 * 1.8rem);
+  .footer-block .footer-block__heading {
+    min-height: 9rem;
+    margin-bottom: 0;
   }
 }
