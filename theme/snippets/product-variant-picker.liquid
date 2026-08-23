@@ -23,19 +23,23 @@
   >
     {%- for option in product.options_with_values -%}
       {%- comment -%}
-        Pet do Duque: o link "como medir" precisa ficar colado ao seletor de
-        tamanho, entre a Cor e o Tamanho (Etapa 2, item 5). Bloco de template
-        não entra no meio de um variant_picker, por isso a injeção vive aqui.
-        A âncora é da própria página: a seção "Como medir a patinha" existe
-        no template de produto desde 22/08 — o cliente desce, não navega.
-        Estilo em assets/custom.css (.pdd-link-medida).
+        Pet do Duque: caixas de opção do mesmo tamanho (23/08). A classe marca
+        os fieldsets de Cor, Tamanho e Kit para a grade em assets/custom.css
+        (.pdd-pills-iguais) — sem ela não há como mirar um fieldset específico.
+        O link "como medir" vive dentro do legend do Tamanho, como selo-botão
+        ao lado do título (.pdd-link-medida); a âncora é da própria página.
       {%- endcomment -%}
-      {%- assign pdd_option_nome = option.name | downcase -%}
-      {%- if pdd_option_nome contains 'tamanho' -%}
-        <p class="pdd-link-medida">
-          <a href="#como-medir">Não sei o tamanho — como medir</a>
-        </p>
-      {%- endif -%}
+      {%- liquid
+        assign pdd_option_nome = option.name | downcase
+        assign pdd_pills_classe = ''
+        if pdd_option_nome contains 'tamanho'
+          assign pdd_pills_classe = ' pdd-pills-iguais pdd-pills-tamanho'
+        elsif pdd_option_nome contains 'kit'
+          assign pdd_pills_classe = ' pdd-pills-iguais pdd-pills-kit'
+        elsif pdd_option_nome contains 'cor'
+          assign pdd_pills_classe = ' pdd-pills-iguais pdd-pills-cor'
+        endif
+      -%}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
@@ -64,8 +68,31 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
+        <fieldset class="js product-form__input product-form__input--pill{{ pdd_pills_classe }}">
           <legend class="form__label">{{ option.name }}</legend>
+          {%- comment -%}
+            Pet do Duque: aviso "como medir" entre o título e os tamanhos,
+            no mesmo desenho do aviso de cor (.pdd-aviso-medida). É link
+            para a âncora #como-medir da própria página (23/08).
+          {%- endcomment -%}
+          {%- if pdd_option_nome contains 'tamanho' %}
+            <a class="pdd-aviso-medida" href="#como-medir">
+              <svg
+                class="pdd-aviso-medida__icone"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="2" y="8" width="20" height="8" rx="1.5"/>
+                <path d="M6.5 8v3.5M11 8v4.5M15.5 8v3.5M19.5 8v4.5"/>
+              </svg>
+              Não sei o tamanho — como medir
+            </a>
+          {%- endif %}
           {% render 'product-variant-options',
             product: product,
             option: option,
@@ -105,6 +132,17 @@
             </span>
           </div>
         </div>
+      {%- endif -%}
+      {%- comment -%}
+        Pet do Duque: aviso de estoque logo abaixo da opção de Cor (23/08) —
+        a cor enviada depende do estoque. Injetado aqui porque bloco de
+        template não entra no meio de um variant_picker. Estilo em
+        assets/custom.css (.pdd-aviso-cor).
+      {%- endcomment -%}
+      {%- if pdd_option_nome contains 'cor' -%}
+        <p class="pdd-aviso-cor">
+          A cor escolhida depende do estoque. Se não tiver, enviamos a mais próxima disponível.
+        </p>
       {%- endif -%}
     {%- endfor -%}
 

@@ -528,18 +528,125 @@
 */
 
 /*
-  Link "como medir", colado ao seletor de tamanho: injetado pelo snippet
-  product-variant-picker.liquid entre a Cor e o Tamanho. A margem negativa
-  aproxima o link do fieldset seguinte, que é a quem ele pertence.
+  Títulos das opções da caixa de compra (Cor, Escolha o tamanho, Selecione
+  o Kit, Quantidade): maiores e em negrito — são os marcos de leitura do
+  formulário (pedido do Gabriel em 23/08). Escopado em variant-selects e no
+  bloco de quantidade do produto para não mexer em outros formulários.
 */
-.pdd-link-medida {
-  margin: 0.4rem 0 -0.6rem;
-  font-size: 1.3rem;
+variant-selects .form__label,
+.product-form__quantity .form__label {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
-.pdd-link-medida a {
-  color: rgba(var(--color-foreground), 0.75);
-  text-underline-offset: 0.3rem;
+/*
+  Aviso "como medir" entre o título "Escolha o tamanho" e os botões
+  (injetado em product-variant-picker.liquid). Mesmo desenho e corpo do
+  aviso de cor — compartilha o visual em .pdd-aviso-cor, mais abaixo —
+  pedido do Gabriel (23/08), mantida a régua. É link para a âncora
+  #como-medir; dentro da grade do fieldset, ocupa a linha inteira.
+*/
+.pdd-aviso-medida {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  transition: background var(--duration-short) ease;
+}
+
+.pdd-aviso-medida:hover,
+.pdd-aviso-medida:focus-visible {
+  background: rgba(var(--color-button), 0.16);
+}
+
+.pdd-aviso-medida__icone {
+  width: 1.8rem;
+  height: 1.8rem;
+  flex-shrink: 0;
+  color: rgb(var(--color-button));
+}
+
+/*
+  Respiro entre os grupos da caixa de compra (23/08): espaço extra acima de
+  "Escolha o tamanho", "Selecione o Kit" e "Quantidade" — o espaçamento
+  nativo do Craft deixava os grupos colados. Margem, não padding, para não
+  esticar fundo nem borda dos fieldsets. Seletor dobrado de propósito:
+  section-main-product.css carrega depois do custom.css e zera a margem de
+  .product-form__input — só especificidade maior segura o respiro.
+*/
+.product-form__input.pdd-pills-tamanho,
+.product-form__input.pdd-pills-kit,
+.product-form__input.product-form__quantity {
+  margin-top: 3.2rem;
+}
+
+/*
+  Caixas de opção do mesmo tamanho (23/08): os pills nativos do Craft são
+  inline e cada um mede o próprio texto — com a faixa em cm as larguras
+  ficavam desiguais. A grade dá colunas iguais nos fieldsets de Tamanho e
+  Kit (classe injetada em product-variant-picker.liquid). Os rádios são
+  absolutos (clip) e não geram célula; só os labels entram na grade.
+*/
+.pdd-pills-iguais {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.7rem;
+}
+
+.pdd-pills-tamanho {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin-top: 0.8rem;
+}
+
+.pdd-pills-cor {
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+/* Kits empilhados, um por linha — nome longo pede a largura toda (23/08).
+   Texto alinhado à esquerda: caixas cheias empilhadas se leem como lista. */
+.pdd-pills-kit {
+  grid-template-columns: 1fr;
+}
+
+/*
+  Avisos da caixa de compra (injetados em product-variant-picker.liquid):
+  estoque da cor abaixo de "Escolha a Cor" e "como medir" abaixo de
+  "Escolha o tamanho". Caixa com o vermelho da marca — é regra de compra,
+  não letra miúda: o cliente precisa ler antes de escolher.
+*/
+.pdd-aviso-cor,
+.pdd-aviso-medida {
+  margin: 0.4rem 0 0;
+  padding: 1rem 1.2rem;
+  border-left: 0.4rem solid rgb(var(--color-button));
+  border-radius: 0.4rem;
+  background: rgba(var(--color-button), 0.08);
+  color: rgb(var(--color-foreground));
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.pdd-pills-iguais input[type='radio'] + label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 0.4rem;
+  margin: 0;
+  padding: 1rem 0.6rem;
+  line-height: 1.2;
+}
+
+/*
+  Seletor dobrado de propósito: component-product-variant-picker.css carrega
+  depois do custom.css e centraliza o texto dos pills com a mesma
+  especificidade — só especificidade maior segura o alinhamento à esquerda.
+*/
+.product-form__input--pill.pdd-pills-kit input[type='radio'] + label {
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 3rem;
 }
 
 /*
@@ -566,15 +673,6 @@
 
 .pdd-frete p {
   margin: 0;
-}
-
-/*
-  Aviso de cor: última linha da caixa de compra, corpo menor — é ressalva.
-*/
-.pdd-aviso-cor {
-  margin: 1rem 0 0;
-  font-size: 1.2rem;
-  color: rgba(var(--color-foreground), 0.7);
 }
 
 .pdd-video__titulo--compacto {
