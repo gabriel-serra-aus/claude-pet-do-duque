@@ -12,6 +12,7 @@ Tudo o que ainda falta fazer. Regras de acesso ao admin: `CLAUDE.md` §4.
 Só se resolve no admin, pelo navegador.
 
 - [ ] **Menu `footer` (navegação)** — "Como comprar?" e "Fale conosco" já removidos pelo Gabriel (2026-08-23). Falta: conferir se "Envios e entregas" e "Trocas e garantia" apontam para página com conteúdo real — o texto de troca ainda está pendente.
+- [ ] **Renomear valores da opção "Selecione o KIT"** no produto Sapatos Duque (2026-08-23): "Kit One = 4 PATAS" → "4 PATAS - Primeiro Rolê" · "Kit Double Duque = 8 PATAS" → "8 PATAS - Um Usa Outro Seca" · "Kit Duque Economy = 16 PATAS" → "16 PATAS - Matilha". Os valores vivem nas variantes do produto, não no tema. Conferir preço/estoque das variantes depois do rename.
 
 
 ## Conteúdo que falta — trava a publicação, não invento nenhum
@@ -20,7 +21,7 @@ Só se resolve no admin, pelo navegador.
 - [ ] **Custo do frete** (FAQ + barra de anúncio)
 - [ ] **Política de troca** (FAQ)
 - [ ] **Instruções de lavagem** (FAQ)
-- [ ] **Confirmar os 3 passos de medida** contra o vídeo "SapatosDuque Como Medir"
+- [x] **Confirmar os 3 passos de medida** contra o vídeo "SapatosDuque Como Medir" — texto final do Gabriel aplicado na home e no produto (2026-08-23)
 - [ ] **Loox** — ver se há avaliação real nos 1.979 pedidos. Destrava Prova social e Depoimentos.
 
 ## Meu, quando o conteúdo chegar
