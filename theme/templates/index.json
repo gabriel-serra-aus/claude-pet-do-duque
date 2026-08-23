@@ -171,40 +171,6 @@
         "padding_bottom": 40
       }
     },
-    "cta_apos_medida": {
-      "type": "rich-text",
-      "blocks": {
-        "texto": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Mediu a patinha? Então você já sabe o tamanho.</p>"
-          }
-        },
-        "botao": {
-          "type": "button",
-          "settings": {
-            "button_label": "Comprar agora",
-            "button_link": "shopify://products/sapatos-duque-c2-original",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "texto",
-        "botao"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-2",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 44
-      }
-    },
     "depoimentos": {
       "type": "multicolumn",
       "disabled": true,
@@ -344,7 +310,6 @@
     "multicolumn_mRRbhi",
     "como_medir",
     "videos_par",
-    "cta_apos_medida",
     "depoimentos",
     "faq"
   ]
