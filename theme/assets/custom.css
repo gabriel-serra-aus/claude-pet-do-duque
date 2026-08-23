@@ -744,7 +744,8 @@
     width: auto;
     max-width: 100%;
     object-fit: contain;
-    object-position: left center;
+    /* topo, não centro: o logo abre na mesma linha dos títulos vizinhos */
+    object-position: left top;
   }
 
   .footer-block:has(a[href^="https://wa.me"]) .footer-block__details-content,
