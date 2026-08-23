@@ -1,6 +1,6 @@
 # Pet do Duque — Instruções do Projeto
 
-**Este arquivo: regras que valem sempre. Tarefas do admin: `ADMIN.md`. Execução: `etapas/`.**
+**Este arquivo: regras que valem sempre. Pendências: `todo.md`. Execução: `etapas/`.**
 
 ## 1. Contexto
 
@@ -19,7 +19,7 @@ Loja em modo senha; vendas por WhatsApp +55 21 99343-8017.
 |---|---|
 | `CLAUDE.md` | Este. Regras que valem sempre. |
 | `etapas/*.md` | **Fonte da verdade da execução.** Uma etapa por sessão. |
-| `ADMIN.md` | Fila de ações do admin da Shopify. |
+| `todo.md` | Todas as pendências — minhas, do Gabriel e do admin. |
 | `MEMORY.md` | Fatos, estado e decisões. Escrita só quando o Gabriel pede. |
 | `arquivo/` | Versões superadas. Não usar. |
 
@@ -46,7 +46,7 @@ shopify theme push --unpublished # congela um ponto de retorno
 
 **Confirmação:** comando que só lê roda direto. Ação que escreve (CLI ou admin): digo o que muda e espero o "pode" — uma confirmação vale só para aquela ação. Refactor ou mudança em lote: antes/depois antes do OK.
 
-**Admin:** só alcançável com ferramenta de navegador conectada na sessão; sem ela, a ação vira item de `ADMIN.md`. Conteúdo da loja (menu, páginas, produtos, navegação) vive no admin, não em `theme/` — não crio nem edito por conta própria; aponto em `ADMIN.md` e o Gabriel decide.
+**Admin:** só alcançável com ferramenta de navegador conectada na sessão; sem ela, a ação vira item de `todo.md`. Conteúdo da loja (menu, páginas, produtos, navegação) vive no admin, não em `theme/` — não crio nem edito por conta própria; aponto em `todo.md` e o Gabriel decide.
 
 **Commits:** fora de `theme/` → prefixo `Non code files - `. Em `theme/` → sem prefixo. Bloco que mexeu nos dois: dois commits separados, nunca um misto.
 

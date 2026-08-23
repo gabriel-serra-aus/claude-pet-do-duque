@@ -14,7 +14,7 @@
 
 - 22/08/2026 — **Etapas 0 e 1 concluídas.** Home reescrita no Craft #164972953635, ainda unpublished. Booster Premium 2.0 continua no ar.
 - 22/08/2026 — Loja **ainda em modo senha** ("Estamos passando por uma manutenção no site"), vendas por WhatsApp. Confirmado buscando `petdoduque.com`.
-- 22/08/2026 — **Sem ferramenta de navegador na sessão.** O Gabriel autorizou o acesso ao admin, mas autorização não instala ferramenta: não há MCP de browser configurado. Enquanto isso, ação de admin fica em `ADMIN.md` e é ele quem executa. A CLI, essa sim, roda por Bash e já está autenticada.
+- 22/08/2026 — **Sem ferramenta de navegador na sessão.** O Gabriel autorizou o acesso ao admin, mas autorização não instala ferramenta: não há MCP de browser configurado. Enquanto isso, ação de admin fica em `todo.md` (seção Admin da Shopify) e é ele quem executa. A CLI, essa sim, roda por Bash e já está autenticada.
 - 22/08/2026 — Loja tem **1.979 pedidos**. Não é loja nova: pode haver avaliação real acumulada no Loox, o que destravaria as seções de prova social.
 
 ## Dados da loja verificados (22/08, pelo servidor de dev)
