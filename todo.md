@@ -5,7 +5,7 @@ Tudo o que ainda falta fazer. Regras de acesso ao admin: `CLAUDE.md` §4.
 ## Gabriel — revisar no `shopify theme dev`
 
 - [ ] **todas as imagens** — .
-- [ ] **rodapé novo** — conferir em 390px e 1280px: coluna da marca (logo + tagline + Instagram), "Fale com a gente" com botão de WhatsApp, "Links rápidos" em duas colunas com seta, banner só com Pix e PayPal (confirmar que o ícone Pix renderiza). O modelo aprovado não mostra o banner de pagamento — ficou mantido do pedido anterior; se não quiser, é só desligar "payment_enable" na seção do rodapé.
+- [ ] **rodapé novo** — conferir em 390px e 1280px: coluna da marca (logo + tagline + Instagram), "Fale com a gente" com botão de WhatsApp, "Links rápidos" em coluna única sem seta, banner só com Pix e PayPal (confirmar que o ícone Pix renderiza). O modelo aprovado não mostra o banner de pagamento — ficou mantido do pedido anterior; se não quiser, é só desligar "payment_enable" na seção do rodapé.
 
 ## Admin da Shopify
 
