@@ -5,6 +5,9 @@
   - whatsapp_link: {String} when present, renders a WhatsApp icon after Instagram (optional).
     Pet do Duque: o Craft não tem campo nativo de WhatsApp nos ícones sociais; o link
     vem por parâmetro para não afetar os outros usos deste snippet (ex.: announcement-bar).
+  - show_labels: {Boolean} when true, shows the network name next to the icon instead of
+    keeping it visually hidden (optional). Pet do Duque: só o Instagram tem o rótulo
+    visível implementado — é a única rede da loja; as demais seguem só com ícone.
 
   Usage:
   {% render 'social-icons',
@@ -29,7 +32,11 @@
         <span class="svg-wrapper">
           {{- 'icon-instagram.svg' | inline_asset_content -}}
         </span>
-        <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+        {%- if show_labels -%}
+          <span class="list-social__label">{{ 'general.social.links.instagram' | t }}</span>
+        {%- else -%}
+          <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+        {%- endif -%}
       </a>
     </li>
   {%- endif -%}

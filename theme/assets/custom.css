@@ -753,3 +753,24 @@
     margin-bottom: 0;
   }
 }
+
+/*
+  Instagram com mais destaque na coluna da marca: ícone maior e a palavra
+  "Instagram" visível ao lado (o snippet social-icons ganhou o parâmetro
+  show_labels para isso). Sem media query: vale também no celular.
+*/
+.footer-block__brand-info .list-social__link {
+  gap: 0.9rem;
+  padding-left: 0;
+  font-size: 1.5rem;
+}
+
+.footer-block__brand-info .list-social__item .icon {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.footer-block__brand-info .list-social__link:hover .list-social__label {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
