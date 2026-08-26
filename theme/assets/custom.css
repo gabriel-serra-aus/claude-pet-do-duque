@@ -932,3 +932,40 @@ variant-selects .form__label,
     padding-top: 0;
   }
 }
+
+/*
+  Carrinho — botão de finalizar compra duplicado (Yampi + Craft).
+
+  O script do Yampi clona o botão nativo (#checkout), insere o clone logo
+  depois com a classe .ymp_elem_mainBtn e esconde o original por CSS. Só que
+  o seletor dele é `.ymp-CrtpageMainFrm button[type="submit"]` — descendente
+  do <form>. No Craft o <form id="cart"> mora em main-cart-items.liquid e o
+  botão em main-cart-footer.liquid, ligado por `form="cart"`: o botão está
+  FORA do form no DOM, o seletor do Yampi não casa, e os dois aparecem.
+
+  Escondemos o original aqui. Não dá para tirá-lo do liquid: o Yampi lê a
+  classe e o texto dele para montar o clone e quebra se não encontrar.
+
+  O :has() é o fallback: o original só some quando o clone existir de fato.
+  Se o Yampi sair do ar, o botão nativo reaparece sozinho e o cliente não
+  fica num carrinho sem saída.
+*/
+.cart__ctas:has(.ymp_elem_mainBtn) #checkout {
+  display: none;
+}
+
+/*
+  Página de produto — botão "Finalizar compra" (bloco custom_liquid
+  finalizar_compra em templates/product.json).
+
+  Ele vive fora do .product-form__buttons, então não herda o espaçamento do
+  grupo: a margem vem daqui. O max-width repete o do .product-form__buttons
+  (section-main-product.css) para o botão não ficar mais largo que o
+  "Adicionar ao carrinho" no desktop.
+*/
+.pdd-finalizar {
+  display: block;
+  max-width: 44rem;
+  margin-top: 1rem;
+  text-align: center;
+}

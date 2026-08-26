@@ -119,11 +119,19 @@
                 </button>
               </div>
 
-              {%- if additional_checkout_buttons -%}
-                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
-                  {{ content_for_additional_checkout_buttons }}
-                </div>
-              {%- endif -%}
+              {%- comment -%}
+                Aqui ficava o bloco `additional_checkout_buttons` do Craft, que
+                renderiza `content_for_additional_checkout_buttons` — PayPal,
+                Shop Pay, Google Pay.
+
+                Removido: esses botões vão direto para o checkout nativo da
+                Shopify e o script do Yampi não consegue interceptá-los, então
+                o cliente sairia do checkout transparente.
+
+                Para reverter, o bloco original está em
+                sections/main-cart-footer.liquid do Craft de fábrica,
+                ou no histórico do git deste arquivo.
+              {%- endcomment -%}
           {%- endcase -%}
         {% endfor %}
 
