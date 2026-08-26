@@ -8,8 +8,9 @@ Loja Shopify **Pet do Duque** (`petdoduque.com`), handle `sapatos-duque.myshopif
 Um produto: **Sapatos Duque**, sapatinhos para cachorros. R$ 109,90 · 4 cores · 8 tamanhos · 3 kits.
 Mercado: Brasil (Rio). **pt-BR, BRL, tráfego majoritariamente mobile.** Posicionamento: acessível e prático.
 
-**Tema alvo:** Craft #164972953635 (unpublished). **No ar:** Booster Premium 2.0 — não tocar.
-Loja em modo senha; vendas por WhatsApp +55 21 99343-8017.
+**No ar:** Craft — "Craft - Novo site v1" #164972953635, **publicado em 2026-08-26**. Booster Premium 2.0 saiu do ar; ficou como tema não publicado, não usar.
+Loja ainda em modo senha; vendas por WhatsApp +55 21 99343-8017.
+**Checkout:** Yampi (checkout transparente). App personalizado legado "YAMPI - PET DO DUQUE" no admin, credenciais válidas, integração ativa no painel Yampi. O script do checkout vive no tema publicado — toda vez que o tema publicado muda, rodar "Reinstalar tema" no painel Yampi, senão o cliente cai no checkout nativo da Shopify.
 Header do Craft sem busca e sem login (só carrinho) — cliente ainda loga pela URL direta `/account/login`.
 
 **Regra do projeto: a Home educa, a página de produto vende.**
@@ -42,12 +43,13 @@ shopify theme push --unpublished # congela um ponto de retorno
 **Proibições — nenhuma confirmação de rotina as libera:**
 
 - Nunca digito senha, credencial, token ou dado de pagamento. Quem autentica é o Gabriel.
+- Nunca acesso o navegador. Sem admin da Shopify, sem painel do Yampi, sem extensão do Chrome, sem automação de browser.
 - Nunca edito o tema publicado.
 - Publicar tema, desativar a senha da loja, instalar/desinstalar app: só com **"pode publicar" explícito**, dito na hora, para aquela ação.
 
 **Confirmação:** comando que só lê roda direto. Ação que escreve (CLI ou admin): digo o que muda e espero o "pode" — uma confirmação vale só para aquela ação. Refactor ou mudança em lote: antes/depois antes do OK.
 
-**Admin:** só alcançável com ferramenta de navegador conectada na sessão; sem ela, a ação vira item de `todo.md`. Conteúdo da loja (menu, páginas, produtos, navegação) vive no admin, não em `theme/` — não crio nem edito por conta própria; aponto em `todo.md` e o Gabriel decide.
+**Admin e navegador — proibido pra mim.** Nunca abro o admin da Shopify, o painel do Yampi, nem qualquer site. Não uso extensão de navegador, Chrome, automação de browser ou ferramenta equivalente, mesmo que estejam disponíveis na sessão e mesmo que o Gabriel autorize no momento — essa regra não tem exceção de rotina. Tudo que vive no admin (menu, páginas, produtos, variantes, navegação, apps, integrações, temas) é o Gabriel quem faz. Meu papel é dizer **exatamente onde clicar e o que testar**, passo a passo, e anotar o que ficou pendente em `todo.md`. Se eu precisar ver alguma tela, peço print.
 
 **Commits:** fora de `theme/` → prefixo `Non code files - `. Em `theme/` → sem prefixo. Bloco que mexeu nos dois: dois commits separados, nunca um misto.
 
