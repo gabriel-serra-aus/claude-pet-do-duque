@@ -8,7 +8,7 @@ Loja Shopify **Pet do Duque** (`petdoduque.com`), handle `sapatos-duque.myshopif
 Um produto: **Sapatos Duque**, sapatinhos para cachorros. R$ 109,90 · 4 cores · 8 tamanhos · 3 kits.
 Mercado: Brasil (Rio). **pt-BR, BRL, tráfego majoritariamente mobile.** Posicionamento: acessível e prático.
 
-**No ar:** Craft — "Craft - Novo site v1" #164972953635, **publicado em 2026-08-26**. Booster Premium 2.0 saiu do ar; ficou como tema não publicado, não usar.
+**No ar:** Craft — "Craft - Novo site v2 2026-08-28" #165331992611, **publicado em 2026-08-28**. O v1 (#164972953635) virou não publicado e é a volta imediata se algo quebrar. Booster Premium 2.0 saiu do ar; ficou como tema não publicado, não usar.
 Loja ainda em modo senha; vendas por WhatsApp +55 21 99343-8017.
 **Checkout:** Yampi (checkout transparente). App personalizado legado "YAMPI - PET DO DUQUE" no admin, credenciais válidas, integração ativa no painel Yampi. O script do checkout vive no tema publicado — toda vez que o tema publicado muda, rodar "Reinstalar tema" no painel Yampi, senão o cliente cai no checkout nativo da Shopify.
 Header do Craft sem busca e sem login (só carrinho) — cliente ainda loga pela URL direta `/account/login`.

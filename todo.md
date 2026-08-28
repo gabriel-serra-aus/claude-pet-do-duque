@@ -4,6 +4,22 @@ Tudo o que ainda falta fazer. Regras de acesso ao admin: `CLAUDE.md` §4.
 
 ## Amanhã (2026-08-27) — prioridade
 
+- [ ] **Reinstalar o script do Yampi — URGENTE** (2026-08-28). O tema publicado
+  mudou: agora é o **Craft - Novo site v2 2026-08-28 (#165331992611)**. Desta vez
+  o `layout/theme.liquid` FOI alterado (`window.variantStrings.addToCart`), então
+  não dá para pular como nos pushes de 26/08. Sem isso o cliente cai no checkout
+  nativo da Shopify em vez do Yampi.
+  Passo a passo: painel Yampi → Checkout → Integrações → Shopify → **Reinstalar
+  tema**. Depois conferir no admin da Shopify: Temas → Craft - Novo site v2 →
+  Editar código → `layout/theme.liquid`, procurar `YampiSnippet` — tem que
+  aparecer uma vez só, perto do fechamento do body.
+  Teste final: adicionar ao carrinho, ir até o checkout e confirmar que a tela
+  é a do Yampi.
+- [ ] **O bug do botão travado foi junto para o ar** (2026-08-28) — o item logo
+  abaixo continua aberto e agora está no tema publicado. Risco baixo enquanto a
+  loja segue em modo senha; vira bloqueio antes de tirar a senha.
+  Verificar também se trava o "Finalizar compra" e o "Adicionar mais um item".
+
 - [ ] **BUG — "Adicionar ao carrinho" trava ao voltar do carrinho** (2026-08-26).
   Com item no carrinho, o cliente vai para `/cart`, volta pelo botão do navegador
   e o "Adicionar ao carrinho" não responde mais. **É regressão da mudança de
