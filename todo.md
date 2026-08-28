@@ -37,6 +37,22 @@ Só se resolve no admin, pelo navegador.
 
 - [x] **Reinstalar o script do Yampi no tema Craft** (2026-08-26) — feito. Confirmado no tema publicado: `layout/theme.liquid` linhas 407-409 chamam `snippets/YampiSnippet.liquid`, injeção única. **Repetir toda vez que o tema publicado mudar** — os três pushes de 2026-08-26 usaram `--only` com `--nodelete` e não tocaram no `theme.liquid`, por isso não precisou repetir.
 - [ ] **Decidir o app AReviews** (2026-08-26) — apareceu no `shopify theme pull` de hoje: dois blocos no `templates/product.json` (nota+estrelas abaixo do título, seção de reviews no fim) e o snippet `aliexpress_reviews.liquid` carregando script de `areviewsapp.com`. Ninguém decidiu se fica. O `CLAUDE.md` §7 diz "nenhum app novo — cada script injetado custa conversão". Se sair, é desinstalar no admin, não apagar arquivo.
+- [ ] **Tirar o botão "Escrever avaliação" do AReviews** (2026-08-28) — pedido do
+  Gabriel. O botão não vive no tema: quem desenha ele é o script remoto do app
+  (`areviewsapp.com/js_codes/areviews_app.js`, injetado dentro de `#az_reviews`
+  pelo snippet `aliexpress_reviews.liquid`). O bloco no `templates/product.json`
+  só expõe a **cor** do botão (`areviews_write_reviews_botton_color`), não um
+  liga/desliga. Dois caminhos:
+  1. **Painel do AReviews** (preferido) — procurar a opção de desativar o
+     formulário/botão de escrever avaliação e desligar lá.
+  2. **Esconder por CSS** no tema — só se o painel não tiver a opção. Preciso da
+     classe/id real do botão: abrir a página do produto, clicar com o direito no
+     "Escrever avaliação" → Inspecionar, e me mandar print do HTML do elemento.
+     Aí escrevo a regra em `assets/custom.css`. É solução frágil: se o app mudar
+     a classe, o botão volta sozinho.
+  Cruza com **Decidir o app AReviews** logo acima — se o app for desinstalado,
+  esta pendência morre junto.
+
 - [ ] **Formato decimal das variantes de tamanho** (2026-08-26) — os rótulos usam ponto (`8.1cm a 10cm`) e o site usa vírgula (`8,1 – 10,0 cm`). Em pt-BR a vírgula é a forma certa. Renomear no admin se quiser padronizar.
 - [ ] **Zona de envio** (2026-08-26) — o checkout ofereceu País "Austrália" / Estado "Vitória". Conferir Configurações → Frete e entrega: se a loja só entrega no Brasil, restringir a zona.
 
