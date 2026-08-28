@@ -116,6 +116,7 @@
   "products": {
     "product": {
       "add_to_cart": "Tambahkan ke keranjang",
+      "add_more_to_cart": "Add one more item to cart",
       "description": "Deskripsi",
       "on_sale": "Obral",
       "product_variants": "Varian produk",

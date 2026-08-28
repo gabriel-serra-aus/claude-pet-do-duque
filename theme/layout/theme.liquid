@@ -366,7 +366,15 @@
       };
 
       window.variantStrings = {
-        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        {%- comment -%}
+          product-form.js reescreve o texto do botão com este valor a
+          cada troca de variante — sem a condição aqui, o rótulo
+          "Adicionar mais um item ao carrinho" de buy-buttons.liquid
+          voltaria para o texto padrão no primeiro clique em cor ou
+          tamanho. Guardado por page_type para não mexer em nenhuma
+          outra página.
+        {%- endcomment -%}
+        addToCart: `{% if request.page_type == 'product' and cart.item_count > 0 %}{{ 'products.product.add_more_to_cart' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}`,
         soldOut: `{{ 'products.product.sold_out' | t }}`,
         unavailable: `{{ 'products.product.unavailable' | t }}`,
         unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,

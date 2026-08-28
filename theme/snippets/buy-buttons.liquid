@@ -74,7 +74,12 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {%- comment -%}
+              pdd-add-cart: gancho de cor só na página de produto
+              (assets/custom.css). O snippet é compartilhado com a seção
+              featured-product, por isso a guarda de page_type.
+            {%- endcomment -%}
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}{% if request.page_type == 'product' %} pdd-add-cart{% endif %}"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
               or product.selected_or_first_available_variant == null
@@ -82,13 +87,48 @@
               disabled
             {% endif %}
           >
+            {%- if request.page_type == 'product' -%}
+              {%- comment -%}
+                Ícone de “mais” antes do rótulo. SVG solto, NUNCA dentro de
+                um <span>: o product-form.js pega o rótulo com
+                submitButton.querySelector('span') e sobrescreveria o
+                ícone com o texto do botão na primeira troca de variante.
+                currentColor para acompanhar o texto no hover e no estado
+                desabilitado.
+              {%- endcomment -%}
+              <svg
+                class="pdd-add-cart__icone"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="12" cy="12" r="9.25" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M12 7.9v8.2M7.9 12h8.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            {%- endif -%}
             <span>
               {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                {%- comment -%}
+                  Com item já no carrinho o rótulo muda: "Adicionar ao
+                  carrinho" sugere carrinho vazio e confunde quem voltou
+                  para pegar outra cor. Casado com o botão "Finalizar
+                  compra" logo abaixo (templates/product.json), que só
+                  aparece nessa mesma situação.
+                  page_type porque o snippet é compartilhado.
+                  O mesmo rótulo está em window.variantStrings
+                  (layout/theme.liquid): o product-form.js reescreve o
+                  texto do botão a cada troca de variante.
+                {%- endcomment -%}
+                {%- if cart.item_count > 0 and request.page_type == 'product' -%}
+                  {{ 'products.product.add_more_to_cart' | t }}
+                {%- else -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- endif -%}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}

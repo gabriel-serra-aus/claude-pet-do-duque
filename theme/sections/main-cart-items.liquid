@@ -25,6 +25,15 @@
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
+{%- comment -%}
+  "Voltar à loja" volta para a página do produto Sapatos Duque, não para a
+  lista de produtos: a loja tem um produto só, e /collections/all é uma
+  vitrine de um item que só atrasa quem quer comprar.
+  O `default` mantém o destino nativo caso o handle mude no admin — assim o
+  cliente nunca fica com um link quebrado no carrinho.
+{%- endcomment -%}
+{%- assign url_voltar = all_products['sapatos-duque-c2-original'].url | default: routes.all_products_collection_url -%}
+
 <cart-items
   class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}"
   view-event-payload="{{ cart | standard_event_data: 'view', context: 'page' | escape }}"
@@ -32,14 +41,14 @@
   <div class="page-width">
     <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+      <a href="{{ url_voltar }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}
       </a>
     </div>
 
     <div class="cart__warnings">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="button">
+      <a href="{{ url_voltar }}" class="button">
         {{ 'general.continue_shopping' | t }}
       </a>
 

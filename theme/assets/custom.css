@@ -962,10 +962,84 @@ variant-selects .form__label,
   grupo: a margem vem daqui. O max-width repete o do .product-form__buttons
   (section-main-product.css) para o botão não ficar mais largo que o
   "Adicionar ao carrinho" no desktop.
+
+  A cor vem da classe button--primary no próprio bloco (vermelho da marca,
+  --color-button do scheme-1). Aqui só o destaque: um pouco mais alto, mais
+  encorpado e com mais respiro acima do que o "Adicionar ao carrinho", para
+  os dois botões vermelhos empilhados não virarem um bloco único.
+  Nada de hex fixo - a altura usa a mesma variável de borda do tema.
+
+  display: flex (e não block) porque o .button do tema centraliza o rótulo
+  com align-items/justify-content; com display: block o texto subia para o
+  topo da caixa. O flex-direction: column empilha o rótulo e o resumo do
+  carrinho, e o padding substitui o `padding: 0 3rem` do .button, que não
+  deixa respiro nenhum em cima e embaixo para duas linhas.
 */
 .pdd-finalizar {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
   max-width: 44rem;
-  margin-top: 1rem;
+  margin-top: 1.4rem;
+  padding: 0.8rem 2rem;
+  line-height: 1.2;
   text-align: center;
+  min-height: calc(5.6rem + var(--buttons-border-width) * 2);
+}
+
+.pdd-finalizar__rotulo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+}
+
+.pdd-finalizar__resumo {
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+
+/*
+  Página de produto — "Adicionar ao carrinho" de contorno, com ícone de
+  mais em círculo (modelo aprovado pelo Gabriel em 28/08).
+
+  A classe pdd-add-cart e o SVG do ícone são postos em
+  snippets/buy-buttons.liquid, e só quando request.page_type é 'product':
+  o snippet também serve a seção featured-product, e nada fora da página
+  de produto muda.
+
+  O vermelho cheio ficou reservado ao "Finalizar compra": dois botões
+  vermelhos empilhados apagavam a hierarquia, e o contorno deixa claro que
+  este é o passo de montar o pedido, não o de pagar.
+
+  Sem hex. O botão continua com a classe button--primary no HTML e vira
+  contorno só pelas variáveis do tema, do mesmo jeito que o
+  .button--secondary do Craft faz:
+    --color-button        → fundo, aqui o próprio fundo da seção
+    --color-button-text   → texto E borda (o :after do .button desenha a
+                            borda com rgba(--color-button-text))
+    --border-opacity      → o .button calcula 1 - buttons_border_opacity,
+                            o que zera a borda; devolver o valor cheio é o
+                            mesmo truque do .button--secondary:after
+  Trocar a paleta no theme editor leva o botão junto.
+
+  O padding menor que o 3rem do tema é para o rótulo longo
+  ("Adicionar mais um item ao carrinho") mais o ícone caberem em 390px.
+*/
+.pdd-add-cart {
+  --color-button: var(--color-background);
+  --color-button-text: var(--color-foreground);
+  gap: 0.9rem;
+  padding: 0 1.6rem;
+}
+
+.pdd-add-cart:after {
+  --border-opacity: var(--buttons-border-opacity);
+}
+
+.pdd-add-cart__icone {
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: 0 0 auto;
 }
